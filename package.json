@@ -1,0 +1,109 @@
+{
+  "name": "codecov",
+  "displayName": "Codecov",
+  "publisher": "codecov",
+  "description": "Codecov's official extension for Visual Studio Code, it helps with setup and configuration.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Snippets",
+    "Formatters"
+  ],
+  "main": "./dist/extension.js",
+  "vscode": {
+    "files": [
+      "dist/languageserver.js"
+    ]
+  },
+  "contributes": {
+    "yamlValidation": [
+      {
+        "url": "./schemas/codecov.json",
+        "fileMatch": [
+          "codecov.yaml",
+          "codecov.yml",
+          "*/codecov.yaml",
+          "*/codecov.yml"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "id": "codecov",
+        "aliases": [
+          "Codecov",
+          "codecov"
+        ],
+        "icon": {
+          "light": "./icons/codecov.png",
+          "dark": "./icons/codecov.png"
+        },
+        "filenames": [
+          "codecov.yaml",
+          "codecov.yml"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "codecov",
+        "scopeName": "source.codecov",
+        "path": "./syntaxes/codecov.tmLanguage.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[codecov]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": false,
+          "strings": true
+        },
+        "editor.autoIndent": "keep"
+      }
+    }
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "request-light": "^0.7.0",
+    "vscode-languageclient": "^8.1.0",
+    "vscode-uri": "^3.0.7",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "scripts": {
+    "clean": "rimraf out && rimraf dist",
+    "test-compile": "npm run clean && tsc -p ./ && webpack --mode development",
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --mode none",
+    "watch": "tsc -watch -p ./ & webpack --mode development --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^18.15.13",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "buffer": "^6.0.3",
+    "eslint": "^8.38.0",
+    "glob": "^10.2.1",
+    "path-browserify": "^1.0.1",
+    "prettier": "^2.8.8",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "umd-compat-loader": "^2.1.2",
+    "url": "^0.11.0",
+    "util": "^0.12.5",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2",
+    "yaml-language-server": "^1.12.0"
+  }
+}

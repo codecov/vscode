@@ -1,0 +1,10 @@
+{
+  "codecov": {
+    "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  },
+  "codecov.ci": {
+    "title": "custom title",
+    "desc": "https://codecov.io/gh/codecov/example-python"
+  },
+  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" }
+}

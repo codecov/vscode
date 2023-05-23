@@ -1,0 +1,1835 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://json.schemastore.org/codecov",
+    "title": "Codecov configuration file",
+    "description": "The Codecov configuration file is used to configure your Codecov experience. More info: https://docs.codecov.com/docs/codecov-yaml",
+    "type": "object",
+    "properties": {
+        "codecov": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "pattern": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+                    "title": "Url",
+                    "description": ""
+                },
+                "token": {
+                    "type": "string",
+                    "title": "Token",
+                    "description": ""
+                },
+                "slug": {
+                    "type": "string",
+                    "title": "Slug",
+                    "description": ""
+                },
+                "bot": {
+                    "type": "string",
+                    "nullable": true,
+                    "title": "Bot",
+                    "description": ""
+                },
+                "branch": {
+                    "type": "string",
+                    "coerce": "branch_normalize",
+                    "title": "Branch",
+                    "description": ""
+                },
+                "ci": {
+                    "type": "array",
+                    "title": "Custom title",
+                    "description": "https://codecov.io/gh/codecov/example-python",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "assume_all_flags": {
+                    "title": "Assume all flags",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "strict_yaml_branch": {
+                    "type": "string",
+                    "title": "Strict yaml branch",
+                    "description": ""
+                },
+                "max_report_age": {
+                    "type": [
+                        "string",
+                        "integer",
+                        "boolean"
+                    ],
+                    "title": "Max report age",
+                    "description": ""
+                },
+                "disable_default_path_fixes": {
+                    "title": "Disable default path fixes",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "require_ci_to_pass": {
+                    "title": "Require ci to pass",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "allow_coverage_offsets": {
+                    "title": "Allow coverage offsets",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "allow_pseudo_compare": {
+                    "title": "Allow pseudo compare",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "archive": {
+                    "type": "object",
+                    "properties": {
+                        "uploads": {
+                            "title": "Uploads",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Archive",
+                    "description": ""
+                },
+                "notify": {
+                    "type": "object",
+                    "properties": {
+                        "after_n_builds": {
+                            "type": "integer",
+                            "min": 0,
+                            "title": "After n builds",
+                            "description": ""
+                        },
+                        "countdown": {
+                            "type": "integer",
+                            "title": "Countdown",
+                            "description": ""
+                        },
+                        "delay": {
+                            "type": "integer",
+                            "title": "Delay",
+                            "description": ""
+                        },
+                        "wait_for_ci": {
+                            "title": "Wait for ci",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        },
+                        "require_ci_to_pass": {
+                            "title": "Require ci to pass",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Notify",
+                    "description": ""
+                },
+                "ui": {
+                    "type": "object",
+                    "properties": {
+                        "hide_density": {
+                            "anyof": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "list",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "title": "Hide density",
+                            "description": "",
+                            "type": "string"
+                        },
+                        "hide_complexity": {
+                            "anyof": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "list",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "title": "Hide complexity",
+                            "description": "",
+                            "type": "string"
+                        },
+                        "hide_contexual": {
+                            "title": "Hide contexual",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        },
+                        "hide_sunburst": {
+                            "title": "Hide sunburst",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        },
+                        "hide_search": {
+                            "title": "Hide search",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Ui",
+                    "description": ""
+                }
+            },
+            "title": "Codecov",
+            "description": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+        },
+        "coverage": {
+            "type": "object",
+            "properties": {
+                "precision": {
+                    "type": "integer",
+                    "min": 0,
+                    "max": 99,
+                    "title": "Precision",
+                    "description": ""
+                },
+                "round": {
+                    "type": "string",
+                    "enum": [
+                        "down",
+                        "up",
+                        "nearest"
+                    ],
+                    "title": "Round",
+                    "description": ""
+                },
+                "range": {
+                    "type": "array",
+                    "maxlength": 2,
+                    "coerce": "string_to_range",
+                    "title": "Range",
+                    "description": ""
+                },
+                "notify": {
+                    "type": "object",
+                    "properties": {
+                        "irc": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "channel": {
+                                        "type": "string"
+                                    },
+                                    "server": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "nickserv_password": {
+                                        "type": "string",
+                                        "coerce": "secret"
+                                    },
+                                    "notice": {
+                                        "type": "boolean"
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Irc",
+                            "description": ""
+                        },
+                        "slack": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "attachments": {
+                                        "type": "string",
+                                        "comma_separated_strings": true,
+                                        "nullable": true
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Slack",
+                            "description": ""
+                        },
+                        "gitter": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Gitter",
+                            "description": ""
+                        },
+                        "hipchat": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "card": {
+                                        "type": "boolean"
+                                    },
+                                    "notify": {
+                                        "type": "boolean"
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Hipchat",
+                            "description": ""
+                        },
+                        "webhook": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Webhook",
+                            "description": ""
+                        },
+                        "email": {
+                            "type": "object",
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": "object",
+                                "properties": {
+                                    "to": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "secret"
+                                        }
+                                    },
+                                    "layout": {
+                                        "type": "string",
+                                        "comma_separated_strings": true,
+                                        "nullable": true
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "coerce": "secret",
+                                        "nullable": true
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    }
+                                }
+                            },
+                            "title": "Email",
+                            "description": ""
+                        }
+                    },
+                    "title": "Notify",
+                    "description": ""
+                },
+                "status": {
+                    "type": [
+                        "boolean",
+                        "object"
+                    ],
+                    "properties": {
+                        "default_rules": {
+                            "type": "object",
+                            "properties": {
+                                "flag_coverage_not_uploaded_behavior": {
+                                    "type": "string",
+                                    "enum": [
+                                        "include",
+                                        "exclude",
+                                        "pass"
+                                    ],
+                                    "title": "Flag coverage not uploaded behavior",
+                                    "description": ""
+                                },
+                                "carryforward_behavior": {
+                                    "type": "string",
+                                    "enum": [
+                                        "include",
+                                        "exclude",
+                                        "pass"
+                                    ],
+                                    "title": "Carryforward behavior",
+                                    "description": ""
+                                }
+                            },
+                            "title": "Default rules",
+                            "description": ""
+                        },
+                        "project": {
+                            "type": [
+                                "object",
+                                "boolean"
+                            ],
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "nullable": true,
+                                "type": [
+                                    "object",
+                                    "boolean"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "anyof": [
+                                            {
+                                                "allowed": [
+                                                    "auto"
+                                                ]
+                                            },
+                                            {
+                                                "regex": "(\\d+)(\\.\\d+)?%?"
+                                            }
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "include_changes": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "anyof": [
+                                            {
+                                                "allowed": [
+                                                    "auto"
+                                                ]
+                                            },
+                                            {
+                                                "regex": "(\\d+)(\\.\\d+)?%?"
+                                            }
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "disable_approx": {
+                                        "type": "boolean"
+                                    },
+                                    "enabled": {
+                                        "type": "boolean"
+                                    },
+                                    "if_ci_failed": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_no_uploads": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_not_found": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "informational": {
+                                        "type": "boolean"
+                                    },
+                                    "measurement": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "enum": [
+                                            "line",
+                                            "statement",
+                                            "branch",
+                                            "method",
+                                            "complexity"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "skip_if_assumes": {
+                                        "type": "boolean"
+                                    },
+                                    "removed_code_behavior": {
+                                        "type": [
+                                            "string",
+                                            "boolean"
+                                        ],
+                                        "enum": [
+                                            "removals_only",
+                                            "adjust_base",
+                                            "fully_covered_patch",
+                                            "off",
+                                            false
+                                        ]
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    },
+                                    "carryforward_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    },
+                                    "flag_coverage_not_uploaded_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    }
+                                }
+                            },
+                            "title": "Project",
+                            "description": ""
+                        },
+                        "patch": {
+                            "type": [
+                                "object",
+                                "boolean"
+                            ],
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": [
+                                    "object",
+                                    "boolean"
+                                ],
+                                "nullable": true,
+                                "properties": {
+                                    "target": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "anyof": [
+                                            {
+                                                "allowed": [
+                                                    "auto"
+                                                ]
+                                            },
+                                            {
+                                                "regex": "(\\d+)(\\.\\d+)?%?"
+                                            }
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "include_changes": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "anyof": [
+                                            {
+                                                "allowed": [
+                                                    "auto"
+                                                ]
+                                            },
+                                            {
+                                                "regex": "(\\d+)(\\.\\d+)?%?"
+                                            }
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "threshold": {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ],
+                                        "nullable": true,
+                                        "coerce": "percentage_to_number"
+                                    },
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "disable_approx": {
+                                        "type": "boolean"
+                                    },
+                                    "enabled": {
+                                        "type": "boolean"
+                                    },
+                                    "if_ci_failed": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_no_uploads": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_not_found": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "informational": {
+                                        "type": "boolean"
+                                    },
+                                    "measurement": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "enum": [
+                                            "line",
+                                            "statement",
+                                            "branch",
+                                            "method",
+                                            "complexity"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "skip_if_assumes": {
+                                        "type": "boolean"
+                                    },
+                                    "removed_code_behavior": {
+                                        "type": [
+                                            "string",
+                                            "boolean"
+                                        ],
+                                        "enum": [
+                                            "removals_only",
+                                            "adjust_base",
+                                            "fully_covered_patch",
+                                            "off",
+                                            false
+                                        ]
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    },
+                                    "carryforward_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    },
+                                    "flag_coverage_not_uploaded_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    }
+                                }
+                            },
+                            "title": "Patch",
+                            "description": ""
+                        },
+                        "changes": {
+                            "type": [
+                                "object",
+                                "boolean"
+                            ],
+                            "keysrules": {
+                                "type": "string",
+                                "pattern": "^[\\w\\-\\.]+$"
+                            },
+                            "valuesrules": {
+                                "type": [
+                                    "object",
+                                    "boolean"
+                                ],
+                                "nullable": true,
+                                "properties": {
+                                    "flags": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "pattern": "^[\\w\\.\\-]{1,45}$"
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "string",
+                                        "enum": [
+                                            "parent",
+                                            "pr",
+                                            "auto"
+                                        ]
+                                    },
+                                    "branches": {
+                                        "type": "array",
+                                        "properties": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "coerce": "branch_name"
+                                        },
+                                        "nullable": true
+                                    },
+                                    "disable_approx": {
+                                        "type": "boolean"
+                                    },
+                                    "enabled": {
+                                        "type": "boolean"
+                                    },
+                                    "if_ci_failed": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_no_uploads": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "if_not_found": {
+                                        "type": "string",
+                                        "enum": [
+                                            "success",
+                                            "failure",
+                                            "error",
+                                            "ignore"
+                                        ]
+                                    },
+                                    "informational": {
+                                        "type": "boolean"
+                                    },
+                                    "measurement": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "enum": [
+                                            "line",
+                                            "statement",
+                                            "branch",
+                                            "method",
+                                            "complexity"
+                                        ]
+                                    },
+                                    "only_pulls": {
+                                        "type": "boolean"
+                                    },
+                                    "skip_if_assumes": {
+                                        "type": "boolean"
+                                    },
+                                    "removed_code_behavior": {
+                                        "type": [
+                                            "string",
+                                            "boolean"
+                                        ],
+                                        "enum": [
+                                            "removals_only",
+                                            "adjust_base",
+                                            "fully_covered_patch",
+                                            "off",
+                                            false
+                                        ]
+                                    },
+                                    "paths": {
+                                        "type": "array",
+                                        "nullable": true,
+                                        "properties": {
+                                            "type": "string",
+                                            "coerce": "regexify_path_pattern"
+                                        }
+                                    },
+                                    "carryforward_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    },
+                                    "flag_coverage_not_uploaded_behavior": {
+                                        "type": "string",
+                                        "enum": [
+                                            "include",
+                                            "exclude",
+                                            "pass"
+                                        ]
+                                    }
+                                }
+                            },
+                            "title": "Changes",
+                            "description": ""
+                        },
+                        "no_upload_behavior": {
+                            "type": "string",
+                            "enum": [
+                                "pass",
+                                "fail"
+                            ],
+                            "title": "No upload behavior",
+                            "description": ""
+                        }
+                    },
+                    "title": "Status",
+                    "description": ""
+                }
+            },
+            "title": "Coverage",
+            "description": ""
+        },
+        "parsers": {
+            "type": "object",
+            "properties": {
+                "go": {
+                    "type": "object",
+                    "properties": {
+                        "partials_as_hits": {
+                            "title": "Partials as hits",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Go",
+                    "description": ""
+                },
+                "javascript": {
+                    "type": "object",
+                    "properties": {
+                        "enable_partials": {
+                            "title": "Enable partials",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Javascript",
+                    "description": ""
+                },
+                "v1": {
+                    "type": "object",
+                    "properties": {
+                        "include_full_missed_files": {
+                            "title": "Include full missed files",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "V1",
+                    "description": ""
+                },
+                "gcov": {
+                    "type": "object",
+                    "properties": {
+                        "branch_detection": {
+                            "type": "object",
+                            "properties": {
+                                "conditional": {
+                                    "title": "Conditional",
+                                    "description": "",
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
+                                },
+                                "loop": {
+                                    "title": "Loop",
+                                    "description": "",
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
+                                },
+                                "method": {
+                                    "title": "Method",
+                                    "description": "",
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
+                                },
+                                "macro": {
+                                    "title": "Macro",
+                                    "description": "",
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
+                                }
+                            },
+                            "title": "Branch detection",
+                            "description": ""
+                        }
+                    },
+                    "title": "Gcov",
+                    "description": ""
+                },
+                "jacoco": {
+                    "type": "object",
+                    "properties": {
+                        "partials_as_hits": {
+                            "title": "Partials as hits",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        }
+                    },
+                    "title": "Jacoco",
+                    "description": ""
+                }
+            },
+            "title": "Parsers",
+            "description": ""
+        },
+        "ignore": {
+            "type": "array",
+            "nullable": true,
+            "title": "Ignore",
+            "description": "",
+            "items": {
+                "type": "string",
+                "coerce": "regexify_path_pattern"
+            }
+        },
+        "fixes": {
+            "type": "array",
+            "title": "Fixes",
+            "description": "",
+            "items": {
+                "type": "string",
+                "coerce": "regexify_path_fix"
+            }
+        },
+        "flags": {
+            "type": "object",
+            "keysrules": {
+                "type": "string",
+                "minlength": 1,
+                "maxlength": 45,
+                "pattern": "^[\\w\\.\\-]+$"
+            },
+            "valuesrules": {
+                "type": "object",
+                "properties": {
+                    "joined": {
+                        "type": "boolean"
+                    },
+                    "carryforward": {
+                        "type": "boolean"
+                    },
+                    "carryforward_mode": {
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "labels"
+                        ]
+                    },
+                    "required": {
+                        "type": "boolean"
+                    },
+                    "ignore": {
+                        "type": "array",
+                        "nullable": true,
+                        "properties": {
+                            "type": "string",
+                            "coerce": "regexify_path_pattern"
+                        }
+                    },
+                    "paths": {
+                        "type": "array",
+                        "nullable": true,
+                        "properties": {
+                            "type": "string",
+                            "coerce": "regexify_path_pattern"
+                        }
+                    },
+                    "assume": {
+                        "type": [
+                            "boolean",
+                            "string",
+                            "object"
+                        ],
+                        "properties": {
+                            "branches": {
+                                "type": "array",
+                                "properties": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "coerce": "branch_name"
+                                },
+                                "nullable": true
+                            }
+                        }
+                    },
+                    "after_n_builds": {
+                        "type": "integer",
+                        "min": 0
+                    }
+                }
+            },
+            "title": "Flags",
+            "description": ""
+        },
+        "flag_management": {
+            "type": "object",
+            "properties": {
+                "default_rules": {
+                    "type": "object",
+                    "properties": {
+                        "statuses": {
+                            "type": "array",
+                            "title": "Statuses",
+                            "description": "",
+                            "prefixItems": "todo"
+                        },
+                        "carryforward_mode": {
+                            "type": "string",
+                            "enum": [
+                                "all",
+                                "labels"
+                            ],
+                            "title": "Carryforward mode",
+                            "description": ""
+                        },
+                        "carryforward": {
+                            "title": "Carryforward",
+                            "description": "",
+                            "enum": [
+                                true,
+                                false,
+                                "yes",
+                                "no",
+                                "on",
+                                "off"
+                            ]
+                        },
+                        "paths": {
+                            "type": "array",
+                            "nullable": true,
+                            "title": "Paths",
+                            "description": "",
+                            "items": {
+                                "type": "string",
+                                "coerce": "regexify_path_pattern"
+                            }
+                        },
+                        "ignore": {
+                            "type": "array",
+                            "nullable": true,
+                            "title": "Ignore",
+                            "description": "",
+                            "items": {
+                                "type": "string",
+                                "coerce": "regexify_path_pattern"
+                            }
+                        },
+                        "after_n_builds": {
+                            "type": "integer",
+                            "min": 0,
+                            "title": "After n builds",
+                            "description": ""
+                        }
+                    },
+                    "title": "Default rules",
+                    "description": ""
+                },
+                "individual_flags": {
+                    "type": "array",
+                    "title": "Individual flags",
+                    "description": "",
+                    "prefixItems": "todo"
+                }
+            },
+            "title": "Flag management",
+            "description": ""
+        },
+        "component_management": {
+            "type": "object",
+            "properties": {
+                "default_rules": {
+                    "type": "object",
+                    "properties": {
+                        "statuses": {
+                            "type": "array",
+                            "title": "Statuses",
+                            "description": "",
+                            "prefixItems": "todo"
+                        },
+                        "flag_regexes": {
+                            "type": "array",
+                            "title": "Flag regexes",
+                            "description": "",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "paths": {
+                            "type": "array",
+                            "nullable": true,
+                            "title": "Paths",
+                            "description": "",
+                            "items": {
+                                "type": "string",
+                                "coerce": "regexify_path_pattern"
+                            }
+                        }
+                    },
+                    "title": "Default rules",
+                    "description": ""
+                },
+                "individual_components": {
+                    "type": "array",
+                    "title": "Individual components",
+                    "description": "",
+                    "prefixItems": "todo"
+                }
+            },
+            "title": "Component management",
+            "description": ""
+        },
+        "comment": {
+            "type": [
+                "object",
+                "boolean"
+            ],
+            "properties": {
+                "layout": {
+                    "type": "string",
+                    "comma_separated_strings": true,
+                    "nullable": true,
+                    "title": "Layout",
+                    "description": ""
+                },
+                "require_changes": {
+                    "title": "Require changes",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "require_base": {
+                    "title": "Require base",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "require_head": {
+                    "title": "Require head",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "show_critical_paths": {
+                    "title": "Show critical paths",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "branches": {
+                    "type": "array",
+                    "nullable": true,
+                    "title": "Branches",
+                    "description": "",
+                    "items": {
+                        "type": "string",
+                        "nullable": true,
+                        "coerce": "branch_name"
+                    }
+                },
+                "paths": {
+                    "type": "array",
+                    "nullable": true,
+                    "title": "Paths",
+                    "description": "",
+                    "items": {
+                        "type": "string",
+                        "coerce": "regexify_path_pattern"
+                    }
+                },
+                "flags": {
+                    "type": "array",
+                    "nullable": true,
+                    "title": "Flags",
+                    "description": "",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[\\w\\.\\-]{1,45}$"
+                    }
+                },
+                "behavior": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "once",
+                        "new",
+                        "spammy"
+                    ],
+                    "title": "Behavior",
+                    "description": ""
+                },
+                "after_n_builds": {
+                    "type": "integer",
+                    "min": 0,
+                    "title": "After n builds",
+                    "description": ""
+                },
+                "show_carryforward_flags": {
+                    "title": "Show carryforward flags",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                },
+                "hide_comment_details": {
+                    "title": "Hide comment details",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                }
+            },
+            "title": "Comment",
+            "description": ""
+        },
+        "github_checks": {
+            "type": [
+                "object",
+                "boolean"
+            ],
+            "properties": {
+                "annotations": {
+                    "title": "Annotations",
+                    "description": "",
+                    "enum": [
+                        true,
+                        false,
+                        "yes",
+                        "no",
+                        "on",
+                        "off"
+                    ]
+                }
+            },
+            "title": "Github checks",
+            "description": ""
+        },
+        "profiling": {
+            "type": "object",
+            "properties": {
+                "fixes": {
+                    "type": "array",
+                    "title": "Fixes",
+                    "description": "",
+                    "items": {
+                        "type": "string",
+                        "coerce": "regexify_path_fix"
+                    }
+                },
+                "grouping_attributes": {
+                    "type": "array",
+                    "title": "Grouping attributes",
+                    "description": "",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "critical_files_paths": {
+                    "type": "array",
+                    "title": "Critical files paths",
+                    "description": "",
+                    "items": {
+                        "type": "string",
+                        "coerce": "regexify_path_pattern"
+                    }
+                }
+            },
+            "title": "Profiling",
+            "description": ""
+        },
+        "beta_groups": {
+            "type": "array",
+            "title": "Beta groups",
+            "description": "",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
