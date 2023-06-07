@@ -6,5 +6,7 @@
     "title": "custom title",
     "desc": "https://codecov.io/gh/codecov/example-python"
   },
-  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" }
+  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" },
+  "comment": { "desc": "Settings for the codecov comment bot in your pull requests." },
+  "comment.layout": { "desc": "You can customiza the layout and what information is displayed in the comment on each PR using a specialized string format. [Check our docs for more information](https://docsite.link/here)." },
 }
