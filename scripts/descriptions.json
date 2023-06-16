@@ -6,5 +6,6 @@
     "title": "custom title",
     "desc": "https://codecov.io/gh/codecov/example-python"
   },
-  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" }
+  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" },
+  "codecov.require_ci_to_pass": { "desc": "Something something" }
 }
