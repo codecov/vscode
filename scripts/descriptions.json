@@ -3,8 +3,15 @@
     "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
   "codecov.ci": {
-    "title": "custom title",
-    "desc": "https://codecov.io/gh/codecov/example-python"
+    "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
   },
-  "codecov.ci.url": { "desc": "https://codecov.io/gh/codecov/example-python" }
+  "codecov.bot" {
+    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+  }
+  "codecov.token" {
+    "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
+  }
+  "codecov.strict_yaml_branch" {
+    "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
+  }
 }
