@@ -2,16 +2,85 @@
   "codecov": {
     "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
-  "codecov.ci": {
-    "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
-  },
-  "codecov.bot": {
-    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+  "codecov.url": {
+    "desc": ""
   },
   "codecov.token": {
     "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
   },
+  "codecov.slug": {
+    "desc": ""
+  },
+  "codecov.bot": {
+    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+  },
+  "codecov.branch": {
+    "desc": ""
+  },
+  "codecov.ci": {
+    "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
+  },
+  "codecov.assume_all_flags": {
+    "desc": ""
+  },
   "codecov.strict_yaml_branch": {
     "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
+  },
+  "codecov.max_report_age": {
+    "desc": ""
+  },
+  "codecov.disable_default_path_fixes": {
+    "desc": ""
+  },
+  "codecov.require_ci_to_pass": {
+    "desc": ""
+  },
+  "codecov.allow_coverage_offsets": {
+    "desc": ""
+  },
+  "codecov.allow_pseudo_compare": {
+    "desc": ""
+  },
+  "codecov.archive": {
+    "desc": ""
+  },
+  "codecov.archive.upploads": {
+    "desc": ""
+  },
+  "codecov.notify": {
+    "desc": ""
+  },
+  "codecov.notify.after_n_builds": {
+    "desc": ""
+  },
+  "codecov.notify.countdown": {
+    "desc": ""
+  },
+  "codecov.notify.delay": {
+    "desc": ""
+  },
+  "codecov.notify.wait_for_ci": {
+    "desc": ""
+  },
+  "codecov.notify.require_ci_to_pass": {
+    "desc": ""
+  },
+  "codecov.ui": {
+    "desc": ""
+  },
+  "codecov.ui.hide_density": {
+    "desc": ""
+  },
+  "codecov.ui.hide_complexity": {
+    "desc": ""
+  },
+  "codecov.ui.hide_contextual": {
+    "desc": ""
+  },
+  "codecov.ui.hide_sunburst": {
+    "desc": ""
+  },
+  "codecov.ui.hide_search": {
+    "desc": ""
   },
 }
