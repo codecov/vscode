@@ -37,11 +37,9 @@
   },
   "codecov.allow_coverage_offsets": {
     "desc": ""
-    # May not need
   },
   "codecov.allow_pseudo_compare": {
     "desc": ""
-    # May not need
   },
   "codecov.archive": {
     "desc": "Configure cloud report archiving"
@@ -57,11 +55,9 @@
   },
   "codecov.notify.countdown": {
     "desc": ""
-    # Not in docs
   },
   "codecov.notify.delay": {
     "desc": ""
-    # Not in docs
   },
   "codecov.notify.wait_for_ci": {
     "desc": ""
