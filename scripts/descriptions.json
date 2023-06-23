@@ -27,37 +27,41 @@
     "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
   },
   "codecov.max_report_age": {
-    "desc": ""
+    "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
   },
   "codecov.disable_default_path_fixes": {
-    "desc": ""
+    "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths"
   },
   "codecov.require_ci_to_pass": {
-    "desc": ""
+    "desc": "Should Codecov wait for all other statuses to pass before sending its status."
   },
   "codecov.allow_coverage_offsets": {
     "desc": ""
+    # May not need
   },
   "codecov.allow_pseudo_compare": {
     "desc": ""
+    # May not need
   },
   "codecov.archive": {
-    "desc": ""
+    "desc": "Configure cloud report archiving"
   },
-  "codecov.archive.upploads": {
-    "desc": ""
+  "codecov.archive.uploads": {
+    "desc": "Boolean - How to disable archiving. More info: https://docs.codecov.com/docs/codecovyml-reference#codecov-cloud-report-archiving"
   },
   "codecov.notify": {
-    "desc": ""
+    "desc": "Configure how Codecov sends a PR comment"
   },
   "codecov.notify.after_n_builds": {
-    "desc": ""
+    "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds"
   },
   "codecov.notify.countdown": {
     "desc": ""
+    # Not in docs
   },
   "codecov.notify.delay": {
     "desc": ""
+    # Not in docs
   },
   "codecov.notify.wait_for_ci": {
     "desc": ""
