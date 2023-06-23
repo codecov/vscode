@@ -82,5 +82,185 @@
   },
   "codecov.ui.hide_search": {
     "desc": ""
+  },  
+  "coverage": {
+    "desc": ""
+  },
+  "coverage.round": {
+    "desc": ""
+  },
+  "coverage.range": {
+    "desc": ""
+  },
+  "coverage.notify": {
+    "desc": ""
+  },
+  "coverage.notify.irc": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.channel": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.password": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.nickserv_password": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.notice": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.notify.slack": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.channel": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.password": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.nickserv_password": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.notice": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.notify.gitter": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.channel": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.password": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.nickserv_password": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.notice": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.notify.webhook": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.channel": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.password": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.nickserv_password": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.notice": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.paths": {
+    "desc": ""
   },
 }
