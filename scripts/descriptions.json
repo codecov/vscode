@@ -104,6 +104,9 @@
   "coverage.notify.irc.valuesrules.channel": {
     "desc": ""
   },
+  "coverage.notify.irc.valuesrules.server": {
+    "desc": ""
+  },
   "coverage.notify.irc.valuesrules.password": {
     "desc": ""
   },
@@ -143,16 +146,7 @@
   "coverage.notify.slack.valuesrules": {
     "desc": ""
   },
-  "coverage.notify.slack.valuesrules.channel": {
-    "desc": ""
-  },
-  "coverage.notify.slack.valuesrules.password": {
-    "desc": ""
-  },
-  "coverage.notify.slack.valuesrules.nickserv_password": {
-    "desc": ""
-  },
-  "coverage.notify.slack.valuesrules.notice": {
+  "coverage.notify.slack.valuesrules.attachments": {
     "desc": ""
   },
   "coverage.notify.slack.valuesrules.url": {
@@ -173,28 +167,13 @@
   "coverage.notify.slack.valuesrules.base": {
     "desc": ""
   },
-  "coverage.notify.slack.valuesrules.only_pulls": {
-    "desc": ""
-  },
-  "coverage.notify.slack.valuesrules.paths": {
+  "coverage.notify.slack.valuesrules.only_puls": {
     "desc": ""
   },
   "coverage.notify.gitter": {
     "desc": ""
   },
   "coverage.notify.gitter.valuesrules": {
-    "desc": ""
-  },
-  "coverage.notify.gitter.valuesrules.channel": {
-    "desc": ""
-  },
-  "coverage.notify.gitter.valuesrules.password": {
-    "desc": ""
-  },
-  "coverage.notify.gitter.valuesrules.nickserv_password": {
-    "desc": ""
-  },
-  "coverage.notify.gitter.valuesrules.notice": {
     "desc": ""
   },
   "coverage.notify.gitter.valuesrules.url": {
@@ -218,25 +197,10 @@
   "coverage.notify.gitter.valuesrules.only_pulls": {
     "desc": ""
   },
-  "coverage.notify.gitter.valuesrules.paths": {
-    "desc": ""
-  },
   "coverage.notify.webhook": {
     "desc": ""
   },
   "coverage.notify.webhook.valuesrules": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.channel": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.password": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.nickserv_password": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.notice": {
     "desc": ""
   },
   "coverage.notify.webhook.valuesrules.url": {
@@ -263,4 +227,64 @@
   "coverage.notify.webhook.valuesrules.paths": {
     "desc": ""
   },
+  "coverage.notify.email": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.to": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.layout": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.status": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules.carryforward_behavior": {
+    "desc": ""
+  }, 
+  "coverage.status.project": {
+    "desc": ""
+  }, 
+  "coverage.status.project.keyrules": {
+    "desc": ""
+  }, 
+  "coverage.status.project.valuesrules": {
+    "desc": ""
+  }, 
+
+  
+
 }
