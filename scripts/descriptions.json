@@ -60,10 +60,10 @@
     "desc": ""
   },
   "codecov.notify.wait_for_ci": {
-    "desc": ""
+    "desc": "Should Codecov wait for all CI statuses to complete before sending ours. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovnotifywait_for_ci"
   },
   "codecov.notify.require_ci_to_pass": {
-    "desc": ""
+    "desc": "Should Codecov wait for all other statuses to PASS before sending its status. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovrequire_ci_to_pass"
   },
   "codecov.ui": {
     "desc": ""
@@ -84,13 +84,13 @@
     "desc": ""
   },  
   "coverage": {
-    "desc": ""
+    "desc": "Configure how Codecov displays and implements a quality gate on your coverage"
   },
   "coverage.round": {
-    "desc": ""
+    "desc": "Which direction to you want to round the coverage value"
   },
   "coverage.range": {
-    "desc": ""
+    "desc": "The value cutoffs where coverage transitions from red to yellow to green. Format: 60...80"
   },
   "coverage.notify": {
     "desc": ""
