@@ -2,16 +2,289 @@
   "codecov": {
     "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
+  "codecov.url": {
+    "desc": ""
+  },
+  "codecov.token": {
+    "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
+  },
+  "codecov.slug": {
+    "desc": ""
+  },
+  "codecov.bot": {
+    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+  },
+  "codecov.branch": {
+    "desc": ""
+  },
   "codecov.ci": {
     "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
   },
-  "codecov.bot" {
-    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
-  }
-  "codecov.token" {
-    "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
-  }
-  "codecov.strict_yaml_branch" {
+  "codecov.assume_all_flags": {
+    "desc": ""
+  },
+  "codecov.strict_yaml_branch": {
     "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
-  }
+  },
+  "codecov.max_report_age": {
+    "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
+  },
+  "codecov.disable_default_path_fixes": {
+    "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths"
+  },
+  "codecov.require_ci_to_pass": {
+    "desc": "Should Codecov wait for all other statuses to pass before sending its status."
+  },
+  "codecov.allow_coverage_offsets": {
+    "desc": ""
+  },
+  "codecov.allow_pseudo_compare": {
+    "desc": ""
+  },
+  "codecov.archive": {
+    "desc": "Configure cloud report archiving"
+  },
+  "codecov.archive.uploads": {
+    "desc": "Boolean - How to disable archiving. More info: https://docs.codecov.com/docs/codecovyml-reference#codecov-cloud-report-archiving"
+  },
+  "codecov.notify": {
+    "desc": "Configure how Codecov sends a PR comment"
+  },
+  "codecov.notify.after_n_builds": {
+    "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds"
+  },
+  "codecov.notify.countdown": {
+    "desc": ""
+  },
+  "codecov.notify.delay": {
+    "desc": ""
+  },
+  "codecov.notify.wait_for_ci": {
+    "desc": ""
+  },
+  "codecov.notify.require_ci_to_pass": {
+    "desc": ""
+  },
+  "codecov.ui": {
+    "desc": ""
+  },
+  "codecov.ui.hide_density": {
+    "desc": ""
+  },
+  "codecov.ui.hide_complexity": {
+    "desc": ""
+  },
+  "codecov.ui.hide_contextual": {
+    "desc": ""
+  },
+  "codecov.ui.hide_sunburst": {
+    "desc": ""
+  },
+  "codecov.ui.hide_search": {
+    "desc": ""
+  },  
+  "coverage": {
+    "desc": ""
+  },
+  "coverage.round": {
+    "desc": ""
+  },
+  "coverage.range": {
+    "desc": ""
+  },
+  "coverage.notify": {
+    "desc": ""
+  },
+  "coverage.notify.irc": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.channel": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.server": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.password": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.nickserv_password": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.notice": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.irc.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.notify.slack": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.attachments": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.slack.valuesrules.only_puls": {
+    "desc": ""
+  },
+  "coverage.notify.gitter": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.gitter.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.webhook": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.webhook.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.notify.email": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.to": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.layout": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.url": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.branches": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.threshold": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.message": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.flags": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.base": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.only_pulls": {
+    "desc": ""
+  },
+  "coverage.notify.email.valuesrules.paths": {
+    "desc": ""
+  },
+  "coverage.status": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
+    "desc": ""
+  }, 
+  "coverage.status.default_rules.carryforward_behavior": {
+    "desc": ""
+  }, 
+  "coverage.status.project": {
+    "desc": ""
+  }, 
+  "coverage.status.project.keyrules": {
+    "desc": ""
+  }, 
+  "coverage.status.project.valuesrules": {
+    "desc": ""
+  }, 
+
+  
+
 }
