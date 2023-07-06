@@ -12,34 +12,34 @@
       "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*), description: "
   },
   "codecov.token": {
-      "desc": "description: "
+      "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
   },
   "codecov.slug": {
       "desc": "description: "
   },
   "codecov.bot": {
-      "desc": "description: "
+      "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
   },
   "codecov.branch": {
       "desc": "description: "
   },
   "codecov.ci": {
-      "desc": "description: https://codecov.io/gh/codecov/example-python"
+      "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
   },
   "codecov.assume_all_flags": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.strict_yaml_branch": {
-      "desc": "description: "
+      "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
   },
   "codecov.max_report_age": {
-      "desc": "description: "
+      "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
   },
   "codecov.disable_default_path_fixes": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.require_ci_to_pass": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off"
   },
   "codecov.allow_coverage_offsets": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -51,10 +51,10 @@
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.archive": {
-      "desc": "description: "
+      "desc": "Configure cloud report archiving. Enum: True, False, yes, no, on, off"
   },
   "codecov.notify.after_n_builds": {
-      "desc": "min: 0, description: "
+      "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
   },
   "codecov.notify.countdown": {
       "desc": "description: "
@@ -69,7 +69,7 @@
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify": {
-      "desc": "description: "
+      "desc": "Configure how Codecov sends a PR comment"
   },
   "codecov.ui.hide_density": {
       "desc": "description: "
