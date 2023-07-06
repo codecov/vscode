@@ -5,17 +5,35 @@
   "id": {
       "desc": "https://json.schemastore.org/codecov"
   },
-  "codecov": {
-      "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  "description": {
+      "desc": "The Codecov configuration file is used to configure your Codecov experience. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
   "codecov.url": {
-      "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+      "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*), description: "
+  },
+  "codecov.token": {
+      "desc": "description: "
+  },
+  "codecov.slug": {
+      "desc": "description: "
   },
   "codecov.bot": {
-      "desc": "nullable: True"
+      "desc": "description: "
+  },
+  "codecov.branch": {
+      "desc": "description: "
+  },
+  "codecov.ci": {
+      "desc": "description: https://codecov.io/gh/codecov/example-python"
   },
   "codecov.assume_all_flags": {
       "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "codecov.strict_yaml_branch": {
+      "desc": "description: "
+  },
+  "codecov.max_report_age": {
+      "desc": "description: "
   },
   "codecov.disable_default_path_fixes": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -32,14 +50,32 @@
   "codecov.archive.uploads": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "codecov.archive": {
+      "desc": "description: "
+  },
   "codecov.notify.after_n_builds": {
-      "desc": "min: 0"
+      "desc": "min: 0, description: "
+  },
+  "codecov.notify.countdown": {
+      "desc": "description: "
+  },
+  "codecov.notify.delay": {
+      "desc": "description: "
   },
   "codecov.notify.wait_for_ci": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify.require_ci_to_pass": {
       "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "codecov.notify": {
+      "desc": "description: "
+  },
+  "codecov.ui.hide_density": {
+      "desc": "description: "
+  },
+  "codecov.ui.hide_complexity": {
+      "desc": "description: "
   },
   "codecov.ui.hide_contexual": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -50,17 +86,23 @@
   "codecov.ui.hide_search": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "codecov.ui": {
+      "desc": "description: "
+  },
+  "codecov": {
+      "desc": "description: Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  },
   "coverage.precision": {
-      "desc": "min: 0"
+      "desc": "min: 0, description: "
   },
   "coverage.precision.max": {
       "desc": 99
   },
   "coverage.round": {
-      "desc": " down,  up,  nearest"
+      "desc": " down,  up,  nearest, description: "
   },
   "coverage.range": {
-      "desc": "maxlength: 2"
+      "desc": "maxlength: 2, description: "
   },
   "coverage.notify.irc.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
@@ -85,6 +127,9 @@
   },
   "coverage.notify.irc.valuesrules.paths": {
       "desc": "nullable: True"
+  },
+  "coverage.notify.irc": {
+      "desc": "description: "
   },
   "coverage.notify.slack.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
@@ -113,6 +158,9 @@
   "coverage.notify.slack.valuesrules.paths": {
       "desc": "nullable: True"
   },
+  "coverage.notify.slack": {
+      "desc": "description: "
+  },
   "coverage.notify.gitter.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
   },
@@ -133,6 +181,9 @@
   },
   "coverage.notify.gitter.valuesrules.paths": {
       "desc": "nullable: True"
+  },
+  "coverage.notify.gitter": {
+      "desc": "description: "
   },
   "coverage.notify.hipchat.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
@@ -155,6 +206,9 @@
   "coverage.notify.hipchat.valuesrules.paths": {
       "desc": "nullable: True"
   },
+  "coverage.notify.hipchat": {
+      "desc": "description: "
+  },
   "coverage.notify.webhook.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
   },
@@ -175,6 +229,9 @@
   },
   "coverage.notify.webhook.valuesrules.paths": {
       "desc": "nullable: True"
+  },
+  "coverage.notify.webhook": {
+      "desc": "description: "
   },
   "coverage.notify.email.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
@@ -203,11 +260,20 @@
   "coverage.notify.email.valuesrules.paths": {
       "desc": "nullable: True"
   },
+  "coverage.notify.email": {
+      "desc": "description: "
+  },
+  "coverage.notify": {
+      "desc": "description: "
+  },
   "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": " include,  exclude,  pass, description: "
   },
   "coverage.status.default_rules.carryforward_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": " include,  exclude,  pass, description: "
+  },
+  "coverage.status.default_rules": {
+      "desc": "description: "
   },
   "coverage.status.project.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
@@ -269,6 +335,9 @@
   "coverage.status.project.valuesrules.flag_coverage_not_uploaded_behavior": {
       "desc": " include,  exclude,  pass"
   },
+  "coverage.status.project": {
+      "desc": "description: "
+  },
   "coverage.status.patch.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
   },
@@ -329,6 +398,9 @@
   "coverage.status.patch.valuesrules.flag_coverage_not_uploaded_behavior": {
       "desc": " include,  exclude,  pass"
   },
+  "coverage.status.patch": {
+      "desc": "description: "
+  },
   "coverage.status.changes.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
   },
@@ -368,17 +440,35 @@
   "coverage.status.changes.valuesrules.flag_coverage_not_uploaded_behavior": {
       "desc": " include,  exclude,  pass"
   },
+  "coverage.status.changes": {
+      "desc": "description: "
+  },
   "coverage.status.no_upload_behavior": {
-      "desc": " pass,  fail"
+      "desc": " pass,  fail, description: "
+  },
+  "coverage.status": {
+      "desc": "description: "
+  },
+  "coverage": {
+      "desc": "description: "
   },
   "parsers.go.partials_as_hits": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "parsers.go": {
+      "desc": "description: "
+  },
   "parsers.javascript.enable_partials": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "parsers.javascript": {
+      "desc": "description: "
+  },
   "parsers.v1.include_full_missed_files": {
       "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.v1": {
+      "desc": "description: "
   },
   "parsers.gcov.branch_detection.conditional": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -392,11 +482,26 @@
   "parsers.gcov.branch_detection.macro": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "parsers.gcov.branch_detection": {
+      "desc": "description: "
+  },
+  "parsers.gcov": {
+      "desc": "description: "
+  },
   "parsers.jacoco.partials_as_hits": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "parsers.jacoco": {
+      "desc": "description: "
+  },
+  "parsers": {
+      "desc": "description: "
+  },
   "ignore": {
-      "desc": "nullable: True"
+      "desc": "description: "
+  },
+  "fixes": {
+      "desc": "description: "
   },
   "flags.keysrules": {
       "desc": "minlength: 1, maxlength: 45, pattern: ^[\\w\\.\\-]+$"
@@ -416,29 +521,59 @@
   "flags.valuesrules.after_n_builds": {
       "desc": "min: 0"
   },
+  "flags": {
+      "desc": "description: "
+  },
+  "flag_management.default_rules.statuses": {
+      "desc": "description: "
+  },
   "flag_management.default_rules.carryforward_mode": {
-      "desc": " all,  labels"
+      "desc": " all,  labels, description: "
   },
   "flag_management.default_rules.carryforward": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "flag_management.default_rules.paths": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "flag_management.default_rules.ignore": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "flag_management.default_rules.after_n_builds": {
-      "desc": "min: 0"
+      "desc": "min: 0, description: "
+  },
+  "flag_management.default_rules": {
+      "desc": "description: "
+  },
+  "flag_management.individual_flags": {
+      "desc": "description: "
+  },
+  "flag_management": {
+      "desc": "description: "
+  },
+  "component_management.default_rules.statuses": {
+      "desc": "description: "
+  },
+  "component_management.default_rules.flag_regexes": {
+      "desc": "description: "
   },
   "component_management.default_rules.paths": {
-      "desc": "nullable: True"
+      "desc": "description: "
+  },
+  "component_management.default_rules": {
+      "desc": "description: "
+  },
+  "component_management.individual_components": {
+      "desc": "description: "
+  },
+  "component_management": {
+      "desc": "description: "
   },
   "comment.layout.comma_separated_strings": {
       "desc": true
   },
   "comment.layout": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "comment.require_changes": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -453,25 +588,25 @@
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "comment.branches": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "comment.branches.items": {
       "desc": "nullable: True"
   },
   "comment.paths": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "comment.flags": {
-      "desc": "nullable: True"
+      "desc": "description: "
   },
   "comment.flags.items": {
       "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "comment.behavior": {
-      "desc": " default,  once,  new,  spammy"
+      "desc": " default,  once,  new,  spammy, description: "
   },
   "comment.after_n_builds": {
-      "desc": "min: 0"
+      "desc": "min: 0, description: "
   },
   "comment.show_carryforward_flags": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -479,7 +614,28 @@
   "comment.hide_comment_details": {
       "desc": " True,  False,  yes,  no,  on,  off"
   },
+  "comment": {
+      "desc": "description: "
+  },
   "github_checks.annotations": {
       "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "github_checks": {
+      "desc": "description: "
+  },
+  "profiling.fixes": {
+      "desc": "description: "
+  },
+  "profiling.grouping_attributes": {
+      "desc": "description: "
+  },
+  "profiling.critical_files_paths": {
+      "desc": "description: "
+  },
+  "profiling": {
+      "desc": "description: "
+  },
+  "beta_groups": {
+      "desc": "description: "
   }
 }
