@@ -5,6 +5,9 @@
   "id": {
       "desc": "https://json.schemastore.org/codecov"
   },
+  "codecov": {
+      "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  },
   "codecov.url": {
       "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
   },
