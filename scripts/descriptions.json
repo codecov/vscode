@@ -1,290 +1,641 @@
 {
-  "codecov": {
-    "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  "$schema": {
+      "desc": "http://json-schema.org/draft-04/schema#"
+  },
+  "id": {
+      "desc": "https://json.schemastore.org/codecov"
+  },
+  "description": {
+      "desc": "The Codecov configuration file is used to configure your Codecov experience. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
   "codecov.url": {
-    "desc": ""
+      "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*), description: "
   },
   "codecov.token": {
-    "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
+      "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
   },
   "codecov.slug": {
-    "desc": ""
+      "desc": "description: "
   },
   "codecov.bot": {
-    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+      "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
   },
   "codecov.branch": {
-    "desc": ""
+      "desc": "description: "
   },
   "codecov.ci": {
-    "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
+      "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
   },
   "codecov.assume_all_flags": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.strict_yaml_branch": {
-    "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
+      "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
   },
   "codecov.max_report_age": {
-    "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
+      "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
   },
   "codecov.disable_default_path_fixes": {
-    "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths"
+      "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.require_ci_to_pass": {
-    "desc": "Should Codecov wait for all other statuses to pass before sending its status."
+      "desc": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off"
   },
   "codecov.allow_coverage_offsets": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.allow_pseudo_compare": {
-    "desc": ""
-  },
-  "codecov.archive": {
-    "desc": "Configure cloud report archiving"
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.archive.uploads": {
-    "desc": "Boolean - How to disable archiving. More info: https://docs.codecov.com/docs/codecovyml-reference#codecov-cloud-report-archiving"
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
-  "codecov.notify": {
-    "desc": "Configure how Codecov sends a PR comment"
+  "codecov.archive": {
+      "desc": "Configure cloud report archiving. Enum: True, False, yes, no, on, off"
   },
   "codecov.notify.after_n_builds": {
-    "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds"
+      "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
   },
   "codecov.notify.countdown": {
-    "desc": ""
+      "desc": "description: "
   },
   "codecov.notify.delay": {
-    "desc": ""
+      "desc": "description: "
   },
   "codecov.notify.wait_for_ci": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify.require_ci_to_pass": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
-  "codecov.ui": {
-    "desc": ""
+  "codecov.notify": {
+      "desc": "Configure how Codecov sends a PR comment"
   },
   "codecov.ui.hide_density": {
-    "desc": ""
+      "desc": "description: "
   },
   "codecov.ui.hide_complexity": {
-    "desc": ""
+      "desc": "description: "
   },
-  "codecov.ui.hide_contextual": {
-    "desc": ""
+  "codecov.ui.hide_contexual": {
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.ui.hide_sunburst": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
   },
   "codecov.ui.hide_search": {
-    "desc": ""
-  },  
-  "coverage": {
-    "desc": ""
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "codecov.ui": {
+      "desc": "description: "
+  },
+  "codecov": {
+      "desc": "description: Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+  },
+  "coverage.precision": {
+      "desc": "min: 0, description: "
+  },
+  "coverage.precision.max": {
+      "desc": 99
   },
   "coverage.round": {
-    "desc": ""
+      "desc": " down,  up,  nearest, description: "
   },
   "coverage.range": {
-    "desc": ""
+      "desc": "maxlength: 2, description: "
   },
-  "coverage.notify": {
-    "desc": ""
-  },
-  "coverage.notify.irc": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.channel": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.server": {
-    "desc": ""
+  "coverage.notify.irc.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
   },
   "coverage.notify.irc.valuesrules.password": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.nickserv_password": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.notice": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.irc.valuesrules.url": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.irc.valuesrules.branches": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.irc.valuesrules.threshold": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.message": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.irc.valuesrules.flags": {
-    "desc": ""
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.irc.valuesrules.base": {
-    "desc": ""
-  },
-  "coverage.notify.irc.valuesrules.only_pulls": {
-    "desc": ""
+      "desc": " parent,  pr,  auto"
   },
   "coverage.notify.irc.valuesrules.paths": {
-    "desc": ""
+      "desc": "nullable: True"
   },
-  "coverage.notify.slack": {
-    "desc": ""
+  "coverage.notify.irc": {
+      "desc": "description: "
   },
-  "coverage.notify.slack.valuesrules": {
-    "desc": ""
+  "coverage.notify.slack.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
+  },
+  "coverage.notify.slack.valuesrules.attachments.comma_separated_strings": {
+      "desc": true
   },
   "coverage.notify.slack.valuesrules.attachments": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.slack.valuesrules.url": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.slack.valuesrules.branches": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.slack.valuesrules.threshold": {
-    "desc": ""
-  },
-  "coverage.notify.slack.valuesrules.message": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.slack.valuesrules.flags": {
-    "desc": ""
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.slack.valuesrules.base": {
-    "desc": ""
+      "desc": " parent,  pr,  auto"
   },
-  "coverage.notify.slack.valuesrules.only_puls": {
-    "desc": ""
+  "coverage.notify.slack.valuesrules.paths": {
+      "desc": "nullable: True"
   },
-  "coverage.notify.gitter": {
-    "desc": ""
+  "coverage.notify.slack": {
+      "desc": "description: "
   },
-  "coverage.notify.gitter.valuesrules": {
-    "desc": ""
+  "coverage.notify.gitter.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
   },
   "coverage.notify.gitter.valuesrules.url": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.gitter.valuesrules.branches": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.gitter.valuesrules.threshold": {
-    "desc": ""
-  },
-  "coverage.notify.gitter.valuesrules.message": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.gitter.valuesrules.flags": {
-    "desc": ""
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.gitter.valuesrules.base": {
-    "desc": ""
+      "desc": " parent,  pr,  auto"
   },
-  "coverage.notify.gitter.valuesrules.only_pulls": {
-    "desc": ""
+  "coverage.notify.gitter.valuesrules.paths": {
+      "desc": "nullable: True"
   },
-  "coverage.notify.webhook": {
-    "desc": ""
+  "coverage.notify.gitter": {
+      "desc": "description: "
   },
-  "coverage.notify.webhook.valuesrules": {
-    "desc": ""
+  "coverage.notify.hipchat.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
+  },
+  "coverage.notify.hipchat.valuesrules.url": {
+      "desc": "nullable: True"
+  },
+  "coverage.notify.hipchat.valuesrules.branches": {
+      "desc": "nullable: True"
+  },
+  "coverage.notify.hipchat.valuesrules.threshold": {
+      "desc": "nullable: True"
+  },
+  "coverage.notify.hipchat.valuesrules.flags": {
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "coverage.notify.hipchat.valuesrules.base": {
+      "desc": " parent,  pr,  auto"
+  },
+  "coverage.notify.hipchat.valuesrules.paths": {
+      "desc": "nullable: True"
+  },
+  "coverage.notify.hipchat": {
+      "desc": "description: "
+  },
+  "coverage.notify.webhook.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
   },
   "coverage.notify.webhook.valuesrules.url": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.webhook.valuesrules.branches": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.webhook.valuesrules.threshold": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.message": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.webhook.valuesrules.flags": {
-    "desc": ""
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.webhook.valuesrules.base": {
-    "desc": ""
-  },
-  "coverage.notify.webhook.valuesrules.only_pulls": {
-    "desc": ""
+      "desc": " parent,  pr,  auto"
   },
   "coverage.notify.webhook.valuesrules.paths": {
-    "desc": ""
+      "desc": "nullable: True"
   },
-  "coverage.notify.email": {
-    "desc": ""
+  "coverage.notify.webhook": {
+      "desc": "description: "
   },
-  "coverage.notify.email.valuesrules": {
-    "desc": ""
+  "coverage.notify.email.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
   },
-  "coverage.notify.email.valuesrules.to": {
-    "desc": ""
+  "coverage.notify.email.valuesrules.layout.comma_separated_strings": {
+      "desc": true
   },
   "coverage.notify.email.valuesrules.layout": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.email.valuesrules.url": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.email.valuesrules.branches": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.email.valuesrules.threshold": {
-    "desc": ""
-  },
-  "coverage.notify.email.valuesrules.message": {
-    "desc": ""
+      "desc": "nullable: True"
   },
   "coverage.notify.email.valuesrules.flags": {
-    "desc": ""
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.email.valuesrules.base": {
-    "desc": ""
-  },
-  "coverage.notify.email.valuesrules.only_pulls": {
-    "desc": ""
+      "desc": " parent,  pr,  auto"
   },
   "coverage.notify.email.valuesrules.paths": {
-    "desc": ""
+      "desc": "nullable: True"
+  },
+  "coverage.notify.email": {
+      "desc": "description: "
+  },
+  "coverage.notify": {
+      "desc": "description: "
+  },
+  "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
+      "desc": " include,  exclude,  pass, description: "
+  },
+  "coverage.status.default_rules.carryforward_behavior": {
+      "desc": " include,  exclude,  pass, description: "
+  },
+  "coverage.status.default_rules": {
+      "desc": "description: "
+  },
+  "coverage.status.project.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
+  },
+  "coverage.status.project.valuesrules": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.target.anyof.0.allowed.0": {
+      "desc": "auto"
+  },
+  "coverage.status.project.valuesrules.target.anyof.1.regex": {
+      "desc": "(\\d+)(\\.\\d+)?%?"
+  },
+  "coverage.status.project.valuesrules.target": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.include_changes.anyof.0.allowed.0": {
+      "desc": "auto"
+  },
+  "coverage.status.project.valuesrules.include_changes.anyof.1.regex": {
+      "desc": "(\\d+)(\\.\\d+)?%?"
+  },
+  "coverage.status.project.valuesrules.include_changes": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.threshold": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.flags": {
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "coverage.status.project.valuesrules.base": {
+      "desc": " parent,  pr,  auto"
+  },
+  "coverage.status.project.valuesrules.branches": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.if_ci_failed": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.project.valuesrules.if_no_uploads": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.project.valuesrules.if_not_found": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.project.valuesrules.measurement": {
+      "desc": " line,  statement,  branch,  method,  complexity"
+  },
+  "coverage.status.project.valuesrules.removed_code_behavior": {
+      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+  },
+  "coverage.status.project.valuesrules.paths": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.project.valuesrules.carryforward_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.project.valuesrules.flag_coverage_not_uploaded_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.project": {
+      "desc": "description: "
+  },
+  "coverage.status.patch.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
+  },
+  "coverage.status.patch.valuesrules": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.target.anyof.0.allowed.0": {
+      "desc": "auto"
+  },
+  "coverage.status.patch.valuesrules.target.anyof.1.regex": {
+      "desc": "(\\d+)(\\.\\d+)?%?"
+  },
+  "coverage.status.patch.valuesrules.target": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.include_changes.anyof.0.allowed.0": {
+      "desc": "auto"
+  },
+  "coverage.status.patch.valuesrules.include_changes.anyof.1.regex": {
+      "desc": "(\\d+)(\\.\\d+)?%?"
+  },
+  "coverage.status.patch.valuesrules.include_changes": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.threshold": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.flags": {
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "coverage.status.patch.valuesrules.base": {
+      "desc": " parent,  pr,  auto"
+  },
+  "coverage.status.patch.valuesrules.branches": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.if_ci_failed": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.patch.valuesrules.if_no_uploads": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.patch.valuesrules.if_not_found": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.patch.valuesrules.measurement": {
+      "desc": " line,  statement,  branch,  method,  complexity"
+  },
+  "coverage.status.patch.valuesrules.removed_code_behavior": {
+      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+  },
+  "coverage.status.patch.valuesrules.paths": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.patch.valuesrules.carryforward_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.patch.valuesrules.flag_coverage_not_uploaded_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.patch": {
+      "desc": "description: "
+  },
+  "coverage.status.changes.keysrules": {
+      "desc": "pattern: ^[\\w\\-\\.]+$"
+  },
+  "coverage.status.changes.valuesrules": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.changes.valuesrules.flags": {
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "coverage.status.changes.valuesrules.base": {
+      "desc": " parent,  pr,  auto"
+  },
+  "coverage.status.changes.valuesrules.branches": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.changes.valuesrules.if_ci_failed": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.changes.valuesrules.if_no_uploads": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.changes.valuesrules.if_not_found": {
+      "desc": " success,  failure,  error,  ignore"
+  },
+  "coverage.status.changes.valuesrules.measurement": {
+      "desc": " line,  statement,  branch,  method,  complexity"
+  },
+  "coverage.status.changes.valuesrules.removed_code_behavior": {
+      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+  },
+  "coverage.status.changes.valuesrules.paths": {
+      "desc": "nullable: True"
+  },
+  "coverage.status.changes.valuesrules.carryforward_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.changes.valuesrules.flag_coverage_not_uploaded_behavior": {
+      "desc": " include,  exclude,  pass"
+  },
+  "coverage.status.changes": {
+      "desc": "description: "
+  },
+  "coverage.status.no_upload_behavior": {
+      "desc": " pass,  fail, description: "
   },
   "coverage.status": {
-    "desc": ""
-  }, 
-  "coverage.status.default_rules": {
-    "desc": ""
-  }, 
-  "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
-    "desc": ""
-  }, 
-  "coverage.status.default_rules.carryforward_behavior": {
-    "desc": ""
-  }, 
-  "coverage.status.project": {
-    "desc": ""
-  }, 
-  "coverage.status.project.keyrules": {
-    "desc": ""
-  }, 
-  "coverage.status.project.valuesrules": {
-    "desc": ""
-  }, 
-
-  
-
+      "desc": "description: "
+  },
+  "coverage": {
+      "desc": "description: "
+  },
+  "parsers.go.partials_as_hits": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.go": {
+      "desc": "description: "
+  },
+  "parsers.javascript.enable_partials": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.javascript": {
+      "desc": "description: "
+  },
+  "parsers.v1.include_full_missed_files": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.v1": {
+      "desc": "description: "
+  },
+  "parsers.gcov.branch_detection.conditional": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.gcov.branch_detection.loop": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.gcov.branch_detection.method": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.gcov.branch_detection.macro": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.gcov.branch_detection": {
+      "desc": "description: "
+  },
+  "parsers.gcov": {
+      "desc": "description: "
+  },
+  "parsers.jacoco.partials_as_hits": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "parsers.jacoco": {
+      "desc": "description: "
+  },
+  "parsers": {
+      "desc": "description: "
+  },
+  "ignore": {
+      "desc": "description: "
+  },
+  "fixes": {
+      "desc": "description: "
+  },
+  "flags.keysrules": {
+      "desc": "minlength: 1, maxlength: 45, pattern: ^[\\w\\.\\-]+$"
+  },
+  "flags.valuesrules.carryforward_mode": {
+      "desc": " all,  labels"
+  },
+  "flags.valuesrules.ignore": {
+      "desc": "nullable: True"
+  },
+  "flags.valuesrules.paths": {
+      "desc": "nullable: True"
+  },
+  "flags.valuesrules.assume.branches": {
+      "desc": "nullable: True"
+  },
+  "flags.valuesrules.after_n_builds": {
+      "desc": "min: 0"
+  },
+  "flags": {
+      "desc": "description: "
+  },
+  "flag_management.default_rules.statuses": {
+      "desc": "description: "
+  },
+  "flag_management.default_rules.carryforward_mode": {
+      "desc": " all,  labels, description: "
+  },
+  "flag_management.default_rules.carryforward": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "flag_management.default_rules.paths": {
+      "desc": "description: "
+  },
+  "flag_management.default_rules.ignore": {
+      "desc": "description: "
+  },
+  "flag_management.default_rules.after_n_builds": {
+      "desc": "min: 0, description: "
+  },
+  "flag_management.default_rules": {
+      "desc": "description: "
+  },
+  "flag_management.individual_flags": {
+      "desc": "description: "
+  },
+  "flag_management": {
+      "desc": "description: "
+  },
+  "component_management.default_rules.statuses": {
+      "desc": "description: "
+  },
+  "component_management.default_rules.flag_regexes": {
+      "desc": "description: "
+  },
+  "component_management.default_rules.paths": {
+      "desc": "description: "
+  },
+  "component_management.default_rules": {
+      "desc": "description: "
+  },
+  "component_management.individual_components": {
+      "desc": "description: "
+  },
+  "component_management": {
+      "desc": "description: "
+  },
+  "comment.layout.comma_separated_strings": {
+      "desc": true
+  },
+  "comment.layout": {
+      "desc": "description: "
+  },
+  "comment.require_changes": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment.require_base": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment.require_head": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment.show_critical_paths": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment.branches": {
+      "desc": "description: "
+  },
+  "comment.branches.items": {
+      "desc": "nullable: True"
+  },
+  "comment.paths": {
+      "desc": "description: "
+  },
+  "comment.flags": {
+      "desc": "description: "
+  },
+  "comment.flags.items": {
+      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "comment.behavior": {
+      "desc": " default,  once,  new,  spammy, description: "
+  },
+  "comment.after_n_builds": {
+      "desc": "min: 0, description: "
+  },
+  "comment.show_carryforward_flags": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment.hide_comment_details": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "comment": {
+      "desc": "description: "
+  },
+  "github_checks.annotations": {
+      "desc": " True,  False,  yes,  no,  on,  off"
+  },
+  "github_checks": {
+      "desc": "description: "
+  },
+  "profiling.fixes": {
+      "desc": "description: "
+  },
+  "profiling.grouping_attributes": {
+      "desc": "description: "
+  },
+  "profiling.critical_files_paths": {
+      "desc": "description: "
+  },
+  "profiling": {
+      "desc": "description: "
+  },
+  "beta_groups": {
+      "desc": "description: "
+  }
 }
