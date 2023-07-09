@@ -510,13 +510,13 @@
       "desc": " all,  labels"
   },
   "flags.valuesrules.ignore": {
-      "desc": "nullable: True"
+      "desc": "Ignore coverage for specific lines of code. You can provide a comma-separated list of line ranges or individual line numbers to be ignored."
   },
   "flags.valuesrules.paths": {
-      "desc": "nullable: True"
+      "desc": "Are used to define the paths to your project's source files or directories for which you want to generate code coverage reports."
   },
   "flags.valuesrules.assume.branches": {
-      "desc": "nullable: True"
+      "desc": "Customize how branches are treated in the code coverage analysis."
   },
   "flags.valuesrules.after_n_builds": {
       "desc": "min: 0"
