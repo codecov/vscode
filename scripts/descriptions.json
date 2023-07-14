@@ -132,10 +132,10 @@
       "desc": "description: "
   },
   "coverage.notify.slack.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "This is a regular expression for setting Key Rules as a string validated with the pattern: ^[\\w\\-\\.]+$. "
   },
   "coverage.notify.slack.valuesrules.attachments.comma_separated_strings": {
-      "desc": true
+      "desc": "These are value rules that you can attach as comma separated strings. The attachments property property can be assigned a null value in addition to being a string or a comma-separated list of strings."
   },
   "coverage.notify.slack.valuesrules.attachments": {
       "desc": "nullable: True"
@@ -183,30 +183,6 @@
       "desc": "nullable: True"
   },
   "coverage.notify.gitter": {
-      "desc": "description: "
-  },
-  "coverage.notify.hipchat.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
-  },
-  "coverage.notify.hipchat.valuesrules.url": {
-      "desc": "nullable: True"
-  },
-  "coverage.notify.hipchat.valuesrules.branches": {
-      "desc": "nullable: True"
-  },
-  "coverage.notify.hipchat.valuesrules.threshold": {
-      "desc": "nullable: True"
-  },
-  "coverage.notify.hipchat.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
-  },
-  "coverage.notify.hipchat.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
-  },
-  "coverage.notify.hipchat.valuesrules.paths": {
-      "desc": "nullable: True"
-  },
-  "coverage.notify.hipchat": {
       "desc": "description: "
   },
   "coverage.notify.webhook.keysrules": {
