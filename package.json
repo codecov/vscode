@@ -4,6 +4,7 @@
   "publisher": "codecov",
   "description": "Codecov's official extension for Visual Studio Code, it helps with setup and configuration.",
   "version": "0.0.1",
+  "repository": "https://github.com/codecov/vscode",
   "engines": {
     "vscode": "^1.75.0"
   },
