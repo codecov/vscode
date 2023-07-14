@@ -519,40 +519,40 @@
       "desc": "Customize how branches are treated in the code coverage analysis."
   },
   "flags.valuesrules.after_n_builds": {
-      "desc": "min: 0"
+      "desc": "Value rules after N builds refer to coverage requirements or thresholds that are applied after a certain number of builds or iterations."
   },
   "flags": {
-      "desc": "description: "
+      "desc": "Flags are typically used to customize the behavior of Codecov during the code coverage analysis process."
   },
   "flag_management.default_rules.statuses": {
-      "desc": "description: "
+      "desc": "Flag management rule statuses refer to the different states or conditions associated with flag management rules."
   },
   "flag_management.default_rules.carryforward_mode": {
-      "desc": " all,  labels, description: "
+      "desc": "Reference of past coverage for tests that are not run on current commit."
   },
   "flag_management.default_rules.carryforward": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Carryforward Flags are designed for projects that do not upload total coverage for every commit. Users can define the following states for flags: True,  False,  yes,  no,  on,  off."
   },
   "flag_management.default_rules.paths": {
-      "desc": "description: "
+      "desc": "Define rules that specify conditions and actions for flag management. These rules can be based on various criteria such as coverage thresholds, branch names, commit messages, or other factors relevant to your project."
   },
   "flag_management.default_rules.ignore": {
-      "desc": "description: "
+      "desc": "To ignore or exclude specific files, directories, or patterns from flag management actions, you can define a flag management rule with conditions that exclude those specific elements."
   },
   "flag_management.default_rules.after_n_builds": {
-      "desc": "min: 0, description: "
+      "desc": "Refers to the ability to apply specific flag management rules after a certain number of builds or iterations. Gradually enforce stricter or different flag management behavior as your project progresses over time."
   },
   "flag_management.default_rules": {
-      "desc": "description: "
+      "desc": "Rules are a set of defined conditions and actions that control the behavior of flags during the code coverage analysis process."
   },
   "flag_management.individual_flags": {
-      "desc": "description: "
+      "desc": "Individual flags refer to specific configuration options or settings that can be used to customize the behavior of the code coverage reporting and analysis process."
   },
   "flag_management": {
-      "desc": "description: "
+      "desc": "Allows you to control the behavior of flags during the code coverage analysis process."
   },
   "component_management.default_rules.statuses": {
-      "desc": "description: "
+      "desc": ""
   },
   "component_management.default_rules.flag_regexes": {
       "desc": "description: "
@@ -567,7 +567,7 @@
       "desc": "description: "
   },
   "component_management": {
-      "desc": "description: "
+      "desc": "Use components you specify to create custom statuses and get coverage information from parts of your code that are not easily broken up into different uploads or span multiple flag groups."
   },
   "comment.layout.comma_separated_strings": {
       "desc": true
