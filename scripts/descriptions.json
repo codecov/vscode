@@ -552,19 +552,19 @@
       "desc": "Allows you to control the behavior of flags during the code coverage analysis process."
   },
   "component_management.default_rules.statuses": {
-      "desc": ""
+      "desc": "Component management rule statuses refer to the different states or conditions associated with component management rules."
   },
   "component_management.default_rules.flag_regexes": {
-      "desc": "description: "
+      "desc": "Refers to the use of regular expressions to define patterns for matching specific flags or conditions during the code coverage analysis process."
   },
   "component_management.default_rules.paths": {
-      "desc": "description: "
+      "desc": "Define rules that specify conditions and actions for component management. These rules can be based on various criteria such as coverage thresholds, branch names, commit messages, or other factors relevant to your project."
   },
   "component_management.default_rules": {
-      "desc": "description: "
+      "desc": "Rules are a set of defined conditions and actions that control the behavior of components during the code coverage analysis process."
   },
   "component_management.individual_components": {
-      "desc": "description: "
+      "desc": "Individual components refer to specific configuration options or settings that can be used to customize the behavior of the code coverage reporting and analysis process."
   },
   "component_management": {
       "desc": "Use components you specify to create custom statuses and get coverage information from parts of your code that are not easily broken up into different uploads or span multiple flag groups."
@@ -573,7 +573,7 @@
       "desc": true
   },
   "comment.layout": {
-      "desc": "description: "
+      "desc": "Comment layout refers to the structure and formatting of the comments generated during the code coverage analysis process. The layout of comments can vary depending on the specific features and configurations of Codecov, as well as the platform or integration being used."
   },
   "comment.require_changes": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -588,16 +588,16 @@
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "comment.branches": {
-      "desc": "description: "
+      "desc": "Comment branches refer to the specific branches or conditions under which comments are generated during the code coverage analysis. These comments provide feedback, suggestions, or information related to code coverage for specific branches of your codebase."
   },
   "comment.branches.items": {
       "desc": "nullable: True"
   },
   "comment.paths": {
-      "desc": "description: "
+      "desc": "Comment paths refer to the specific locations within your codebase where comments are added to provide feedback or information related to code coverage analysis. Comment paths can be associated with individual lines of code, code sections, or specific files."
   },
   "comment.flags": {
-      "desc": "description: "
+      "desc": "Comment flags refer to special markers or indicators that can be added to comments in your code to control the behavior of Codecov's code coverage analysis."
   },
   "comment.flags.items": {
       "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
@@ -615,13 +615,13 @@
       "desc": " True,  False,  yes,  no,  on,  off"
   },
   "comment": {
-      "desc": "description: "
+      "desc": "Refer to the feedback or remarks that Codecov can provide on your code coverage results. These comments are typically added to pull requests or specific lines of code to provide additional information or suggestions regarding the code coverage analysis."
   },
   "github_checks.annotations": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Checks enable users to see inline code annotations for contributed code on a PR that was not covered by tests, making it much easier for developers to see uncovered code contributions without leaving the GitHub PR."
   },
   "github_checks": {
-      "desc": "description: "
+      "desc": "Display code coverage information and analysis results directly within the GitHub interface. "
   },
   "profiling.fixes": {
       "desc": "description: "
