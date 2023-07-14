@@ -84,34 +84,44 @@ def modify_annotate(dictionary, key, location):
 
 
 def modify_type(dictionary):
-    new_dictionary = dictionary
     if isinstance(dictionary, dict):
-        # if no type match default to string
-        type = "string"
-        if "type" in dictionary:
-            type = dictionary["type"]
-
         modified = {
-            **new_dictionary,
-            "type": type,
+            **dictionary,
         }
 
         if "type" in modified:
+            # hooo boy objects
+            if modified["type"] == "object":
+                if "keysrules" in modified and "valuesrules" in modified:
+                    values_rules = modified["valuesrules"]["properties"]
+
+                    for property in values_rules:
+                        values_rules[property] = modify_type(values_rules[property])
+
+                    del modified["valuesrules"]
+                    del modified["keysrules"]
+
+                    modified["patternProperties"] = values_rules
+                    modified["unevaluatedProperties"] = False
+
             # if type is array, move properties to items
             if modified["type"] == "array":
                 if "properties" in modified:
                     modified["items"] = modified["properties"]
                     del modified["properties"]
+
             # Remove properties if type is string and properties only contains type
             if modified["type"] == "string":
                 if "properties" in modified and modified["properties"].keys() == [
                     "type"
                 ]:
                     del modified["properties"]
+
             # Because of cerberus weirdness, replace type boolean with enum for boolean values and "yes" and "no".
             if modified["type"] == "boolean":
                 modified["enum"] = [True, False, "yes", "no", "on", "off"]
                 del modified["type"]
+
             # if type is a list format must convert to oneOf
             if "type" in modified:
                 if isinstance(modified["type"], list):
@@ -156,14 +166,27 @@ def modify_type(dictionary):
                     del modified["maxlength"]
 
             # Handles: 57%
-            if "coerce" in modified and modified["coerce"] == "percentage_to_number":
-                print(modified)
+            # if "coerce" in modified and modified["coerce"] == "percentage_to_number":
+            #     print(modified)
 
         if "oneOf" in modified:
             if isinstance(modified["oneOf"], list):
                 new_one_of = []
-                for type in modified["oneOf"]:
-                    formatted_one_of = recurse(type)
+                for config in modified["oneOf"]:
+                    # if one of has object rules move from parent to oneOf
+                    if (
+                        "type" in config
+                        and config["type"] == "object"
+                        and "properties" in modified
+                    ):
+                        new_properties = recurse(modified["properties"])
+                        new_properties = modify_schema(new_properties)
+                        new_properties = modify_type(new_properties)
+
+                        config["properties"] = new_properties
+                        del modified["properties"]
+
+                    formatted_one_of = recurse(config)
                     formatted_one_of = modify_schema(formatted_one_of)
                     formatted_one_of = modify_type(formatted_one_of)
                     new_one_of.append(formatted_one_of)
