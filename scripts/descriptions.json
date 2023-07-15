@@ -576,16 +576,16 @@
       "desc": "Comment layout refers to the structure and formatting of the comments generated during the code coverage analysis process. The layout of comments can vary depending on the specific features and configurations of Codecov, as well as the platform or integration being used."
   },
   "comment.require_changes": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "If you need to indicate in your Codecov comments that certain code requires changes or modifications, you can use specific keywords or phrases to convey this information. You can tailor the comments to suit your specific needs by using keywords like 'TODO,' 'FIXME,' or 'CHANGES NEEDED' to explicitly communicate that certain code sections need attention."
   },
   "comment.require_base": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "To indicate that a certain code section requires a base or starting point for coverage analysis add the phrase 'Base required' or any other relevant keyword, you clearly communicate that a starting point or base coverage is necessary to accurately assess the coverage of those specific code sections."
   },
   "comment.require_head": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "If you want to add Codecov comments to indicate that a certain code section requires a 'head' or an updated state for coverage analysis, you can add the phrase 'Head required' or any other relevant keyword, you clearly communicate that an updated or current state of the code is needed to accurately assess the coverage of those specific code sections."
   },
   "comment.show_critical_paths": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "When adding Codecov comments to highlight the critical path of your code, you can include the phrase 'Critical Path' or any other relevant keyword, you explicitly communicate the essential steps in the code execution flow."
   },
   "comment.branches": {
       "desc": "Comment branches refer to the specific branches or conditions under which comments are generated during the code coverage analysis. These comments provide feedback, suggestions, or information related to code coverage for specific branches of your codebase."
