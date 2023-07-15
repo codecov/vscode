@@ -570,7 +570,7 @@
       "desc": "Use components you specify to create custom statuses and get coverage information from parts of your code that are not easily broken up into different uploads or span multiple flag groups."
   },
   "comment.layout.comma_separated_strings": {
-      "desc": true
+      "desc": "Split the comma-separated data into a list of values to  provide clarity to developers and reviewers about the specific parts of the code that are relevant to code coverage analysis when dealing with comma-separated strings."
   },
   "comment.layout": {
       "desc": "Comment layout refers to the structure and formatting of the comments generated during the code coverage analysis process. The layout of comments can vary depending on the specific features and configurations of Codecov, as well as the platform or integration being used."
