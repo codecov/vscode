@@ -573,25 +573,25 @@
       "desc": "Split the comma-separated data into a list of values to  provide clarity to developers and reviewers about the specific parts of the code that are relevant to code coverage analysis when dealing with comma-separated strings."
   },
   "comment.layout": {
-      "desc": "Comment layout refers to the structure and formatting of the comments generated during the code coverage analysis process. The layout of comments can vary depending on the specific features and configurations of Codecov, as well as the platform or integration being used."
+      "desc": "Comment layout refers to the structure and formatting of the comments generated during the code coverage analysis process. The layout of comments can vary depending on the specific features and configurations of, as well as the platform or integration being used."
   },
   "comment.require_changes": {
-      "desc": "If you need to indicate in your Codecov comments that certain code requires changes or modifications, you can use specific keywords or phrases to convey this information. You can tailor the comments to suit your specific needs by using keywords like 'TODO,' 'FIXME,' or 'CHANGES NEEDED' to explicitly communicate that certain code sections need attention."
+      "desc": "If you need to indicate in your comments that certain code requires changes or modifications, you can use specific keywords or phrases to convey this information. You can tailor the comments to suit your specific needs by using keywords like 'TODO,' 'FIXME,' or 'CHANGES NEEDED' to explicitly communicate that certain code sections need attention."
   },
   "comment.require_base": {
       "desc": "To indicate that a certain code section requires a base or starting point for coverage analysis add the phrase 'Base required' or any other relevant keyword, you clearly communicate that a starting point or base coverage is necessary to accurately assess the coverage of those specific code sections."
   },
   "comment.require_head": {
-      "desc": "If you want to add Codecov comments to indicate that a certain code section requires a 'head' or an updated state for coverage analysis, you can add the phrase 'Head required' or any other relevant keyword, you clearly communicate that an updated or current state of the code is needed to accurately assess the coverage of those specific code sections."
+      "desc": "If you want to add comments to indicate that a certain code section requires a 'head' or an updated state for coverage analysis, you can add the phrase 'Head required' or any other relevant keyword, you clearly communicate that an updated or current state of the code is needed to accurately assess the coverage of those specific code sections."
   },
   "comment.show_critical_paths": {
-      "desc": "When adding Codecov comments to highlight the critical path of your code, you can include the phrase 'Critical Path' or any other relevant keyword, you explicitly communicate the essential steps in the code execution flow."
+      "desc": "When adding comments to highlight the critical path of your code, you can include the phrase 'Critical Path' or any other relevant keyword, you explicitly communicate the essential steps in the code execution flow."
   },
   "comment.branches": {
       "desc": "Comment branches refer to the specific branches or conditions under which comments are generated during the code coverage analysis. These comments provide feedback, suggestions, or information related to code coverage for specific branches of your codebase."
   },
   "comment.branches.items": {
-      "desc": "nullable: True"
+      "desc": "If you want to add comments to specify branches or items within your code for coverage analysis, you can include terms like 'Branch' or any other relevant keyword, you clearly communicate the specific branches or items within the code that are relevant for coverage analysis."
   },
   "comment.paths": {
       "desc": "Comment paths refer to the specific locations within your codebase where comments are added to provide feedback or information related to code coverage analysis. Comment paths can be associated with individual lines of code, code sections, or specific files."
@@ -600,7 +600,8 @@
       "desc": "Comment flags refer to special markers or indicators that can be added to comments in your code to control the behavior of Codecov's code coverage analysis."
   },
   "comment.flags.items": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+      "desc": "If you want to add comments to specify flags or items within your code for coverage analysis, you can use terms like 'Flag' or any other relevant keyword, you clearly communicate the specific flags or items within the code that are relevant for coverage analysis. "
+
   },
   "comment.behavior": {
       "desc": " default,  once,  new,  spammy, description: "
