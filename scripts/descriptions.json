@@ -607,13 +607,13 @@
       "desc": "When adding comments to describe the behavior of your code for coverage analysis, use the phrase 'Behavior' or any other relevant keyword, you make it clear that these comments describe the expected behavior of the code."
   },
   "comment.after_n_builds": {
-      "desc": "min: 0, description: "
+      "desc": "If you want to add comments that appear after a specific number of builds or iterations for coverage analysis, you can include the phrase 'After n builds' or any other relevant keyword, you communicate that these comments should be taken into account after a specific number of builds or iterations."
   },
   "comment.show_carryforward_flags": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "If you want to add comments to indicate the presence of carry-forward flags in your code for coverage analysis, you can use the phrase 'Carry-forward Flag' or any other relevant keyword, you clearly communicate the presence of carry-forward flags and their significance for coverage analysis. "
   },
   "comment.hide_comment_details": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "If you want to add comments but hide the specific details or implementation information within the comments for coverage analysis, you can use abstract or generic descriptions to hide the specific details of the code implementation within the comments while still conveying the coverage significance of different sections."
   },
   "comment": {
       "desc": "Refer to the feedback or remarks that Codecov can provide on your code coverage results. These comments are typically added to pull requests or specific lines of code to provide additional information or suggestions regarding the code coverage analysis."
@@ -625,18 +625,18 @@
       "desc": "Display code coverage information and analysis results directly within the GitHub interface. "
   },
   "profiling.fixes": {
-      "desc": "description: "
+      "desc": "Add path rixes to your codecov.yml configuration to see critical changes."
   },
   "profiling.grouping_attributes": {
-      "desc": "description: "
+      "desc": "Grouping attributes allow you to categorize your code coverage data based on specific criteria. These attributes can be applied to files, directories, or other relevant components of your codebase. Grouping attributes provide a way to aggregate and filter coverage information, enabling you to gain insights into different aspects of your codebase's test coverage."
   },
   "profiling.critical_files_paths": {
-      "desc": "description: "
+      "desc": "You can supply any of the following as an element of critical_files_paths: 1.The fully qualified path to the file relative to the root of the repository, 2. A path containing globs. 3. A regular expression."
   },
   "profiling": {
-      "desc": "description: "
+      "desc": "Impact Analysis requires a profiling token used to identify your repository and authenticate API requests. You can find your token in your repo settings page."
   },
   "beta_groups": {
-      "desc": "description: "
+      "desc": "To see Impacted Entrypoints in your pull request comments, 'betaprofiling' must be added to the comment.layout section of your codecov.yml."
   }
 }
