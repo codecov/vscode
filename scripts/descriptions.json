@@ -604,7 +604,7 @@
 
   },
   "comment.behavior": {
-      "desc": " default,  once,  new,  spammy, description: "
+      "desc": "When adding comments to describe the behavior of your code for coverage analysis, use the phrase 'Behavior' or any other relevant keyword, you make it clear that these comments describe the expected behavior of the code."
   },
   "comment.after_n_builds": {
       "desc": "min: 0, description: "
