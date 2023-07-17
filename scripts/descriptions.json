@@ -101,33 +101,6 @@
   "coverage.range": {
       "desc": "Configure how you want Codecov to color your coverage. Coverage below the first number will be red, coverage between each number yellow, and coverage above the second number will be green. Format: xx...yy "
   },
-  "coverage.notify.irc.keysrules": {
-      "desc": "This is a regular expression for setting Key Rules as a string validated with the pattern: ^[\\w\\-\\.]+$"
-  },
-  "coverage.notify.irc.valuesrules.password": {
-      "desc": "Authenticate to an IRC channel. nullable: True"
-  },
-  "coverage.notify.irc.valuesrules.url": {
-      "desc": "Unneeded."
-  },
-  "coverage.notify.irc.valuesrules.branches": {
-      "desc": "What branches should Codecov notify your IRC channel about."
-  },
-  "coverage.notify.irc.valuesrules.threshold": {
-      "desc": "What threshold of coverage change should Codecov notify your IRC channel about."
-  },
-  "coverage.notify.irc.valuesrules.flags": {
-      "desc": "What flags should Codecov notify your IRC channel about."
-  },
-  "coverage.notify.irc.valuesrules.base": {
-      "desc": "The base commit type to which you would like to send notifications. Options: parent,  pr,  auto. More info: https://docs.codecov.com/docs/notifications"
-  },
-  "coverage.notify.irc.valuesrules.paths": {
-      "desc": "Only send a notification if the specified file paths change. "
-  },
-  "coverage.notify.irc": {
-      "desc": "Configure notifications to an IRC channel"
-  },
   "coverage.notify.slack.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
   },
