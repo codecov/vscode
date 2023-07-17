@@ -9,19 +9,19 @@
       "desc": "The Codecov configuration file is used to configure your Codecov experience. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
   "codecov.url": {
-      "desc": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*), description: "
+      "desc": "A url you want to send notifications too. More info: https://docs.codecov.com/docs/notifications#standard-notification-fields"
   },
   "codecov.token": {
       "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
   },
   "codecov.slug": {
-      "desc": "Allows self hosted Codecov users to specify a repo."
+      "desc": "Self Hosted only - specify a slug manually"
   },
   "codecov.bot": {
       "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
   },
   "codecov.branch": {
-      "desc": "Set and oevrride the default branch from your yaml."
+      "desc": "Specify a branch manually in your yaml"
   },
   "codecov.ci": {
       "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
@@ -42,67 +42,64 @@
       "desc": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off"
   },
   "codecov.allow_coverage_offsets": {
-      "desc": " Allow Codecov to calculate a pseudo base commit using the diff from last known commit with coverage to the true base commit of a PR. Enum: True,  False, yes, no, on, off More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports"
+      "desc": "Codecov will calculate a coverage diff based on last coverage found and the diff to the base commit. More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.allow_pseudo_compare": {
-      "desc": "Allow Codecov to look for a pseudo base commit when the base commit of a PR doesn't have coverage. Enum: True, False, yes, no, on, off  More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports "
+      "desc": "Allow Codecov to find an alternative base if base of comparison has no coverage. More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.archive.uploads": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Diasble Codecov cloud report archiving. More info: https://docs.codecov.com/v4.6/docs/codecovyml-reference#codecov-cloud-report-archiving. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.archive": {
-      "desc": "Configure cloud report archiving. Enum: True, False, yes, no, on, off"
+      "desc": "Configure cloud report archiving."
   },
   "codecov.notify.after_n_builds": {
       "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
   },
   "codecov.notify.countdown": {
-      "desc": "description: "
+      "desc": "No longer used"
   },
   "codecov.notify.delay": {
-      "desc": "description: "
+      "desc": "No longer used"
   },
   "codecov.notify.wait_for_ci": {
-      "desc": "  Enum: True,  False,  yes,  no,  on,  off"
+      "desc": "Wait for CI to finish to send notifictionas. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovnotifywait_for_ci. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify.require_ci_to_pass": {
-      "desc": "  Enum: True,  False,  yes,  no,  on,  off"
+      "desc": "Wait for all CI statuses to pass. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovrequire_ci_to_pass. Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify": {
       "desc": "Configure how Codecov sends a PR comment"
   },
   "codecov.ui.hide_density": {
-      "desc": "description: "
+      "desc": "No longer used"
   },
   "codecov.ui.hide_complexity": {
-      "desc": "description: "
+      "desc": "No longer used"
   },
   "codecov.ui.hide_contexual": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "No longer used"
   },
   "codecov.ui.hide_sunburst": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "No longer used"
   },
   "codecov.ui.hide_search": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "No longer used"
   },
   "codecov.ui": {
-      "desc": "description: "
+      "desc": "No longer used"
   },
   "codecov": {
-      "desc": "description: Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+      "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
   },
   "coverage.precision": {
-      "desc": "min: 0, description: "
-  },
-  "coverage.precision.max": {
-      "desc": 99
+      "desc": "What precision do you want the coverage value to be. More info: https://docs.codecov.com/docs/codecovyml-reference#coverageprecision"
   },
   "coverage.round": {
-      "desc": " down,  up,  nearest, description: "
+      "desc": "Configure how you want Codecov to round your coverage numbers. Enum: down,  up,  nearest"
   },
   "coverage.range": {
-      "desc": "maxlength: 2, description: "
+      "desc": "Configure how you want Codecov to color your coverage. Coverage below the first number will be red, coverage between each number yellow, and coverage above the second number will be green. Format: xx...yy "
   },
   "coverage.notify.irc.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
