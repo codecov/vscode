@@ -330,112 +330,94 @@
       "desc": "The configuration root for all patch status checks in the repository."
   },
   "coverage.status.changes.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "Title of the changes status check. Must match pattern: ^[\\w\\-\\.]+$"
   },
   "coverage.status.changes.valuesrules": {
-      "desc": "nullable: True"
+      "desc": "Contains configuration for the changes status check."
   },
   "coverage.status.changes.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+      "desc": "A list of user defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.status.changes.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "[Deprecated] Base picking approach to use for changes statues. Options: parent, pr, auto. It is recommended to use Codecov CLI's base picking feature instead: https://docs.codecov.com/docs/cli-options#pr-base-picking"
   },
   "coverage.status.changes.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "The branches for which the changes status will be active. Nullable."
   },
   "coverage.status.changes.valuesrules.if_ci_failed": {
-      "desc": " success,  failure,  error,  ignore"
-  },
-  "coverage.status.changes.valuesrules.if_no_uploads": {
-      "desc": " success,  failure,  error,  ignore"
+      "desc": "The status to send if CI fails. Options include: success, failure. On error Codecov will on set a passing status if CI passes, on succes Codecov will set the status to success even if CI fails."
   },
   "coverage.status.changes.valuesrules.if_not_found": {
-      "desc": " success,  failure,  error,  ignore"
-  },
-  "coverage.status.changes.valuesrules.measurement": {
-      "desc": " line,  statement,  branch,  method,  complexity"
+      "desc": "The status to send if there is no report for the head. Options: failure, success. failure: the status will fail if there is no report for the head. success: the status will pass if there is no report for the head. Use this on commits / PRs where you won't be uploading coverage but still want codecov status checks to pass."
   },
   "coverage.status.changes.valuesrules.removed_code_behavior": {
-      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+      "desc": "These behaviors allows users to specify what should happen to the project status in case changes causes overall coverage to drop, but are part of good development practices. Options include: removals_only, adjust_base, fully_covered_patch, off, False. More information: https://docs.codecov.com/docs/commit-status#removed_code_behavior"
   },
   "coverage.status.changes.valuesrules.paths": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.changes.valuesrules.carryforward_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Paths to consider when determining the status result. More information: https://docs.codecov.com/docs/commit-status#paths"
   },
   "coverage.status.changes.valuesrules.flag_coverage_not_uploaded_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options: include,  exclude,  pass. More information: https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.changes": {
-      "desc": "description: "
-  },
-  "coverage.status.no_upload_behavior": {
-      "desc": " pass,  fail, description: "
+      "desc": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. More information: https://docs.codecov.com/docs/commit-status#changes-status"
   },
   "coverage.status": {
-      "desc": "description: "
+      "desc": "Configuration for various status checks supported in Codecov. Useful for blocking Pull Requests that don't meet a particular coverage threshold. More information: https://docs.codecov.com/docs/commit-status"
   },
   "coverage": {
-      "desc": "description: "
+      "desc": "Configuration options that determine how Codecov calulates and reports on code coverage metrics."
   },
   "parsers.go.partials_as_hits": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count partial coverage as hits for the Golang language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
   },
   "parsers.go": {
-      "desc": "description: "
+      "desc": "Configruation options for Codecov's Golang coverage parser."
   },
   "parsers.javascript.enable_partials": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count partial coverage as hits for the JavaScript language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
   },
   "parsers.javascript": {
-      "desc": "description: "
-  },
-  "parsers.v1.include_full_missed_files": {
-      "desc": " True,  False,  yes,  no,  on,  off"
-  },
-  "parsers.v1": {
-      "desc": "description: "
+      "desc": "Configruation options for Codecov's JavaScript coverage parser."
   },
   "parsers.gcov.branch_detection.conditional": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count conditional coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
   },
   "parsers.gcov.branch_detection.loop": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count loop coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
   },
   "parsers.gcov.branch_detection.method": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count method coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
   },
   "parsers.gcov.branch_detection.macro": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count macro coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
   },
   "parsers.gcov.branch_detection": {
-      "desc": "description: "
+      "desc": "Controls how Codecov parses branch coverage in gcov reports. The coverage must exist in the uploaded report for us to parse it. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersgcov"
   },
   "parsers.gcov": {
-      "desc": "description: "
+      "desc": "Configuration options for the gcov coverage parser. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersgcov"
   },
   "parsers.jacoco.partials_as_hits": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Count partial coverage as hits for Jacoco coverage reports. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
   },
   "parsers.jacoco": {
-      "desc": "description: "
+      "desc": "Configuration options for the gcov coverage parser. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersjacoco"
   },
   "parsers": {
-      "desc": "description: "
+      "desc": "Configuration settings for Codecov various language specific test coverage parsers. More info: https://docs.codecov.com/docs/codecovyml-reference#parsers"
   },
   "ignore": {
-      "desc": "description: "
+      "desc": "File paths for Codecov to ignore when processing coverage reports. More information: https://docs.codecov.com/docs/ignoring-paths"
   },
   "fixes": {
-      "desc": "description: "
+      "desc": "A list of path fixes that Codecov applies to uploaded coverage reports. Before using path fixing, reading the docs is greatly encouraged: https://docs.codecov.com/docs/fixing-paths"
   },
   "flags.keysrules": {
-      "desc": "minlength: 1, maxlength: 45, pattern: ^[\\w\\.\\-]+$"
+      "desc": "A list of flags Codecov will apply in order to segment code coverage. Rules for flag names: min length: 1, max length: 45, pattern: ^[\\w\\.\\-]+$. Before using flags, reading the docs is greatly encouraged: https://docs.codecov.com/docs/flags"
   },
   "flags.valuesrules.carryforward_mode": {
-      "desc": " all,  labels"
+      "desc": "Specified whether a flag should carry its coverage forward to future commits. Carryforward flags is an advanced feature, and reading the documentation is recommended: https://docs.codecov.com/docs/flags#carryforward-flags"
   },
   "flags.valuesrules.ignore": {
       "desc": "Ignore coverage for specific lines of code. You can provide a comma-separated list of line ranges or individual line numbers to be ignored."
