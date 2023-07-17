@@ -252,130 +252,82 @@
       "desc": "description: "
   },
   "coverage.status.project.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "Title of the project status check. Using `default` will set title to blank"
   },
   "coverage.status.project.valuesrules": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.project.valuesrules.target.anyof.0.allowed.0": {
-      "desc": "auto"
-  },
-  "coverage.status.project.valuesrules.target.anyof.1.regex": {
-      "desc": "(\\d+)(\\.\\d+)?%?"
+      "desc": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
   },
   "coverage.status.project.valuesrules.target": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.project.valuesrules.include_changes.anyof.0.allowed.0": {
-      "desc": "auto"
-  },
-  "coverage.status.project.valuesrules.include_changes.anyof.1.regex": {
-      "desc": "(\\d+)(\\.\\d+)?%?"
-  },
-  "coverage.status.project.valuesrules.include_changes": {
-      "desc": "nullable: True"
+      "desc": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
   },
   "coverage.status.project.valuesrules.threshold": {
-      "desc": "nullable: True"
+      "desc": "Allow coverage to drop by x% below the target and still pass the status check."
   },
   "coverage.status.project.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
-  },
-  "coverage.status.project.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
   },
   "coverage.status.project.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "A list of the branches that, when used, will trigger this status."
   },
   "coverage.status.project.valuesrules.if_ci_failed": {
-      "desc": " success,  failure,  error,  ignore"
-  },
-  "coverage.status.project.valuesrules.if_no_uploads": {
-      "desc": " success,  failure,  error,  ignore"
+      "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
   },
   "coverage.status.project.valuesrules.if_not_found": {
-      "desc": " success,  failure,  error,  ignore"
+      "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
   },
   "coverage.status.project.valuesrules.measurement": {
-      "desc": " line,  statement,  branch,  method,  complexity"
+      "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
   },
   "coverage.status.project.valuesrules.removed_code_behavior": {
-      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+      "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
   },
   "coverage.status.project.valuesrules.paths": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.project.valuesrules.carryforward_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
   },
   "coverage.status.project.valuesrules.flag_coverage_not_uploaded_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.project": {
-      "desc": "description: "
+      "desc": "The configuration root for all project status checks in the repository."
   },
   "coverage.status.patch.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "Title of the patch status check. Using `default` will set title to blank"
   },
   "coverage.status.patch.valuesrules": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.patch.valuesrules.target.anyof.0.allowed.0": {
-      "desc": "auto"
-  },
-  "coverage.status.patch.valuesrules.target.anyof.1.regex": {
-      "desc": "(\\d+)(\\.\\d+)?%?"
+      "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
   },
   "coverage.status.patch.valuesrules.target": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.patch.valuesrules.include_changes.anyof.0.allowed.0": {
-      "desc": "auto"
-  },
-  "coverage.status.patch.valuesrules.include_changes.anyof.1.regex": {
-      "desc": "(\\d+)(\\.\\d+)?%?"
-  },
-  "coverage.status.patch.valuesrules.include_changes": {
-      "desc": "nullable: True"
+      "desc": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
   },
   "coverage.status.patch.valuesrules.threshold": {
-      "desc": "nullable: True"
+      "desc": "Allow coverage to drop by x% below the target and still pass the status check."
   },
   "coverage.status.patch.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
-  },
-  "coverage.status.patch.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
   },
   "coverage.status.patch.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "A list of the branches that, when used, will trigger this status."
   },
   "coverage.status.patch.valuesrules.if_ci_failed": {
-      "desc": " success,  failure,  error,  ignore"
-  },
-  "coverage.status.patch.valuesrules.if_no_uploads": {
-      "desc": " success,  failure,  error,  ignore"
+      "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
   },
   "coverage.status.patch.valuesrules.if_not_found": {
-      "desc": " success,  failure,  error,  ignore"
+      "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
   },
   "coverage.status.patch.valuesrules.measurement": {
-      "desc": " line,  statement,  branch,  method,  complexity"
+      "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
   },
   "coverage.status.patch.valuesrules.removed_code_behavior": {
-      "desc": " removals_only,  adjust_base,  fully_covered_patch,  off,  False"
+      "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
   },
   "coverage.status.patch.valuesrules.paths": {
-      "desc": "nullable: True"
-  },
-  "coverage.status.patch.valuesrules.carryforward_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
   },
   "coverage.status.patch.valuesrules.flag_coverage_not_uploaded_behavior": {
-      "desc": " include,  exclude,  pass"
+      "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.patch": {
-      "desc": "description: "
+      "desc": "The configuration root for all patch status checks in the repository."
   },
   "coverage.status.changes.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
