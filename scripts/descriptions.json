@@ -27,7 +27,7 @@
       "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
   },
   "codecov.assume_all_flags": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Deprecated"
   },
   "codecov.strict_yaml_branch": {
       "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
@@ -57,10 +57,10 @@
       "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
   },
   "codecov.notify.countdown": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.notify.delay": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.notify.wait_for_ci": {
       "desc": "Wait for CI to finish to send notifictionas. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovnotifywait_for_ci. Enum: True,  False,  yes,  no,  on,  off"
@@ -72,22 +72,22 @@
       "desc": "Configure how Codecov sends a PR comment"
   },
   "codecov.ui.hide_density": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.ui.hide_complexity": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.ui.hide_contexual": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.ui.hide_sunburst": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.ui.hide_search": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov.ui": {
-      "desc": "No longer used"
+      "desc": "Deprecated"
   },
   "codecov": {
       "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
@@ -100,6 +100,33 @@
   },
   "coverage.range": {
       "desc": "Configure how you want Codecov to color your coverage. Coverage below the first number will be red, coverage between each number yellow, and coverage above the second number will be green. Format: xx...yy "
+  },
+   "coverage.notify.irc.keysrules": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.password": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.url": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.branches": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.threshold": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.flags": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.base": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc.valuesrules.paths": {
+      "desc": "Deprecated"
+  },
+  "coverage.notify.irc": {
+      "desc": "Deprecated"
   },
   "coverage.notify.slack.keysrules": {
       "desc": "pattern: ^[\\w\\-\\.]+$"
