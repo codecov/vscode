@@ -15,13 +15,13 @@
       "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
   },
   "codecov.slug": {
-      "desc": "description: "
+      "desc": "Allows self hosted Codecov users to specify a repo."
   },
   "codecov.bot": {
       "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
   },
   "codecov.branch": {
-      "desc": "description: "
+      "desc": "Set and oevrride the default branch from your yaml."
   },
   "codecov.ci": {
       "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
@@ -42,10 +42,10 @@
       "desc": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off"
   },
   "codecov.allow_coverage_offsets": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": " Allow Codecov to calculate a pseudo base commit using the diff from last known commit with coverage to the true base commit of a PR. Enum: True,  False, yes, no, on, off More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports"
   },
   "codecov.allow_pseudo_compare": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "Allow Codecov to look for a pseudo base commit when the base commit of a PR doesn't have coverage. Enum: True, False, yes, no, on, off  More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports "
   },
   "codecov.archive.uploads": {
       "desc": " True,  False,  yes,  no,  on,  off"
@@ -63,10 +63,10 @@
       "desc": "description: "
   },
   "codecov.notify.wait_for_ci": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "  Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify.require_ci_to_pass": {
-      "desc": " True,  False,  yes,  no,  on,  off"
+      "desc": "  Enum: True,  False,  yes,  no,  on,  off"
   },
   "codecov.notify": {
       "desc": "Configure how Codecov sends a PR comment"
