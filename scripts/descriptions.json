@@ -141,7 +141,7 @@
       "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.slack.valuesrules.only_pulls": {
-      "desc": "True / False binary to specify if you only want notifications to fire on pull requests (vs. individual commits on the branch). Default is `false`, which will notify on all new commits. 
+      "desc": "True / False binary to specify if you only want notifications to fire on pull requests (vs. individual commits on the branch). Default is `false`, which will notify on all new commits."
   },
   "coverage.notify.slack.valuesrules.flags": {
       "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
@@ -153,61 +153,49 @@
       "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.slack": {
-      "desc": "This is the path for Slack notifications to fire. Available keys are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Slack notification docs](https://docs.codecov.com/docs/notifications#slack)"
-  },
-  "coverage.notify.gitter.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "This is the path for Slack notifications to fire. Below "slack:" start your configuration with an indented "default:". Available keys after "default:" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Slack notification docs](https://docs.codecov.com/docs/notifications#slack)"
   },
   "coverage.notify.gitter.valuesrules.url": {
-      "desc": "nullable: True"
+      "desc": "Used to store the Gitter hooks URL associated with your Gitter notifier: "https://webhooks.gitter.im/e/9d1957r0a481787c756z""
   },
   "coverage.notify.gitter.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
   "coverage.notify.gitter.valuesrules.threshold": {
-      "desc": "nullable: True"
+      "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.gitter.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+      "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.gitter.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
   "coverage.notify.gitter.valuesrules.paths": {
-      "desc": "nullable: True"
+      "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.gitter": {
-      "desc": "description: "
-  },
-  "coverage.notify.webhook.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
+      "desc": "This is the root for Gitter notifications to fire. Below "gitter:" start your configuration with an indented "default:". Available keys after "default:" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Gitter notification docs](https://docs.codecov.com/docs/notifications#gitter)"
   },
   "coverage.notify.webhook.valuesrules.url": {
-      "desc": "nullable: True"
+      "desc": "Used to store the generalized webhook URL associated with your notifier"
   },
   "coverage.notify.webhook.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
   "coverage.notify.webhook.valuesrules.threshold": {
-      "desc": "nullable: True"
+      "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.webhook.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+      "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.webhook.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
   "coverage.notify.webhook.valuesrules.paths": {
-      "desc": "nullable: True"
+      "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.webhook": {
-      "desc": "description: "
-  },
-  "coverage.notify.email.keysrules": {
-      "desc": "pattern: ^[\\w\\-\\.]+$"
-  },
-  "coverage.notify.email.valuesrules.layout.comma_separated_strings": {
-      "desc": true
+      "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below "webhook:" start your configuration with an indented "default:". Available keys after "default:" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [General notification docs](https://docs.codecov.com/docs/notifications#standard-notification-fields)"
   },
   "coverage.notify.email.valuesrules.layout": {
       "desc": "nullable: True"
@@ -234,7 +222,7 @@
       "desc": "description: "
   },
   "coverage.notify": {
-      "desc": "description: "
+      "desc": "A collection of notification tools for sending coverage data to services outside of Git. Out of the box tools are Slack and Gitter, or you can make your own wehbook. Available keys are slack, gitter, webhook, and after_n_builds. [Read about Codecov notifications here](https://docs.codecov.com/docs/notifications)."
   },
   "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
       "desc": " include,  exclude,  pass, description: "
