@@ -198,40 +198,40 @@
       "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below "webhook:" start your configuration with an indented "default:". Available keys after "default:" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [General notification docs](https://docs.codecov.com/docs/notifications#standard-notification-fields)"
   },
   "coverage.notify.email.valuesrules.layout": {
-      "desc": "nullable: True"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.url": {
-      "desc": "nullable: True"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.branches": {
-      "desc": "nullable: True"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.threshold": {
-      "desc": "nullable: True"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.flags": {
-      "desc": "pattern: ^[\\w\\.\\-]{1,45}$"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.base": {
-      "desc": " parent,  pr,  auto"
+      "desc": "Deprecated"
   },
   "coverage.notify.email.valuesrules.paths": {
-      "desc": "nullable: True"
+      "desc": "Deprecated"
   },
   "coverage.notify.email": {
-      "desc": "description: "
+      "desc": "Deprecated"
   },
   "coverage.notify": {
       "desc": "A collection of notification tools for sending coverage data to services outside of Git. Out of the box tools are Slack and Gitter, or you can make your own wehbook. Available keys are slack, gitter, webhook, and after_n_builds. [Read about Codecov notifications here](https://docs.codecov.com/docs/notifications)."
   },
   "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
-      "desc": " include,  exclude,  pass, description: "
+      "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. This includes status checks where flags have carriedforward coverage (since coverage was no newly uploaded), as well as flags for which coverage is missing entirely. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options are a.) include: (default) All the status checks defined in the YAML file will be processed and sent as normal b.) exclude: Status checks that haven't newly uploaded any flag coverage will not be sent c.) pass: Status checks that haven't newly uploaded any flag coverage will be passed automatically." 
   },
   "coverage.status.default_rules.carryforward_behavior": {
-      "desc": " include,  exclude,  pass, description: "
+      "desc": "Determines how we handle status checks for which flags that were carried forward. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options are a.) include: (default) All the status checks defined in the YAML file will be processed and sent as normal b.) exclude: Status checks that carried forward coverage will not be included c.) pass: Status checks that have carried forward coverage will pass automatically."
   },
   "coverage.status.default_rules": {
-      "desc": "description: "
+      "desc": "A path of the `status` configuration that provides advanced configuration for repos not uploading all of their coverage on every commit. Keys available are `flag_coverage_not_uploaded_behavior` and `carryforward_behavior`."
   },
   "coverage.status.project.keysrules": {
       "desc": "Title of the project status check. Using `default` will set title to blank"
