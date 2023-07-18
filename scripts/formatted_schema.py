@@ -188,11 +188,71 @@ def modify_type(dictionary, parent_node="unknown"):
                         config["properties"] = new_properties
                         del modified["properties"]
 
+                    if (
+                        "type" in config
+                        and config["type"] == "object"
+                        and "valuesrules" in modified
+                        and "keysrules" in modified
+                    ):
+                        values_rules = modified["valuesrules"]["properties"]
+
+                        values_rules = recurse(values_rules)
+                        values_rules = modify_schema(values_rules, parent_node)
+                        values_rules = modify_type(values_rules, parent_node)
+
+                        del modified["valuesrules"]
+                        del modified["keysrules"]
+
+                        modified["patternProperties"] = values_rules
+                        modified["unevaluatedProperties"] = False
+
                     formatted_one_of = recurse(config)
                     formatted_one_of = modify_schema(formatted_one_of, parent_node)
                     formatted_one_of = modify_type(formatted_one_of, parent_node)
                     new_one_of.append(formatted_one_of)
                 modified["oneOf"] = new_one_of
+
+        # if "anyof" in modified:
+        #     if isinstance(modified["anyof"], list):
+        #         new_any_of = []
+        #         for config in modified["anyof"]:
+        #             # if one of has object rules move from parent to anyof
+        #             if (
+        #                 "type" in config
+        #                 and config["type"] == "object"
+        #                 and "properties" in modified
+        #             ):
+        #                 new_properties = recurse(modified["properties"])
+        #                 new_properties = modify_schema(new_properties, parent_node)
+        #                 new_properties = modify_type(new_properties, parent_node)
+
+        #                 config["properties"] = new_properties
+        #                 del modified["properties"]
+
+        #             if (
+        #                 "type" in config
+        #                 and config["type"] == "object"
+        #                 and "valuesrules" in modified
+        #                 and "keysrules" in modified
+        #             ):
+        #                 values_rules = modified["valuesrules"]["properties"]
+
+        #                 values_rules = recurse(values_rules)
+        #                 values_rules = modify_schema(values_rules, parent_node)
+        #                 values_rules = modify_type(values_rules, parent_node)
+
+        #                 del modified["valuesrules"]
+        #                 del modified["keysrules"]
+
+        #                 values_rules["patternProperties"] = values_rules
+        #                 values_rules["unevaluatedProperties"] = False
+
+        #             formatted_any_of = recurse(config)
+        #             formatted_any_of = modify_schema(formatted_any_of, parent_node)
+        #             formatted_any_of = modify_type(formatted_any_of, parent_node)
+        #             new_any_of.append(formatted_any_of)
+        #         del modified["anyof"]
+        #         modified["anyOf"] = new_any_of
 
         # if is enum drop string type
         if "enum" in modified and "type" in modified:
@@ -251,18 +311,22 @@ def modify_schema(schema, parent_node="root"):
 
 
 def recurse(value):
-    if isinstance(value, dict):
-        for key in value:
-            if isinstance(value[key], dict):
-                value[key] = convert_keys_dict(value[key])
-                value[key] = convert_values_dict(value[key])
-                value[key] = recurse(value[key])
+    new_value = value
+    if isinstance(new_value, dict):
+        for key in new_value:
+            if isinstance(new_value[key], dict):
+                new_value[key] = convert_keys_dict(new_value[key])
+                new_value[key] = convert_values_dict(new_value[key])
+                new_value[key] = recurse(new_value[key])
             elif isinstance(value[key], list):
-                value[key] = convert_values_list(value[key])
-                value[key] = recurse(value[key])
+                new_value[key] = convert_values_list(new_value[key])
+                new_value[key] = recurse(new_value[key])
             else:
-                value[key] = convert_value(value[key])
-        return value
+                new_value[key] = convert_value(new_value[key])
+        if new_value == value:
+            new_value = convert_keys_dict(new_value)
+            new_value = convert_values_dict(new_value)
+        return new_value
     elif isinstance(value, list):
         for item in value:
             if isinstance(item, dict):

@@ -942,180 +942,252 @@
                                             ]
                                         }
                                     ],
-                                    "keysrules": {
-                                        "type": "string",
-                                        "pattern": "^[\\w\\-\\.]+$"
-                                    },
-                                    "valuesrules": {
-                                        "nullable": true,
-                                        "type": [
-                                            "object",
-                                            "boolean"
-                                        ],
-                                        "properties": {
-                                            "target": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "anyof": [
-                                                    {
-                                                        "allowed": [
-                                                            "auto"
-                                                        ]
-                                                    },
-                                                    {
-                                                        "regex": "(\\d+)(\\.\\d+)?%?"
-                                                    }
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "include_changes": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "anyof": [
-                                                    {
-                                                        "allowed": [
-                                                            "auto"
-                                                        ]
-                                                    },
-                                                    {
-                                                        "regex": "(\\d+)(\\.\\d+)?%?"
-                                                    }
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "threshold": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "flags": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "pattern": "^[\\w\\.\\-]{1,45}$"
-                                                }
-                                            },
-                                            "base": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "parent",
-                                                    "pr",
-                                                    "auto"
-                                                ]
-                                            },
-                                            "branches": {
-                                                "type": "array",
-                                                "properties": {
-                                                    "type": "string",
-                                                    "nullable": true,
-                                                    "coerce": "branch_name"
+                                    "title": "Project",
+                                    "description": "Contains the configuration for a given project status check. Setting to False will disable the project status check.",
+                                    "patternProperties": {
+                                        "target": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
                                                 },
-                                                "nullable": true
-                                            },
-                                            "disable_approx": {
-                                                "type": "boolean"
-                                            },
-                                            "enabled": {
-                                                "type": "boolean"
-                                            },
-                                            "if_ci_failed": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_no_uploads": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_not_found": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "informational": {
-                                                "type": "boolean"
-                                            },
-                                            "measurement": {
-                                                "type": "string",
-                                                "nullable": true,
-                                                "enum": [
-                                                    "line",
-                                                    "statement",
-                                                    "branch",
-                                                    "method",
-                                                    "complexity"
-                                                ]
-                                            },
-                                            "only_pulls": {
-                                                "type": "boolean"
-                                            },
-                                            "skip_if_assumes": {
-                                                "type": "boolean"
-                                            },
-                                            "removed_code_behavior": {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ],
-                                                "enum": [
-                                                    "removals_only",
-                                                    "adjust_base",
-                                                    "fully_covered_patch",
-                                                    "off",
-                                                    false
-                                                ]
-                                            },
-                                            "paths": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "coerce": "regexify_path_pattern"
+                                                {
+                                                    "type": "number"
                                                 }
-                                            },
-                                            "carryforward_behavior": {
+                                            ],
+                                            "anyof": [
+                                                {
+                                                    "allowed": [
+                                                        "auto"
+                                                    ]
+                                                },
+                                                {
+                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Target",
+                                            "description": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
+                                        },
+                                        "include_changes": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ],
+                                            "anyof": [
+                                                {
+                                                    "allowed": [
+                                                        "auto"
+                                                    ]
+                                                },
+                                                {
+                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Include changes",
+                                            "description": ""
+                                        },
+                                        "threshold": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Threshold",
+                                            "description": "Allow coverage to drop by x% below the target and still pass the status check."
+                                        },
+                                        "flags": {
+                                            "type": "array",
+                                            "title": "Flags",
+                                            "description": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported.",
+                                            "items": {
                                                 "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
-                                            },
-                                            "flag_coverage_not_uploaded_behavior": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
+                                                "pattern": "^[\\w\\.\\-]{1,45}$"
                                             }
+                                        },
+                                        "base": {
+                                            "enum": [
+                                                "parent",
+                                                "pr",
+                                                "auto"
+                                            ],
+                                            "title": "Base",
+                                            "description": ""
+                                        },
+                                        "branches": {
+                                            "type": "array",
+                                            "title": "Branches",
+                                            "description": "A list of the branches that, when used, will trigger this status.",
+                                            "items": {
+                                                "type": "string",
+                                                "nullable": true,
+                                                "coerce": "branch_name"
+                                            }
+                                        },
+                                        "disable_approx": {
+                                            "title": "Disable approx",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "enabled": {
+                                            "title": "Enabled",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "if_ci_failed": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If ci failed",
+                                            "description": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
+                                        },
+                                        "if_no_uploads": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If no uploads",
+                                            "description": ""
+                                        },
+                                        "if_not_found": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If not found",
+                                            "description": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
+                                        },
+                                        "informational": {
+                                            "title": "Informational",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "measurement": {
+                                            "enum": [
+                                                "line",
+                                                "statement",
+                                                "branch",
+                                                "method",
+                                                "complexity"
+                                            ],
+                                            "title": "Measurement",
+                                            "description": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
+                                        },
+                                        "only_pulls": {
+                                            "title": "Only pulls",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "skip_if_assumes": {
+                                            "title": "Skip if assumes",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "removed_code_behavior": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "enum": [
+                                                        true,
+                                                        false,
+                                                        "yes",
+                                                        "no",
+                                                        "on",
+                                                        "off"
+                                                    ]
+                                                }
+                                            ],
+                                            "enum": [
+                                                "removals_only",
+                                                "adjust_base",
+                                                "fully_covered_patch",
+                                                "off",
+                                                false
+                                            ],
+                                            "title": "Removed code behavior",
+                                            "description": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
+                                        },
+                                        "paths": {
+                                            "type": "array",
+                                            "title": "Paths",
+                                            "description": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported.",
+                                            "items": {
+                                                "type": "string",
+                                                "coerce": "regexify_path_pattern"
+                                            }
+                                        },
+                                        "carryforward_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Carryforward behavior",
+                                            "description": ""
+                                        },
+                                        "flag_coverage_not_uploaded_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Flag coverage not uploaded behavior",
+                                            "description": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
                                         }
                                     },
-                                    "title": "Project",
-                                    "description": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
+                                    "unevaluatedProperties": false
                                 },
                                 "patch": {
                                     "oneOf": [
@@ -1133,180 +1205,252 @@
                                             ]
                                         }
                                     ],
-                                    "keysrules": {
-                                        "type": "string",
-                                        "pattern": "^[\\w\\-\\.]+$"
-                                    },
-                                    "valuesrules": {
-                                        "type": [
-                                            "object",
-                                            "boolean"
-                                        ],
-                                        "nullable": true,
-                                        "properties": {
-                                            "target": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "anyof": [
-                                                    {
-                                                        "allowed": [
-                                                            "auto"
-                                                        ]
-                                                    },
-                                                    {
-                                                        "regex": "(\\d+)(\\.\\d+)?%?"
-                                                    }
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "include_changes": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "anyof": [
-                                                    {
-                                                        "allowed": [
-                                                            "auto"
-                                                        ]
-                                                    },
-                                                    {
-                                                        "regex": "(\\d+)(\\.\\d+)?%?"
-                                                    }
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "threshold": {
-                                                "type": [
-                                                    "string",
-                                                    "number"
-                                                ],
-                                                "nullable": true,
-                                                "coerce": "percentage_to_number"
-                                            },
-                                            "flags": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "pattern": "^[\\w\\.\\-]{1,45}$"
-                                                }
-                                            },
-                                            "base": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "parent",
-                                                    "pr",
-                                                    "auto"
-                                                ]
-                                            },
-                                            "branches": {
-                                                "type": "array",
-                                                "properties": {
-                                                    "type": "string",
-                                                    "nullable": true,
-                                                    "coerce": "branch_name"
+                                    "title": "Patch",
+                                    "description": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check.",
+                                    "patternProperties": {
+                                        "target": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
                                                 },
-                                                "nullable": true
-                                            },
-                                            "disable_approx": {
-                                                "type": "boolean"
-                                            },
-                                            "enabled": {
-                                                "type": "boolean"
-                                            },
-                                            "if_ci_failed": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_no_uploads": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_not_found": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "informational": {
-                                                "type": "boolean"
-                                            },
-                                            "measurement": {
-                                                "type": "string",
-                                                "nullable": true,
-                                                "enum": [
-                                                    "line",
-                                                    "statement",
-                                                    "branch",
-                                                    "method",
-                                                    "complexity"
-                                                ]
-                                            },
-                                            "only_pulls": {
-                                                "type": "boolean"
-                                            },
-                                            "skip_if_assumes": {
-                                                "type": "boolean"
-                                            },
-                                            "removed_code_behavior": {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ],
-                                                "enum": [
-                                                    "removals_only",
-                                                    "adjust_base",
-                                                    "fully_covered_patch",
-                                                    "off",
-                                                    false
-                                                ]
-                                            },
-                                            "paths": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "coerce": "regexify_path_pattern"
+                                                {
+                                                    "type": "number"
                                                 }
-                                            },
-                                            "carryforward_behavior": {
+                                            ],
+                                            "anyof": [
+                                                {
+                                                    "allowed": [
+                                                        "auto"
+                                                    ]
+                                                },
+                                                {
+                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Target",
+                                            "description": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
+                                        },
+                                        "include_changes": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ],
+                                            "anyof": [
+                                                {
+                                                    "allowed": [
+                                                        "auto"
+                                                    ]
+                                                },
+                                                {
+                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Include changes",
+                                            "description": ""
+                                        },
+                                        "threshold": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ],
+                                            "coerce": "percentage_to_number",
+                                            "title": "Threshold",
+                                            "description": "Allow coverage to drop by x% below the target and still pass the status check."
+                                        },
+                                        "flags": {
+                                            "type": "array",
+                                            "title": "Flags",
+                                            "description": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported.",
+                                            "items": {
                                                 "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
-                                            },
-                                            "flag_coverage_not_uploaded_behavior": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
+                                                "pattern": "^[\\w\\.\\-]{1,45}$"
                                             }
+                                        },
+                                        "base": {
+                                            "enum": [
+                                                "parent",
+                                                "pr",
+                                                "auto"
+                                            ],
+                                            "title": "Base",
+                                            "description": ""
+                                        },
+                                        "branches": {
+                                            "type": "array",
+                                            "title": "Branches",
+                                            "description": "A list of the branches that, when used, will trigger this status.",
+                                            "items": {
+                                                "type": "string",
+                                                "nullable": true,
+                                                "coerce": "branch_name"
+                                            }
+                                        },
+                                        "disable_approx": {
+                                            "title": "Disable approx",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "enabled": {
+                                            "title": "Enabled",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "if_ci_failed": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If ci failed",
+                                            "description": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
+                                        },
+                                        "if_no_uploads": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If no uploads",
+                                            "description": ""
+                                        },
+                                        "if_not_found": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If not found",
+                                            "description": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
+                                        },
+                                        "informational": {
+                                            "title": "Informational",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "measurement": {
+                                            "enum": [
+                                                "line",
+                                                "statement",
+                                                "branch",
+                                                "method",
+                                                "complexity"
+                                            ],
+                                            "title": "Measurement",
+                                            "description": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
+                                        },
+                                        "only_pulls": {
+                                            "title": "Only pulls",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "skip_if_assumes": {
+                                            "title": "Skip if assumes",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "removed_code_behavior": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "enum": [
+                                                        true,
+                                                        false,
+                                                        "yes",
+                                                        "no",
+                                                        "on",
+                                                        "off"
+                                                    ]
+                                                }
+                                            ],
+                                            "enum": [
+                                                "removals_only",
+                                                "adjust_base",
+                                                "fully_covered_patch",
+                                                "off",
+                                                false
+                                            ],
+                                            "title": "Removed code behavior",
+                                            "description": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
+                                        },
+                                        "paths": {
+                                            "type": "array",
+                                            "title": "Paths",
+                                            "description": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported.",
+                                            "items": {
+                                                "type": "string",
+                                                "coerce": "regexify_path_pattern"
+                                            }
+                                        },
+                                        "carryforward_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Carryforward behavior",
+                                            "description": ""
+                                        },
+                                        "flag_coverage_not_uploaded_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Flag coverage not uploaded behavior",
+                                            "description": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
                                         }
                                     },
-                                    "title": "Patch",
-                                    "description": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
+                                    "unevaluatedProperties": false
                                 },
                                 "changes": {
                                     "oneOf": [
@@ -1324,136 +1468,193 @@
                                             ]
                                         }
                                     ],
-                                    "keysrules": {
-                                        "type": "string",
-                                        "pattern": "^[\\w\\-\\.]+$"
-                                    },
-                                    "valuesrules": {
-                                        "type": [
-                                            "object",
-                                            "boolean"
-                                        ],
-                                        "nullable": true,
-                                        "properties": {
-                                            "flags": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "pattern": "^[\\w\\.\\-]{1,45}$"
-                                                }
-                                            },
-                                            "base": {
+                                    "title": "Changes",
+                                    "description": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. More information: https://docs.codecov.com/docs/commit-status#changes-status",
+                                    "patternProperties": {
+                                        "flags": {
+                                            "type": "array",
+                                            "title": "Flags",
+                                            "description": "A list of user defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$",
+                                            "items": {
                                                 "type": "string",
-                                                "enum": [
-                                                    "parent",
-                                                    "pr",
-                                                    "auto"
-                                                ]
-                                            },
-                                            "branches": {
-                                                "type": "array",
-                                                "properties": {
-                                                    "type": "string",
-                                                    "nullable": true,
-                                                    "coerce": "branch_name"
-                                                },
-                                                "nullable": true
-                                            },
-                                            "disable_approx": {
-                                                "type": "boolean"
-                                            },
-                                            "enabled": {
-                                                "type": "boolean"
-                                            },
-                                            "if_ci_failed": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_no_uploads": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "if_not_found": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "success",
-                                                    "failure",
-                                                    "error",
-                                                    "ignore"
-                                                ]
-                                            },
-                                            "informational": {
-                                                "type": "boolean"
-                                            },
-                                            "measurement": {
-                                                "type": "string",
-                                                "nullable": true,
-                                                "enum": [
-                                                    "line",
-                                                    "statement",
-                                                    "branch",
-                                                    "method",
-                                                    "complexity"
-                                                ]
-                                            },
-                                            "only_pulls": {
-                                                "type": "boolean"
-                                            },
-                                            "skip_if_assumes": {
-                                                "type": "boolean"
-                                            },
-                                            "removed_code_behavior": {
-                                                "type": [
-                                                    "string",
-                                                    "boolean"
-                                                ],
-                                                "enum": [
-                                                    "removals_only",
-                                                    "adjust_base",
-                                                    "fully_covered_patch",
-                                                    "off",
-                                                    false
-                                                ]
-                                            },
-                                            "paths": {
-                                                "type": "array",
-                                                "nullable": true,
-                                                "properties": {
-                                                    "type": "string",
-                                                    "coerce": "regexify_path_pattern"
-                                                }
-                                            },
-                                            "carryforward_behavior": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
-                                            },
-                                            "flag_coverage_not_uploaded_behavior": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "include",
-                                                    "exclude",
-                                                    "pass"
-                                                ]
+                                                "pattern": "^[\\w\\.\\-]{1,45}$"
                                             }
+                                        },
+                                        "base": {
+                                            "enum": [
+                                                "parent",
+                                                "pr",
+                                                "auto"
+                                            ],
+                                            "title": "Base",
+                                            "description": "[Deprecated] Base picking approach to use for changes statues. Options: parent, pr, auto. It is recommended to use Codecov CLI's base picking feature instead: https://docs.codecov.com/docs/cli-options#pr-base-picking"
+                                        },
+                                        "branches": {
+                                            "type": "array",
+                                            "title": "Branches",
+                                            "description": "The branches for which the changes status will be active. Nullable.",
+                                            "items": {
+                                                "type": "string",
+                                                "nullable": true,
+                                                "coerce": "branch_name"
+                                            }
+                                        },
+                                        "disable_approx": {
+                                            "title": "Disable approx",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "enabled": {
+                                            "title": "Enabled",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "if_ci_failed": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If ci failed",
+                                            "description": "The status to send if CI fails. Options include: success, failure. On error Codecov will on set a passing status if CI passes, on succes Codecov will set the status to success even if CI fails."
+                                        },
+                                        "if_no_uploads": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If no uploads",
+                                            "description": ""
+                                        },
+                                        "if_not_found": {
+                                            "enum": [
+                                                "success",
+                                                "failure",
+                                                "error",
+                                                "ignore"
+                                            ],
+                                            "title": "If not found",
+                                            "description": "The status to send if there is no report for the head. Options: failure, success. failure: the status will fail if there is no report for the head. success: the status will pass if there is no report for the head. Use this on commits / PRs where you won't be uploading coverage but still want codecov status checks to pass."
+                                        },
+                                        "informational": {
+                                            "title": "Informational",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "measurement": {
+                                            "enum": [
+                                                "line",
+                                                "statement",
+                                                "branch",
+                                                "method",
+                                                "complexity"
+                                            ],
+                                            "title": "Measurement",
+                                            "description": ""
+                                        },
+                                        "only_pulls": {
+                                            "title": "Only pulls",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "skip_if_assumes": {
+                                            "title": "Skip if assumes",
+                                            "description": "",
+                                            "enum": [
+                                                true,
+                                                false,
+                                                "yes",
+                                                "no",
+                                                "on",
+                                                "off"
+                                            ]
+                                        },
+                                        "removed_code_behavior": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "enum": [
+                                                        true,
+                                                        false,
+                                                        "yes",
+                                                        "no",
+                                                        "on",
+                                                        "off"
+                                                    ]
+                                                }
+                                            ],
+                                            "enum": [
+                                                "removals_only",
+                                                "adjust_base",
+                                                "fully_covered_patch",
+                                                "off",
+                                                false
+                                            ],
+                                            "title": "Removed code behavior",
+                                            "description": "These behaviors allows users to specify what should happen to the project status in case changes causes overall coverage to drop, but are part of good development practices. Options include: removals_only, adjust_base, fully_covered_patch, off, False. More information: https://docs.codecov.com/docs/commit-status#removed_code_behavior"
+                                        },
+                                        "paths": {
+                                            "type": "array",
+                                            "title": "Paths",
+                                            "description": "Paths to consider when determining the status result. More information: https://docs.codecov.com/docs/commit-status#paths",
+                                            "items": {
+                                                "type": "string",
+                                                "coerce": "regexify_path_pattern"
+                                            }
+                                        },
+                                        "carryforward_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Carryforward behavior",
+                                            "description": ""
+                                        },
+                                        "flag_coverage_not_uploaded_behavior": {
+                                            "enum": [
+                                                "include",
+                                                "exclude",
+                                                "pass"
+                                            ],
+                                            "title": "Flag coverage not uploaded behavior",
+                                            "description": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options: include,  exclude,  pass. More information: https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
                                         }
                                     },
-                                    "title": "Changes",
-                                    "description": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. More information: https://docs.codecov.com/docs/commit-status#changes-status"
+                                    "unevaluatedProperties": false
                                 },
                                 "no_upload_behavior": {
                                     "enum": [
