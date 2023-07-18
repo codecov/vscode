@@ -49,7 +49,7 @@ function parseErrors(errors: object) {
   return message;
 }
 
-function traverse(item: {} | [] | string, root = ""): string | [] {
+function traverse(item: {} | string[] | string, root = ""): string | string[] {
   if (typeof item === "string") {
     return root + ": " + item;
   }
