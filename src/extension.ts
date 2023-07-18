@@ -4,6 +4,7 @@ import {
   extensions,
   Uri,
   ConfigurationTarget,
+  commands,
 } from "vscode";
 import type { ExtensionContext } from "vscode";
 import {
@@ -21,6 +22,7 @@ import {
 import type { IJSONSchemaCache } from "./json-schema-cache";
 import { getJsonSchemaContent } from "./json-schema-content-provider";
 import { joinPath } from "./paths";
+import { validateAction } from "./validate";
 
 export interface ISchemaAssociations {
   [pattern: string]: string[];
@@ -85,9 +87,8 @@ export namespace SchemaSelectionRequests {
   export const type: NotificationType<void> = new NotificationType(
     "yaml/supportSchemaSelection"
   );
-  export const schemaStoreInitialized: NotificationType<void> = new NotificationType(
-    "yaml/schema/store/initialized"
-  );
+  export const schemaStoreInitialized: NotificationType<void> =
+    new NotificationType("yaml/schema/store/initialized");
 }
 
 let client: LanguageClient;
@@ -107,6 +108,15 @@ export async function startClient(
   newLanguageClient: LanguageClientConstructor,
   runtime: RuntimeEnvironment
 ): Promise<SchemaExtensionAPI> {
+  // Activate validator
+  const command = "codecov.validate";
+  const commandHandler = () => {
+    validateAction(context);
+  };
+
+  context.subscriptions.push(commands.registerCommand(command, commandHandler));
+
+  // Language features
   const yamlConfig = workspace.getConfiguration("yaml");
 
   // default to not enforcing keyOrdering

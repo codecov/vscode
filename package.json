@@ -57,6 +57,25 @@
         "path": "./syntaxes/codecov.tmLanguage.json"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "codecov.validate",
+          "group": "navigation",
+          "when": "resourceLangId == codecov"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "codecov.validate",
+        "title": "Validate current file for Codecov configuration",
+        "icon": {
+          "light": "./icons/codecov-light.png",
+          "dark": "./icons/codecov-dark.png"
+        }
+      }
+    ],
     "configurationDefaults": {
       "[codecov]": {
         "editor.insertSpaces": true,
@@ -71,6 +90,7 @@
     }
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "fs-extra": "^11.1.1",
     "request-light": "^0.7.0",
     "vscode-languageclient": "^8.1.0",

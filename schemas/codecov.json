@@ -12,7 +12,7 @@
                     "type": "string",
                     "pattern": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
                     "title": "Url",
-                    "description": ""
+                    "description": "pattern: https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*), description: "
                 },
                 "token": {
                     "type": "string",
@@ -22,7 +22,7 @@
                 "slug": {
                     "type": "string",
                     "title": "Slug",
-                    "description": ""
+                    "description": "description: "
                 },
                 "bot": {
                     "type": "string",
@@ -33,7 +33,7 @@
                     "type": "string",
                     "coerce": "branch_normalize",
                     "title": "Branch",
-                    "description": ""
+                    "description": "description: "
                 },
                 "ci": {
                     "type": "array",
@@ -45,7 +45,7 @@
                 },
                 "assume_all_flags": {
                     "title": "Assume all flags",
-                    "description": "",
+                    "description": " True,  False,  yes,  no,  on,  off",
                     "enum": [
                         true,
                         false,
@@ -80,11 +80,11 @@
                         }
                     ],
                     "title": "Max report age",
-                    "description": ""
+                    "description": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
                 },
                 "disable_default_path_fixes": {
                     "title": "Disable default path fixes",
-                    "description": "",
+                    "description": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths. Enum: True,  False,  yes,  no,  on,  off",
                     "enum": [
                         true,
                         false,
@@ -96,7 +96,7 @@
                 },
                 "require_ci_to_pass": {
                     "title": "Require ci to pass",
-                    "description": "",
+                    "description": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off",
                     "enum": [
                         true,
                         false,
@@ -108,7 +108,7 @@
                 },
                 "allow_coverage_offsets": {
                     "title": "Allow coverage offsets",
-                    "description": "",
+                    "description": " True,  False,  yes,  no,  on,  off",
                     "enum": [
                         true,
                         false,
@@ -120,7 +120,7 @@
                 },
                 "allow_pseudo_compare": {
                     "title": "Allow pseudo compare",
-                    "description": "",
+                    "description": " True,  False,  yes,  no,  on,  off",
                     "enum": [
                         true,
                         false,
@@ -135,7 +135,7 @@
                     "properties": {
                         "uploads": {
                             "title": "Uploads",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -147,7 +147,7 @@
                         }
                     },
                     "title": "Archive",
-                    "description": ""
+                    "description": "Configure cloud report archiving. Enum: True, False, yes, no, on, off"
                 },
                 "notify": {
                     "type": "object",
@@ -156,21 +156,21 @@
                             "type": "integer",
                             "minimum": 0,
                             "title": "After n builds",
-                            "description": ""
+                            "description": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
                         },
                         "countdown": {
                             "type": "integer",
                             "title": "Countdown",
-                            "description": ""
+                            "description": "description: "
                         },
                         "delay": {
                             "type": "integer",
                             "title": "Delay",
-                            "description": ""
+                            "description": "description: "
                         },
                         "wait_for_ci": {
                             "title": "Wait for ci",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -182,7 +182,7 @@
                         },
                         "require_ci_to_pass": {
                             "title": "Require ci to pass",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -194,7 +194,7 @@
                         }
                     },
                     "title": "Notify",
-                    "description": ""
+                    "description": "Configure how Codecov sends a PR comment"
                 },
                 "ui": {
                     "type": "object",
@@ -212,7 +212,7 @@
                                 }
                             ],
                             "title": "Hide density",
-                            "description": ""
+                            "description": "description: "
                         },
                         "hide_complexity": {
                             "anyof": [
@@ -227,11 +227,11 @@
                                 }
                             ],
                             "title": "Hide complexity",
-                            "description": ""
+                            "description": "description: "
                         },
                         "hide_contexual": {
                             "title": "Hide contexual",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -243,7 +243,7 @@
                         },
                         "hide_sunburst": {
                             "title": "Hide sunburst",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -255,7 +255,7 @@
                         },
                         "hide_search": {
                             "title": "Hide search",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -267,11 +267,11 @@
                         }
                     },
                     "title": "Ui",
-                    "description": ""
+                    "description": "description: "
                 }
             },
             "title": "Codecov",
-            "description": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+            "description": "description: Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
         },
         "coverage": {
             "type": "object",
@@ -281,7 +281,7 @@
                     "minimum": 0,
                     "maximum": 99,
                     "title": "Precision",
-                    "description": ""
+                    "description": "min: 0, description: "
                 },
                 "round": {
                     "enum": [
@@ -290,7 +290,7 @@
                         "nearest"
                     ],
                     "title": "Round",
-                    "description": ""
+                    "description": " down,  up,  nearest, description: "
                 },
                 "range": {
                     "oneOf": [
@@ -312,7 +312,7 @@
                         }
                     ],
                     "title": "Range",
-                    "description": ""
+                    "description": "maxlength: 2, description: "
                 },
                 "notify": {
                     "type": "object",
@@ -320,7 +320,7 @@
                         "irc": {
                             "type": "object",
                             "title": "Irc",
-                            "description": "",
+                            "description": "description: ",
                             "patternProperties": {
                                 "channel": {
                                     "type": "string"
@@ -409,7 +409,7 @@
                         "slack": {
                             "type": "object",
                             "title": "Slack",
-                            "description": "",
+                            "description": "description: ",
                             "patternProperties": {
                                 "attachments": {
                                     "type": "string",
@@ -478,7 +478,7 @@
                         "gitter": {
                             "type": "object",
                             "title": "Gitter",
-                            "description": "",
+                            "description": "description: ",
                             "patternProperties": {
                                 "url": {
                                     "type": "string",
@@ -628,7 +628,7 @@
                         "webhook": {
                             "type": "object",
                             "title": "Webhook",
-                            "description": "",
+                            "description": "description: ",
                             "patternProperties": {
                                 "url": {
                                     "type": "string",
@@ -693,7 +693,7 @@
                         "email": {
                             "type": "object",
                             "title": "Email",
-                            "description": "",
+                            "description": "description: ",
                             "patternProperties": {
                                 "to": {
                                     "type": "array",
@@ -768,7 +768,7 @@
                         }
                     },
                     "title": "Notify",
-                    "description": ""
+                    "description": "description: "
                 },
                 "status": {
                     "oneOf": [
@@ -1351,11 +1351,11 @@
                         }
                     ],
                     "title": "Status",
-                    "description": ""
+                    "description": "description: "
                 }
             },
             "title": "Coverage",
-            "description": ""
+            "description": "description: "
         },
         "parsers": {
             "type": "object",
@@ -1365,7 +1365,7 @@
                     "properties": {
                         "partials_as_hits": {
                             "title": "Partials as hits",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -1377,14 +1377,14 @@
                         }
                     },
                     "title": "Go",
-                    "description": ""
+                    "description": "description: "
                 },
                 "javascript": {
                     "type": "object",
                     "properties": {
                         "enable_partials": {
                             "title": "Enable partials",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -1396,14 +1396,14 @@
                         }
                     },
                     "title": "Javascript",
-                    "description": ""
+                    "description": "description: "
                 },
                 "v1": {
                     "type": "object",
                     "properties": {
                         "include_full_missed_files": {
                             "title": "Include full missed files",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -1415,7 +1415,7 @@
                         }
                     },
                     "title": "V1",
-                    "description": ""
+                    "description": "description: "
                 },
                 "gcov": {
                     "type": "object",
@@ -1425,7 +1425,7 @@
                             "properties": {
                                 "conditional": {
                                     "title": "Conditional",
-                                    "description": "",
+                                    "description": " True,  False,  yes,  no,  on,  off",
                                     "enum": [
                                         true,
                                         false,
@@ -1437,7 +1437,7 @@
                                 },
                                 "loop": {
                                     "title": "Loop",
-                                    "description": "",
+                                    "description": " True,  False,  yes,  no,  on,  off",
                                     "enum": [
                                         true,
                                         false,
@@ -1449,7 +1449,7 @@
                                 },
                                 "method": {
                                     "title": "Method",
-                                    "description": "",
+                                    "description": " True,  False,  yes,  no,  on,  off",
                                     "enum": [
                                         true,
                                         false,
@@ -1461,7 +1461,7 @@
                                 },
                                 "macro": {
                                     "title": "Macro",
-                                    "description": "",
+                                    "description": " True,  False,  yes,  no,  on,  off",
                                     "enum": [
                                         true,
                                         false,
@@ -1473,18 +1473,18 @@
                                 }
                             },
                             "title": "Branch detection",
-                            "description": ""
+                            "description": "description: "
                         }
                     },
                     "title": "Gcov",
-                    "description": ""
+                    "description": "description: "
                 },
                 "jacoco": {
                     "type": "object",
                     "properties": {
                         "partials_as_hits": {
                             "title": "Partials as hits",
-                            "description": "",
+                            "description": " True,  False,  yes,  no,  on,  off",
                             "enum": [
                                 true,
                                 false,
@@ -1496,16 +1496,16 @@
                         }
                     },
                     "title": "Jacoco",
-                    "description": ""
+                    "description": "description: "
                 }
             },
             "title": "Parsers",
-            "description": ""
+            "description": "description: "
         },
         "ignore": {
             "type": "array",
             "title": "Ignore",
-            "description": "",
+            "description": "description: ",
             "items": {
                 "type": "string",
                 "coerce": "regexify_path_pattern"
@@ -1514,7 +1514,7 @@
         "fixes": {
             "type": "array",
             "title": "Fixes",
-            "description": "",
+            "description": "description: ",
             "items": {
                 "type": "string",
                 "coerce": "regexify_path_fix"
@@ -1523,7 +1523,7 @@
         "flags": {
             "type": "object",
             "title": "Flags",
-            "description": "",
+            "description": "Flags are typically used to customize the behavior of Codecov during the code coverage analysis process.",
             "patternProperties": {
                 "joined": {
                     "enum": [
@@ -1623,7 +1623,7 @@
                         "statuses": {
                             "type": "array",
                             "title": "Statuses",
-                            "description": "",
+                            "description": "Flag management rule statuses refer to the different states or conditions associated with flag management rules.",
                             "prefixItems": "todo"
                         },
                         "carryforward_mode": {
@@ -1632,11 +1632,11 @@
                                 "labels"
                             ],
                             "title": "Carryforward mode",
-                            "description": ""
+                            "description": "Reference of past coverage for tests that are not run on current commit."
                         },
                         "carryforward": {
                             "title": "Carryforward",
-                            "description": "",
+                            "description": "Carryforward Flags are designed for projects that do not upload total coverage for every commit. Users can define the following states for flags: True,  False,  yes,  no,  on,  off.",
                             "enum": [
                                 true,
                                 false,
@@ -1649,7 +1649,7 @@
                         "paths": {
                             "type": "array",
                             "title": "Paths",
-                            "description": "",
+                            "description": "Define rules that specify conditions and actions for flag management. These rules can be based on various criteria such as coverage thresholds, branch names, commit messages, or other factors relevant to your project.",
                             "items": {
                                 "type": "string",
                                 "coerce": "regexify_path_pattern"
@@ -1658,7 +1658,7 @@
                         "ignore": {
                             "type": "array",
                             "title": "Ignore",
-                            "description": "",
+                            "description": "To ignore or exclude specific files, directories, or patterns from flag management actions, you can define a flag management rule with conditions that exclude those specific elements.",
                             "items": {
                                 "type": "string",
                                 "coerce": "regexify_path_pattern"
@@ -1668,21 +1668,21 @@
                             "type": "integer",
                             "minimum": 0,
                             "title": "After n builds",
-                            "description": ""
+                            "description": "Refers to the ability to apply specific flag management rules after a certain number of builds or iterations. Gradually enforce stricter or different flag management behavior as your project progresses over time."
                         }
                     },
                     "title": "Default rules",
-                    "description": ""
+                    "description": "Rules are a set of defined conditions and actions that control the behavior of flags during the code coverage analysis process."
                 },
                 "individual_flags": {
                     "type": "array",
                     "title": "Individual flags",
-                    "description": "",
+                    "description": "Individual flags refer to specific configuration options or settings that can be used to customize the behavior of the code coverage reporting and analysis process.",
                     "prefixItems": "todo"
                 }
             },
             "title": "Flag management",
-            "description": ""
+            "description": "Allows you to control the behavior of flags during the code coverage analysis process."
         },
         "component_management": {
             "type": "object",
@@ -1693,13 +1693,13 @@
                         "statuses": {
                             "type": "array",
                             "title": "Statuses",
-                            "description": "",
+                            "description": "Component management rule statuses refer to the different states or conditions associated with component management rules.",
                             "prefixItems": "todo"
                         },
                         "flag_regexes": {
                             "type": "array",
                             "title": "Flag regexes",
-                            "description": "",
+                            "description": "Refers to the use of regular expressions to define patterns for matching specific flags or conditions during the code coverage analysis process.",
                             "items": {
                                 "type": "string"
                             }
@@ -1707,7 +1707,7 @@
                         "paths": {
                             "type": "array",
                             "title": "Paths",
-                            "description": "",
+                            "description": "Define rules that specify conditions and actions for component management. These rules can be based on various criteria such as coverage thresholds, branch names, commit messages, or other factors relevant to your project.",
                             "items": {
                                 "type": "string",
                                 "coerce": "regexify_path_pattern"
@@ -1715,17 +1715,17 @@
                         }
                     },
                     "title": "Default rules",
-                    "description": ""
+                    "description": "Rules are a set of defined conditions and actions that control the behavior of components during the code coverage analysis process."
                 },
                 "individual_components": {
                     "type": "array",
                     "title": "Individual components",
-                    "description": "",
+                    "description": "Individual components refer to specific configuration options or settings that can be used to customize the behavior of the code coverage reporting and analysis process.",
                     "prefixItems": "todo"
                 }
             },
             "title": "Component management",
-            "description": ""
+            "description": "Use components you specify to create custom statuses and get coverage information from parts of your code that are not easily broken up into different uploads or span multiple flag groups."
         },
         "comment": {
             "oneOf": [
@@ -1808,7 +1808,7 @@
                         "flags": {
                             "type": "array",
                             "title": "Flags",
-                            "description": "",
+                            "description": "Flags are typically used to customize the behavior of Codecov during the code coverage analysis process.",
                             "items": {
                                 "type": "string",
                                 "pattern": "^[\\w\\.\\-]{1,45}$"
@@ -1868,7 +1868,7 @@
                 }
             ],
             "title": "Comment",
-            "description": ""
+            "description": "Refer to the feedback or remarks that Codecov can provide on your code coverage results. These comments are typically added to pull requests or specific lines of code to provide additional information or suggestions regarding the code coverage analysis."
         },
         "github_checks": {
             "oneOf": [
@@ -1901,7 +1901,7 @@
                 }
             ],
             "title": "Github checks",
-            "description": ""
+            "description": "Display code coverage information and analysis results directly within the GitHub interface. "
         },
         "profiling": {
             "type": "object",
@@ -1909,7 +1909,7 @@
                 "fixes": {
                     "type": "array",
                     "title": "Fixes",
-                    "description": "",
+                    "description": "Add path rixes to your codecov.yml configuration to see critical changes.",
                     "items": {
                         "type": "string",
                         "coerce": "regexify_path_fix"
@@ -1918,7 +1918,7 @@
                 "grouping_attributes": {
                     "type": "array",
                     "title": "Grouping attributes",
-                    "description": "",
+                    "description": "Grouping attributes allow you to categorize your code coverage data based on specific criteria. These attributes can be applied to files, directories, or other relevant components of your codebase. Grouping attributes provide a way to aggregate and filter coverage information, enabling you to gain insights into different aspects of your codebase's test coverage.",
                     "items": {
                         "type": "string"
                     }
@@ -1926,7 +1926,7 @@
                 "critical_files_paths": {
                     "type": "array",
                     "title": "Critical files paths",
-                    "description": "",
+                    "description": "You can supply any of the following as an element of critical_files_paths: 1.The fully qualified path to the file relative to the root of the repository, 2. A path containing globs. 3. A regular expression.",
                     "items": {
                         "type": "string",
                         "coerce": "regexify_path_pattern"
@@ -1934,12 +1934,12 @@
                 }
             },
             "title": "Profiling",
-            "description": ""
+            "description": "Impact Analysis requires a profiling token used to identify your repository and authenticate API requests. You can find your token in your repo settings page."
         },
         "beta_groups": {
             "type": "array",
             "title": "Beta groups",
-            "description": "",
+            "description": "To see Impacted Entrypoints in your pull request comments, 'betaprofiling' must be added to the comment.layout section of your codecov.yml.",
             "items": {
                 "type": "string"
             }
