@@ -83,7 +83,7 @@ def modify_annotate(dictionary, key, location):
     return dictionary
 
 
-def modify_type(dictionary):
+def modify_type(dictionary, parent_node="unknown"):
     if isinstance(dictionary, dict):
         modified = {
             **dictionary,
@@ -95,8 +95,9 @@ def modify_type(dictionary):
                 if "keysrules" in modified and "valuesrules" in modified:
                     values_rules = modified["valuesrules"]["properties"]
 
-                    for property in values_rules:
-                        values_rules[property] = modify_type(values_rules[property])
+                    values_rules = recurse(values_rules)
+                    values_rules = modify_schema(values_rules, parent_node)
+                    values_rules = modify_type(values_rules, parent_node)
 
                     del modified["valuesrules"]
                     del modified["keysrules"]
@@ -154,6 +155,7 @@ def modify_type(dictionary):
                 dictionary = {}
                 dictionary["oneOf"] = one_of
                 modified = {**dictionary, **modified}
+
                 if "regex" in modified:
                     del modified["regex"]
                 if "anyof" in modified:
@@ -180,15 +182,15 @@ def modify_type(dictionary):
                         and "properties" in modified
                     ):
                         new_properties = recurse(modified["properties"])
-                        new_properties = modify_schema(new_properties)
-                        new_properties = modify_type(new_properties)
+                        new_properties = modify_schema(new_properties, parent_node)
+                        new_properties = modify_type(new_properties, parent_node)
 
                         config["properties"] = new_properties
                         del modified["properties"]
 
                     formatted_one_of = recurse(config)
-                    formatted_one_of = modify_schema(formatted_one_of)
-                    formatted_one_of = modify_type(formatted_one_of)
+                    formatted_one_of = modify_schema(formatted_one_of, parent_node)
+                    formatted_one_of = modify_type(formatted_one_of, parent_node)
                     new_one_of.append(formatted_one_of)
                 modified["oneOf"] = new_one_of
 
@@ -214,12 +216,12 @@ def modify_schema(schema, parent_node="root"):
 
     if isinstance(schema, dict):
         for key in schema:
-            if isinstance(schema[key], str):
+            if isinstance(schema[key], str) or isinstance(schema[key], bool):
                 return schema
 
             modified = schema[key]
             modified = modify_annotate(modified, key, parent_node.split("."))
-            modified = modify_type(modified)
+            modified = modify_type(modified, parent_node + "." + key)
 
             if "properties" in modified:
                 modified_properties = modified["properties"]

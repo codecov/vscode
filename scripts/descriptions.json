@@ -1,13 +1,4 @@
 {
-  "$schema": {
-    "desc": "http://json-schema.org/draft-04/schema#"
-  },
-  "id": {
-    "desc": "https://json.schemastore.org/codecov"
-  },
-  "description": {
-    "desc": "The Codecov configuration file is used to configure your Codecov experience. More info: https://docs.codecov.com/docs/codecov-yaml"
-  },
   "codecov.url": {
     "desc": "A url you want to send notifications too. More info: https://docs.codecov.com/docs/notifications#standard-notification-fields"
   },
@@ -101,121 +92,118 @@
   "coverage.range": {
     "desc": "Configure how you want Codecov to color your coverage. Coverage below the first number will be red, coverage between each number yellow, and coverage above the second number will be green. Format: xx...yy "
   },
-  "coverage.notify.irc.keysrules": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.password": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.url": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.branches": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.threshold": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.flags": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.base": {
-    "desc": "Deprecated"
-  },
-  "coverage.notify.irc.valuesrules.paths": {
-    "desc": "Deprecated"
-  },
   "coverage.notify.irc": {
     "desc": "Deprecated"
   },
-  "coverage.notify.slack.valuesrules.attachments": {
+  "coverage.notify.irc.password": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.url": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.branches": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.threshold": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.flags": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.base": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.irc.paths": {
+    "desc": "Deprecated"
+  },
+  "coverage.notify.slack.attachments": {
     "desc": "These are attachments you can make as strings to the Slack notifier with the pattern: ^([^,]+)(,[^,]+)*$"
   },
-  "coverage.notify.slack.valuesrules.url": {
+  "coverage.notify.slack.url": {
     "desc": "Used to store the Slack hooks URL associated with your Slack notifier: https://hooks.slack.com/services/abc/123"
   },
-  "coverage.notify.slack.valuesrules.branches": {
+  "coverage.notify.slack.branches": {
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
-  "coverage.notify.slack.valuesrules.threshold": {
+  "coverage.notify.slack.threshold": {
     "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
-  "coverage.notify.slack.valuesrules.only_pulls": {
+  "coverage.notify.slack.only_pulls": {
     "desc": "True / False binary to specify if you only want notifications to fire on pull requests (vs. individual commits on the branch). Default is `false`, which will notify on all new commits."
   },
-  "coverage.notify.slack.valuesrules.flags": {
+  "coverage.notify.slack.flags": {
     "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
-  "coverage.notify.slack.valuesrules.base": {
+  "coverage.notify.slack.base": {
     "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
-  "coverage.notify.slack.valuesrules.paths": {
+  "coverage.notify.slack.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.slack": {
     "desc": "This is the path for Slack notifications to fire. Below \"slack:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Slack notification docs](https://docs.codecov.com/docs/notifications#slack)"
   },
-  "coverage.notify.gitter.valuesrules.url": {
+  "coverage.notify.gitter.url": {
     "desc": "Used to store the Gitter hooks URL associated with your Gitter notifier: \"https://webhooks.gitter.im/e/9d1957r0a481787c756z\""
   },
-  "coverage.notify.gitter.valuesrules.branches": {
+  "coverage.notify.gitter.branches": {
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
-  "coverage.notify.gitter.valuesrules.threshold": {
+  "coverage.notify.gitter.threshold": {
     "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
-  "coverage.notify.gitter.valuesrules.flags": {
+  "coverage.notify.gitter.flags": {
     "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
-  "coverage.notify.gitter.valuesrules.base": {
+  "coverage.notify.gitter.base": {
     "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
-  "coverage.notify.gitter.valuesrules.paths": {
+  "coverage.notify.gitter.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.gitter": {
     "desc": "This is the root for Gitter notifications to fire. Below \"gitter:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Gitter notification docs](https://docs.codecov.com/docs/notifications#gitter)"
   },
-  "coverage.notify.webhook.valuesrules.url": {
+  "coverage.notify.webhook.url": {
     "desc": "Used to store the generalized webhook URL associated with your notifier"
   },
-  "coverage.notify.webhook.valuesrules.branches": {
+  "coverage.notify.webhook.branches": {
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
-  "coverage.notify.webhook.valuesrules.threshold": {
+  "coverage.notify.webhook.threshold": {
     "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
-  "coverage.notify.webhook.valuesrules.flags": {
+  "coverage.notify.webhook.flags": {
     "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular expressions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
-  "coverage.notify.webhook.valuesrules.base": {
+  "coverage.notify.webhook.base": {
     "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
-  "coverage.notify.webhook.valuesrules.paths": {
+  "coverage.notify.webhook.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.webhook": {
     "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below \"webhook:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [General notification docs](https://docs.codecov.com/docs/notifications#standard-notification-fields)"
   },
-  "coverage.notify.email.valuesrules.layout": {
+  "coverage.notify.email.layout": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.url": {
+  "coverage.notify.email.url": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.branches": {
+  "coverage.notify.email.branches": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.threshold": {
+  "coverage.notify.email.threshold": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.flags": {
+  "coverage.notify.email.flags": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.base": {
+  "coverage.notify.email.base": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.valuesrules.paths": {
+  "coverage.notify.email.paths": {
     "desc": "Deprecated"
   },
   "coverage.notify.email": {
@@ -233,112 +221,103 @@
   "coverage.status.default_rules": {
     "desc": "A path of the `status` configuration that provides advanced configuration for repos not uploading all of their coverage on every commit. Keys available are `flag_coverage_not_uploaded_behavior` and `carryforward_behavior`."
   },
-  "coverage.status.project.keysrules": {
+  "coverage.status.project": {
     "desc": "Title of the project status check. Using `default` will set title to blank"
   },
-  "coverage.status.project.valuesrules": {
+  "coverage.status.project": {
     "desc": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
   },
-  "coverage.status.project.valuesrules.target": {
+  "coverage.status.project.target": {
     "desc": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
   },
-  "coverage.status.project.valuesrules.threshold": {
+  "coverage.status.project.threshold": {
     "desc": "Allow coverage to drop by x% below the target and still pass the status check."
   },
-  "coverage.status.project.valuesrules.flags": {
+  "coverage.status.project.flags": {
     "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
   },
-  "coverage.status.project.valuesrules.branches": {
+  "coverage.status.project.branches": {
     "desc": "A list of the branches that, when used, will trigger this status."
   },
-  "coverage.status.project.valuesrules.if_ci_failed": {
+  "coverage.status.project.if_ci_failed": {
     "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
   },
-  "coverage.status.project.valuesrules.if_not_found": {
+  "coverage.status.project.if_not_found": {
     "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
   },
-  "coverage.status.project.valuesrules.measurement": {
+  "coverage.status.project.measurement": {
     "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
   },
-  "coverage.status.project.valuesrules.removed_code_behavior": {
+  "coverage.status.project.removed_code_behavior": {
     "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
   },
-  "coverage.status.project.valuesrules.paths": {
+  "coverage.status.project.paths": {
     "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
   },
-  "coverage.status.project.valuesrules.flag_coverage_not_uploaded_behavior": {
-    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
-  },
-  "coverage.status.project": {
-    "desc": "The configuration root for all project status checks in the repository."
-  },
-  "coverage.status.patch.keysrules": {
-    "desc": "Title of the patch status check. Using `default` will set title to blank"
-  },
-  "coverage.status.patch.valuesrules": {
-    "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
-  },
-  "coverage.status.patch.valuesrules.target": {
-    "desc": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
-  },
-  "coverage.status.patch.valuesrules.threshold": {
-    "desc": "Allow coverage to drop by x% below the target and still pass the status check."
-  },
-  "coverage.status.patch.valuesrules.flags": {
-    "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
-  },
-  "coverage.status.patch.valuesrules.branches": {
-    "desc": "A list of the branches that, when used, will trigger this status."
-  },
-  "coverage.status.patch.valuesrules.if_ci_failed": {
-    "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
-  },
-  "coverage.status.patch.valuesrules.if_not_found": {
-    "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
-  },
-  "coverage.status.patch.valuesrules.measurement": {
-    "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
-  },
-  "coverage.status.patch.valuesrules.removed_code_behavior": {
-    "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
-  },
-  "coverage.status.patch.valuesrules.paths": {
-    "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
-  },
-  "coverage.status.patch.valuesrules.flag_coverage_not_uploaded_behavior": {
+  "coverage.status.project.flag_coverage_not_uploaded_behavior": {
     "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.patch": {
-    "desc": "The configuration root for all patch status checks in the repository."
+    "desc": "Title of the patch status check. Using `default` will set title to blank"
   },
-  "coverage.status.changes.keysrules": {
-    "desc": "Title of the changes status check. Must match pattern: ^[\\w\\-\\.]+$"
+  "coverage.status.patch": {
+    "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
   },
-  "coverage.status.changes.valuesrules": {
+  "coverage.status.patch.target": {
+    "desc": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
+  },
+  "coverage.status.patch.threshold": {
+    "desc": "Allow coverage to drop by x% below the target and still pass the status check."
+  },
+  "coverage.status.patch.flags": {
+    "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
+  },
+  "coverage.status.patch.branches": {
+    "desc": "A list of the branches that, when used, will trigger this status."
+  },
+  "coverage.status.patch.if_ci_failed": {
+    "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
+  },
+  "coverage.status.patch.if_not_found": {
+    "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
+  },
+  "coverage.status.patch.measurement": {
+    "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
+  },
+  "coverage.status.patch.removed_code_behavior": {
+    "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
+  },
+  "coverage.status.patch.paths": {
+    "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
+  },
+  "coverage.status.patch.flag_coverage_not_uploaded_behavior": {
+    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
+  },
+  "coverage.status.changes": {
     "desc": "Contains configuration for the changes status check."
   },
-  "coverage.status.changes.valuesrules.flags": {
+  "coverage.status.changes.flags": {
     "desc": "A list of user defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
   },
-  "coverage.status.changes.valuesrules.base": {
+  "coverage.status.changes.base": {
     "desc": "[Deprecated] Base picking approach to use for changes statues. Options: parent, pr, auto. It is recommended to use Codecov CLI's base picking feature instead: https://docs.codecov.com/docs/cli-options#pr-base-picking"
   },
-  "coverage.status.changes.valuesrules.branches": {
+  "coverage.status.changes.branches": {
     "desc": "The branches for which the changes status will be active. Nullable."
   },
-  "coverage.status.changes.valuesrules.if_ci_failed": {
+  "coverage.status.changes.if_ci_failed": {
     "desc": "The status to send if CI fails. Options include: success, failure. On error Codecov will on set a passing status if CI passes, on succes Codecov will set the status to success even if CI fails."
   },
-  "coverage.status.changes.valuesrules.if_not_found": {
+  "coverage.status.changes.if_not_found": {
     "desc": "The status to send if there is no report for the head. Options: failure, success. failure: the status will fail if there is no report for the head. success: the status will pass if there is no report for the head. Use this on commits / PRs where you won't be uploading coverage but still want codecov status checks to pass."
   },
-  "coverage.status.changes.valuesrules.removed_code_behavior": {
+  "coverage.status.changes.removed_code_behavior": {
     "desc": "These behaviors allows users to specify what should happen to the project status in case changes causes overall coverage to drop, but are part of good development practices. Options include: removals_only, adjust_base, fully_covered_patch, off, False. More information: https://docs.codecov.com/docs/commit-status#removed_code_behavior"
   },
-  "coverage.status.changes.valuesrules.paths": {
+  "coverage.status.changes.paths": {
     "desc": "Paths to consider when determining the status result. More information: https://docs.codecov.com/docs/commit-status#paths"
   },
-  "coverage.status.changes.valuesrules.flag_coverage_not_uploaded_behavior": {
+  "coverage.status.changes.flag_coverage_not_uploaded_behavior": {
     "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options: include,  exclude,  pass. More information: https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.changes": {
@@ -395,26 +374,23 @@
   "fixes": {
     "desc": "A list of path fixes that Codecov applies to uploaded coverage reports. Before using path fixing, reading the docs is greatly encouraged: https://docs.codecov.com/docs/fixing-paths"
   },
-  "flags.keysrules": {
+  "flags": {
     "desc": "A list of flags Codecov will apply in order to segment code coverage. Rules for flag names: min length: 1, max length: 45, pattern: ^[\\w\\.\\-]+$. Before using flags, reading the docs is greatly encouraged: https://docs.codecov.com/docs/flags"
   },
-  "flags.valuesrules.carryforward_mode": {
+  "flags.carryforward_mode": {
     "desc": "Specified whether a flag should carry its coverage forward to future commits. Carryforward flags is an advanced feature, and reading the documentation is recommended: https://docs.codecov.com/docs/flags#carryforward-flags"
   },
-  "flags.valuesrules.ignore": {
+  "flags.ignore": {
     "desc": "Ignore coverage for specific lines of code. You can provide a comma-separated list of line ranges or individual line numbers to be ignored."
   },
-  "flags.valuesrules.paths": {
+  "flags.paths": {
     "desc": "Are used to define the paths to your project's source files or directories for which you want to generate code coverage reports."
   },
-  "flags.valuesrules.assume.branches": {
+  "flags.assume.branches": {
     "desc": "Customize how branches are treated in the code coverage analysis."
   },
-  "flags.valuesrules.after_n_builds": {
+  "flags.after_n_builds": {
     "desc": "Value rules after N builds refer to coverage requirements or thresholds that are applied after a certain number of builds or iterations."
-  },
-  "flags": {
-    "desc": "Flags are typically used to customize the behavior of Codecov during the code coverage analysis process."
   },
   "flag_management.default_rules.statuses": {
     "desc": "Flag management rule statuses refer to the different states or conditions associated with flag management rules."
