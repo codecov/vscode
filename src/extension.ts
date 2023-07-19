@@ -108,6 +108,29 @@ export async function startClient(
   newLanguageClient: LanguageClientConstructor,
   runtime: RuntimeEnvironment
 ): Promise<SchemaExtensionAPI> {
+  // On first time install
+  const extensionInstalledBefore = context.globalState.get(
+    "codecov.extensionInstalledBefore",
+    false
+  );
+
+  if (!extensionInstalledBefore) {
+    // Show a restart prompt after installation
+    window
+      .showInformationMessage(
+        "It looks like this is your first time installing Codecov in the IDE. Please restart Visual Studio Code for the changes to take effect.",
+        "Restart"
+      )
+      .then((choice) => {
+        if (choice === "Restart") {
+          commands.executeCommand("workbench.action.reloadWindow");
+        }
+      });
+
+    // Store the flag indicating that the extension has been installed
+    context.globalState.update("codecov.extensionInstalledBefore", true);
+  }
+
   // Activate validator
   const command = "codecov.validate";
   const commandHandler = () => {
