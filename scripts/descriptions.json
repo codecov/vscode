@@ -149,6 +149,7 @@
   "coverage.notify.gitter.[any].branches": {
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
+
   "coverage.notify.gitter.[any].threshold": {
     "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise, it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
@@ -288,6 +289,9 @@
     "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options include: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
   "coverage.status.changes.[any].flags": {
+    "desc": "A list of user-defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
+  },
+  "coverage.status.changes.flags": {
     "desc": "A list of user-defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.status.changes.[any].base": {
