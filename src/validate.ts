@@ -17,26 +17,39 @@ export function validateAction(context: vscode.ExtensionContext) {
       })
       .then(function (response) {
         // handle response
-        vscode.window.showInformationMessage(response.data.message);
-        vscode.window.setStatusBarMessage(response.data.message, 10000);
+        vscode.window.showInformationMessage(
+          "Codecov: " + response.data.message
+        );
+        vscode.window.setStatusBarMessage(
+          "Codecov: " + response.data.message,
+          10000
+        );
         return;
       })
       .catch(function (error) {
         if (error?.response?.status >= 500) {
           vscode.window.showErrorMessage(
-            "Unable to connect to server or something went seriously wrong."
+            "Codecov: Unable to connect to server or something went seriously wrong."
           );
+          return;
         }
+
+        console.log(error);
 
         const validationErrors = error.response.data.validation_error;
         const result = parseErrors(validationErrors);
 
-        vscode.window.showErrorMessage(error.response.data.message);
+        console.log("Codecov: " + error.response.data.message);
+        vscode.window.showErrorMessage(
+          "Codecov: " + error.response.data.message
+        );
 
         // Show each error
         if (result.length > 0 && Array.isArray(result)) {
           result.forEach((element) => {
-            vscode.window.showErrorMessage(element);
+            vscode.window.showErrorMessage(
+              "Codecov: Issue found with " + element
+            );
           });
         }
       });
