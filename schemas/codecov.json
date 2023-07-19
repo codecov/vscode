@@ -200,34 +200,48 @@
                     "type": "object",
                     "properties": {
                         "hide_density": {
-                            "anyof": [
+                            "title": "Hide density",
+                            "description": "Deprecated",
+                            "anyOf": [
                                 {
-                                    "type": "boolean"
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
                                 },
                                 {
-                                    "type": "list",
-                                    "schema": {
+                                    "type": "array",
+                                    "items": {
                                         "type": "string"
                                     }
                                 }
-                            ],
-                            "title": "Hide density",
-                            "description": "Deprecated"
+                            ]
                         },
                         "hide_complexity": {
-                            "anyof": [
+                            "title": "Hide complexity",
+                            "description": "Deprecated",
+                            "anyOf": [
                                 {
-                                    "type": "boolean"
+                                    "enum": [
+                                        true,
+                                        false,
+                                        "yes",
+                                        "no",
+                                        "on",
+                                        "off"
+                                    ]
                                 },
                                 {
-                                    "type": "list",
-                                    "schema": {
+                                    "type": "array",
+                                    "items": {
                                         "type": "string"
                                     }
                                 }
-                            ],
-                            "title": "Hide complexity",
-                            "description": "Deprecated"
+                            ]
                         },
                         "hide_contexual": {
                             "title": "Hide contexual",
@@ -954,19 +968,19 @@
                                                     "type": "number"
                                                 }
                                             ],
-                                            "anyof": [
+                                            "coerce": "percentage_to_number",
+                                            "title": "Target",
+                                            "description": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit.",
+                                            "anyOf": [
                                                 {
-                                                    "allowed": [
+                                                    "enum": [
                                                         "auto"
                                                     ]
                                                 },
                                                 {
-                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                    "pattern": "(\\d+)(\\.\\d+)?%?"
                                                 }
-                                            ],
-                                            "coerce": "percentage_to_number",
-                                            "title": "Target",
-                                            "description": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
+                                            ]
                                         },
                                         "include_changes": {
                                             "oneOf": [
@@ -977,19 +991,19 @@
                                                     "type": "number"
                                                 }
                                             ],
-                                            "anyof": [
+                                            "coerce": "percentage_to_number",
+                                            "title": "Include changes",
+                                            "description": "",
+                                            "anyOf": [
                                                 {
-                                                    "allowed": [
+                                                    "enum": [
                                                         "auto"
                                                     ]
                                                 },
                                                 {
-                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                    "pattern": "(\\d+)(\\.\\d+)?%?"
                                                 }
-                                            ],
-                                            "coerce": "percentage_to_number",
-                                            "title": "Include changes",
-                                            "description": ""
+                                            ]
                                         },
                                         "threshold": {
                                             "oneOf": [
@@ -1217,19 +1231,19 @@
                                                     "type": "number"
                                                 }
                                             ],
-                                            "anyof": [
+                                            "coerce": "percentage_to_number",
+                                            "title": "Target",
+                                            "description": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit.",
+                                            "anyOf": [
                                                 {
-                                                    "allowed": [
+                                                    "enum": [
                                                         "auto"
                                                     ]
                                                 },
                                                 {
-                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                    "pattern": "(\\d+)(\\.\\d+)?%?"
                                                 }
-                                            ],
-                                            "coerce": "percentage_to_number",
-                                            "title": "Target",
-                                            "description": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
+                                            ]
                                         },
                                         "include_changes": {
                                             "oneOf": [
@@ -1240,19 +1254,19 @@
                                                     "type": "number"
                                                 }
                                             ],
-                                            "anyof": [
+                                            "coerce": "percentage_to_number",
+                                            "title": "Include changes",
+                                            "description": "",
+                                            "anyOf": [
                                                 {
-                                                    "allowed": [
+                                                    "enum": [
                                                         "auto"
                                                     ]
                                                 },
                                                 {
-                                                    "regex": "(\\d+)(\\.\\d+)?%?"
+                                                    "pattern": "(\\d+)(\\.\\d+)?%?"
                                                 }
-                                            ],
-                                            "coerce": "percentage_to_number",
-                                            "title": "Include changes",
-                                            "description": ""
+                                            ]
                                         },
                                         "threshold": {
                                             "oneOf": [

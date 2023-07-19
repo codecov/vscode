@@ -212,47 +212,47 @@ def modify_type(dictionary, parent_node="unknown"):
                     new_one_of.append(formatted_one_of)
                 modified["oneOf"] = new_one_of
 
-        # if "anyof" in modified:
-        #     if isinstance(modified["anyof"], list):
-        #         new_any_of = []
-        #         for config in modified["anyof"]:
-        #             # if one of has object rules move from parent to anyof
-        #             if (
-        #                 "type" in config
-        #                 and config["type"] == "object"
-        #                 and "properties" in modified
-        #             ):
-        #                 new_properties = recurse(modified["properties"])
-        #                 new_properties = modify_schema(new_properties, parent_node)
-        #                 new_properties = modify_type(new_properties, parent_node)
+        if "anyof" in modified:
+            if isinstance(modified["anyof"], list):
+                new_any_of = []
+                for config in modified["anyof"]:
+                    # if one of has object rules move from parent to anyof
+                    if (
+                        "type" in config
+                        and config["type"] == "object"
+                        and "properties" in modified
+                    ):
+                        new_properties = recurse(modified["properties"])
+                        new_properties = modify_schema(new_properties, parent_node)
+                        new_properties = modify_type(new_properties, parent_node)
 
-        #                 config["properties"] = new_properties
-        #                 del modified["properties"]
+                        config["properties"] = new_properties
+                        del modified["properties"]
 
-        #             if (
-        #                 "type" in config
-        #                 and config["type"] == "object"
-        #                 and "valuesrules" in modified
-        #                 and "keysrules" in modified
-        #             ):
-        #                 values_rules = modified["valuesrules"]["properties"]
+                    if (
+                        "type" in config
+                        and config["type"] == "object"
+                        and "valuesrules" in modified
+                        and "keysrules" in modified
+                    ):
+                        values_rules = modified["valuesrules"]["properties"]
 
-        #                 values_rules = recurse(values_rules)
-        #                 values_rules = modify_schema(values_rules, parent_node)
-        #                 values_rules = modify_type(values_rules, parent_node)
+                        values_rules = recurse(values_rules)
+                        values_rules = modify_schema(values_rules, parent_node)
+                        values_rules = modify_type(values_rules, parent_node)
 
-        #                 del modified["valuesrules"]
-        #                 del modified["keysrules"]
+                        del modified["valuesrules"]
+                        del modified["keysrules"]
 
-        #                 values_rules["patternProperties"] = values_rules
-        #                 values_rules["unevaluatedProperties"] = False
+                        values_rules["patternProperties"] = values_rules
+                        values_rules["unevaluatedProperties"] = False
 
-        #             formatted_any_of = recurse(config)
-        #             formatted_any_of = modify_schema(formatted_any_of, parent_node)
-        #             formatted_any_of = modify_type(formatted_any_of, parent_node)
-        #             new_any_of.append(formatted_any_of)
-        #         del modified["anyof"]
-        #         modified["anyOf"] = new_any_of
+                    formatted_any_of = recurse(config)
+                    formatted_any_of = modify_schema(formatted_any_of, parent_node)
+                    formatted_any_of = modify_type(formatted_any_of, parent_node)
+                    new_any_of.append(formatted_any_of)
+                del modified["anyof"]
+                modified["anyOf"] = new_any_of
 
         # if is enum drop string type
         if "enum" in modified and "type" in modified:

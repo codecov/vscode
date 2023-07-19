@@ -222,9 +222,6 @@
     "desc": "A path of the `status` configuration that provides advanced configuration for repos not uploading all of their coverage on every commit. Keys available are `flag_coverage_not_uploaded_behavior` and `carryforward_behavior`."
   },
   "coverage.status.project": {
-    "desc": "Title of the project status check. Using `default` will set title to blank"
-  },
-  "coverage.status.project": {
     "desc": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
   },
   "coverage.status.project.target": {
@@ -258,9 +255,6 @@
     "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
   },
   "coverage.status.patch": {
-    "desc": "Title of the patch status check. Using `default` will set title to blank"
-  },
-  "coverage.status.patch": {
     "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
   },
   "coverage.status.patch.target": {
@@ -292,9 +286,6 @@
   },
   "coverage.status.patch.flag_coverage_not_uploaded_behavior": {
     "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
-  },
-  "coverage.status.changes": {
-    "desc": "Contains configuration for the changes status check."
   },
   "coverage.status.changes.flags": {
     "desc": "A list of user defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
