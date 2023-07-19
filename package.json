@@ -2,6 +2,11 @@
   "name": "codecov",
   "displayName": "Codecov",
   "publisher": "codecov",
+  "activationEvents": [
+    "onInstall",
+    "onUpdate"
+  ],
+  "icon": "./icons/codecov.png",
   "description": "Codecov's official extension for Visual Studio Code, it helps with setup and configuration.",
   "version": "0.0.1",
   "repository": "https://github.com/codecov/vscode",
@@ -21,6 +26,49 @@
     ]
   },
   "contributes": {
+    "walkthroughs": [
+      {
+        "id": "codecov.gettingStarted",
+        "title": "Getting Started with Codecov",
+        "description": "How to make the most of Codecov in VS Code.",
+        "steps": [
+          {
+            "id": "welcometocodecov",
+            "title": "Welcome to Codecov",
+            "description": "You did it! You've installed Codecov. Now let's get you set up.",
+            "media": {
+              "image": "media/placeholder-welcome.jpg",
+              "altText": "Placeholder image"
+            }
+          },
+          {
+            "id": "repositorysetup",
+            "title": "Repository Setup",
+            "description": "Direct the user to the UI / IDE to explain setting up their CI/CD, link to docs for it?",
+            "media": {
+              "markdown": "media/welcome.md"
+            }
+          },
+          {
+            "id": "settinguptheyamlfile",
+            "title": "Setting Up the YAML File",
+            "description": "Explain setting up a new file, link to reference docs, explain the check server validation button.",
+            "media": {
+              "image": "media/placeholder-welcome.jpg",
+              "altText": "Placeholder image"
+            }
+          },
+          {
+            "id": "usingcodecov",
+            "title": "Using Codecov",
+            "description": "Explain how to know when it's configured correctly and start using Codecov!",
+            "media": {
+              "markdown": "media/welcome.md"
+            }
+          }
+        ]
+      }
+    ],
     "yamlValidation": [
       {
         "url": "./schemas/codecov.json",
@@ -69,7 +117,7 @@
     "commands": [
       {
         "command": "codecov.validate",
-        "title": "Validate current file for Codecov configuration",
+        "title": "Codecov: Validate current file for Codecov configuration",
         "icon": {
           "light": "./icons/codecov-light.png",
           "dark": "./icons/codecov-dark.png"
