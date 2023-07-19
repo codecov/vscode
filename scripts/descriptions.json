@@ -1,6 +1,6 @@
 {
   "codecov.url": {
-    "desc": "A url you want to send notifications too. More info: https://docs.codecov.com/docs/notifications#standard-notification-fields"
+    "desc": "A url you want to send notifications too. [More info] (https://docs.codecov.com/docs/notifications#standard-notification-fields)
   },
   "codecov.token": {
     "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
