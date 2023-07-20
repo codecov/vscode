@@ -56,6 +56,16 @@ def get_data(key, location):
     location.append(key)
     key = ".".join(location)
 
+    # uncomment to find missing keys
+    # if len(list(filter(lambda x: "[any]" in x, location))):
+    #     if key not in descriptions:
+    #                     print(
+    #                         """ "%s": {
+    #             "desc": ""
+    #           },"""
+    #                         % key,
+    #                     )
+
     try:
         return descriptions[key]
     except KeyError:
