@@ -1,51 +1,51 @@
 {
   "codecov.url": {
-    "desc": "A url you want to send notifications too. More info: https://docs.codecov.com/docs/notifications#standard-notification-fields"
+    "desc": "A URL you want to send notifications to. [More information](https://docs.codecov.com/docs/notifications#standard-notification-fields)."
   },
   "codecov.token": {
-    "desc": "The repository upload token. More info: https://docs.codecov.com/docs/codecov-uploader#upload-token"
+    "desc": "The repository upload token. [More information](https://docs.codecov.com/docs/codecov-uploader#upload-token)."
   },
   "codecov.slug": {
     "desc": "Self Hosted only - specify a slug manually"
   },
   "codecov.bot": {
-    "desc": "The username you want to use for Codecov operations. More info: https://docs.codecov.com/docs/team-bot"
+    "desc": "The username you want to use for Codecov operations. [More information](https://docs.codecov.com/docs/team-bot)."
   },
   "codecov.branch": {
-    "desc": "Specify a branch manually in your yaml"
+    "desc": "Specify a branch manually in your YAML"
   },
   "codecov.ci": {
-    "desc": "Additional CI provider URLs you want Codecov to recognize. More info: https://docs.codecov.com/docs/detecting-ci-services"
+    "desc": "Additional CI provider URLs you want Codecov to recognize. [More information](https://docs.codecov.com/docs/detecting-ci-services)."
   },
   "codecov.assume_all_flags": {
     "desc": "Deprecated"
   },
   "codecov.strict_yaml_branch": {
-    "desc": "Specify a branch you want Codecov to always only read the YAML from. More info: https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes"
+    "desc": "Specify a branch you want Codecov to always only read the YAML from. [More information](https://docs.codecov.io/docs/codecov-yaml#section-restricting-changes)."
   },
   "codecov.max_report_age": {
-    "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by codecov. More info: https://docs.codecov.io/docs/codecov-yaml#section-expired-reports"
+    "desc": "The age you want coverage reports to expire at, or if you want to disable this check. Expired reports will not be processed by CodeCov. [More information](https://docs.codecov.io/docs/codecov-yaml#section-expired-reports)."
   },
   "codecov.disable_default_path_fixes": {
-    "desc": "Should Codecov's default path fixes be disabled. More info: https://docs.codecov.io/docs/fixing-paths. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Should Codecov's default path fixes be disabled? [More information](https://docs.codecov.io/docs/fixing-paths). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.require_ci_to_pass": {
-    "desc": "Should Codecov wait for all other statuses to pass before sending its status. Enum: True, False,  yes,  no,  on,  off"
+    "desc": "Should Codecov wait for all other statuses to pass before sending its status? Options include: 'True', 'False', 'yes', 'no', 'on', 'off'"
   },
   "codecov.allow_coverage_offsets": {
-    "desc": "Codecov will calculate a coverage diff based on last coverage found and the diff to the base commit. More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Codecov will calculate a coverage diff based on the last coverage found and the diff to the base commit. [More information](https://.codecov.com//comparing-commits#comparing-pull-request-base-reports). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.allow_pseudo_compare": {
-    "desc": "Allow Codecov to find an alternative base if base of comparison has no coverage. More info: https://docs.codecov.com/docs/comparing-commits#comparing-pull-request-base-reports. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Allow Codecov to find an alternative base if the base of comparison has no coverage. [More information](https://.codecov.com//comparing-commits#comparing-pull-request-base-reports). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.archive.uploads": {
-    "desc": "Diasble Codecov cloud report archiving. More info: https://docs.codecov.com/v4.6/docs/codecovyml-reference#codecov-cloud-report-archiving. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Disable Codecov cloud report archiving? [More information](https://.codecov.com/v4.6//codecovyml-reference#codecov-cloud-report-archiving). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.archive": {
     "desc": "Configure cloud report archiving."
   },
   "codecov.notify.after_n_builds": {
-    "desc": "How many uploaded reports Codecov should wait to receive before sending statuses. More info: https://docs.codecov.io/docs/notifications#section-preventing-notifications-until-after-n-builds."
+    "desc": "How many uploaded reports Codecov should wait to receive before sending statuses? [More information](https://.codecov.io//notifications#section-preventing-notifications-until-after-n-builds)."
   },
   "codecov.notify.countdown": {
     "desc": "Deprecated"
@@ -54,10 +54,10 @@
     "desc": "Deprecated"
   },
   "codecov.notify.wait_for_ci": {
-    "desc": "Wait for CI to finish to send notifictionas. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovnotifywait_for_ci. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Wait for CI to finish sending notifications? [More information](https://.codecov.com//codecovyml-reference#codecovnotifywait_for_ci). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.notify.require_ci_to_pass": {
-    "desc": "Wait for all CI statuses to pass. More info: https://docs.codecov.com/docs/codecovyml-reference#codecovrequire_ci_to_pass. Enum: True,  False,  yes,  no,  on,  off"
+    "desc": "Wait for all CI statuses to pass? [More information](https://.codecov.com//codecovyml-reference#codecovrequire_ci_to_pass). Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "codecov.notify": {
     "desc": "Configure how Codecov sends a PR comment"
@@ -81,13 +81,13 @@
     "desc": "Deprecated"
   },
   "codecov": {
-    "desc": "Configure general codecov settings. More info: https://docs.codecov.com/docs/codecov-yaml"
+    "desc": "Configure general CodeCov settings. [More information](https://.codecov.com//codecov-yaml)."
   },
   "coverage.precision": {
-    "desc": "What precision do you want the coverage value to be. More info: https://docs.codecov.com/docs/codecovyml-reference#coverageprecision"
+    "desc": "What precision do you want the coverage value to be? [More information](https://.codecov.com//codecovyml-reference#coverageprecision)."
   },
   "coverage.round": {
-    "desc": "Configure how you want Codecov to round your coverage numbers. Enum: down,  up,  nearest"
+    "desc": "Configure how you want Codecov to round your coverage numbers. Options include: 'down', 'up', 'nearest'."
   },
   "coverage.range": {
     "desc": "Configure how you want Codecov to color your coverage. Coverage below the first number will be red, coverage between each number yellow, and coverage above the second number will be green. Format: xx...yy "
@@ -126,43 +126,43 @@
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
   "coverage.notify.slack.threshold": {
-    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
+    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise, it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.slack.only_pulls": {
     "desc": "True / False binary to specify if you only want notifications to fire on pull requests (vs. individual commits on the branch). Default is `false`, which will notify on all new commits."
   },
   "coverage.notify.slack.flags": {
-    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
+    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://.codecov.com//flags). Add a new, indented line for each flag. Regular expressions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.slack.base": {
-    "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
+    "desc": "The base commit type to which you would like to send notifications. Options include: 'parent', 'pr', and 'auto'. parent: compare the commit being notified on, to its direct parent. 'pr': compare the commit being notified on, to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
   "coverage.notify.slack.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.slack": {
-    "desc": "This is the path for Slack notifications to fire. Below \"slack:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Slack notification docs](https://docs.codecov.com/docs/notifications#slack)"
+    "desc": "This is the path for Slack notifications to fire. Below \"slack:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [Slack notification](https://.codecov.com//notifications#slack)"
   },
   "coverage.notify.gitter.url": {
-    "desc": "Used to store the Gitter hooks URL associated with your Gitter notifier: \"https://webhooks.gitter.im/e/9d1957r0a481787c756z\""
+    "desc": "Used to store the Gitter hooks URL associated with your Gitter notifier: \"https://webhooks.gitter.im/e/9d1957r0a481787c756z\"
   },
   "coverage.notify.gitter.branches": {
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
   "coverage.notify.gitter.threshold": {
-    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
+    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise, it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.gitter.flags": {
-    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular experessions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
+    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://.codecov.com//flags). Add a new, indented line for each flag. Regular expressions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.gitter.base": {
-    "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
+    "desc": "The base commit type to which you would like to send notifications. Options include: 'parent', 'pr', and 'auto'. parent: compare the commit being notified on, to its direct parent. 'pr': compare the commit being notified on, to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
   "coverage.notify.gitter.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.gitter": {
-    "desc": "This is the root for Gitter notifications to fire. Below \"gitter:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [Gitter notification docs](https://docs.codecov.com/docs/notifications#gitter)"
+    "desc": "This is the root for Gitter notifications to fire. Below \"gitter:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [Gitter notification ](https://.codecov.com//notifications#gitter)"
   },
   "coverage.notify.webhook.url": {
     "desc": "Used to store the generalized webhook URL associated with your notifier"
@@ -171,19 +171,19 @@
     "desc": "Used to store the branch(es) that will report code coverage. Defaults to all branches. Each new branch is a new indented line"
   },
   "coverage.notify.webhook.threshold": {
-    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
+    "desc": "The coverage threshold on which you would like to send a notification. If the coverage changes by more than the amount in the threshold field, a notification will be sent, otherwise, it will not. Default to `None`, which means that notifications will always be sent regardless of coverage change amount."
   },
   "coverage.notify.webhook.flags": {
-    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://docs.codecov.com/docs/flags). Add a new, indented line for each flag. Regular expressions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
+    "desc": "Specify the flags for which you would like notifications to be sent. Defaults to all flags. [Read more about flags](https://.codecov.com//flags). Add a new, indented line for each flag. Regular expressions are permitted with the pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.notify.webhook.base": {
-    "desc": "The base commit type to which you would like to send notifications. Options are 'parent','pr', and 'auto'. parent: compare the commit being notified on to its direct parent. 'pr': compare the commit being notified on to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
+    "desc": "The base commit type to which you would like to send notifications. Options include: 'parent', 'pr', and 'auto'. parent: compare the commit being notified on, to its direct parent. 'pr': compare the commit being notified on, to the base of a PR if the commit is in a PR. 'auto': automatically choose the appropriate comparison. If the commit being notified on is in a PR, pr will be used, otherwise parent will be used. This is the default."
   },
   "coverage.notify.webhook.paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
   "coverage.notify.webhook": {
-    "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below \"webhook:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags and Paths. [General notification docs](https://docs.codecov.com/docs/notifications#standard-notification-fields)"
+    "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below \"webhook:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [General notification ](https://.codecov.com//notifications#standard-notification-fields)"
   },
   "coverage.notify.email.layout": {
     "desc": "Deprecated"
@@ -210,175 +210,175 @@
     "desc": "Deprecated"
   },
   "coverage.notify": {
-    "desc": "A collection of notification tools for sending coverage data to services outside of Git. Out of the box tools are Slack and Gitter, or you can make your own wehbook. Available keys are slack, gitter, webhook, and after_n_builds. [Read about Codecov notifications here](https://docs.codecov.com/docs/notifications)."
+    "desc": "A collection of notification tools for sending coverage data to services outside of Git. Out-of-the-box tools are Slack and Gitter, or you can make your own webhook. Available keys are slack, gitter, webhook, and after_n_builds. [Read about Codecov notifications here](https://.codecov.com//notifications)."
   },
   "coverage.status.default_rules.flag_coverage_not_uploaded_behavior": {
-    "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. This includes status checks where flags have carriedforward coverage (since coverage was no newly uploaded), as well as flags for which coverage is missing entirely. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options are a.) include: (default) All the status checks defined in the YAML file will be processed and sent as normal b.) exclude: Status checks that haven't newly uploaded any flag coverage will not be sent c.) pass: Status checks that haven't newly uploaded any flag coverage will be passed automatically."
+    "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. This includes status checks where flags have carried forward coverage (since coverage was not newly uploaded), as well as flags for which coverage is missing entirely. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options include: a.) 'include': (default) All the status checks defined in the YAML file will be processed and sent as normal b.) 'exclude': Status checks that haven't newly uploaded any flag coverage will not be sent c.) 'pass': Status checks that haven't newly uploaded any flag coverage will be passed automatically."
   },
   "coverage.status.default_rules.carryforward_behavior": {
-    "desc": "Determines how we handle status checks for which flags that were carried forward. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options are a.) include: (default) All the status checks defined in the YAML file will be processed and sent as normal b.) exclude: Status checks that carried forward coverage will not be included c.) pass: Status checks that have carried forward coverage will pass automatically."
+    "desc": "Determines how we handle status checks for which flags that were carried forward. This is useful if, for example, you're working on a project in a monorepo and don't want to see status checks related to other projects. Note that this only applies to status checks that specify flags. If there are no flags on a check, the status check will be processed as usual.  Options include: a.) 'include': (default) All the status checks defined in the YAML file will be processed and sent as normal b.) 'exclude': Status checks that carried forward coverage will not be included c.) 'pass': Status checks that have carried forward coverage will pass automatically."
   },
   "coverage.status.default_rules": {
     "desc": "A path of the `status` configuration that provides advanced configuration for repos not uploading all of their coverage on every commit. Keys available are `flag_coverage_not_uploaded_behavior` and `carryforward_behavior`."
   },
   "coverage.status.project": {
-    "desc": "Title of the project status check. Using `default` will set title to blank"
+    "desc": "Title of the project status check. Using `default` will set the title to blank"
   },
   "coverage.status.project": {
     "desc": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
   },
   "coverage.status.project.target": {
-    "desc": "Set the project status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
+    "desc": "Set the project status check to a number (80), percent (80%), or `auto`. This specifies the minimum coverage number accepted by this project status check. Setting to `auto` will compare coverage against the BASE commit."
   },
   "coverage.status.project.threshold": {
     "desc": "Allow coverage to drop by x% below the target and still pass the status check."
   },
   "coverage.status.project.flags": {
-    "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
+    "desc": "A list of user-defined Flags to use for the status check. The combined coverage from those flags will be reported."
   },
   "coverage.status.project.branches": {
     "desc": "A list of the branches that, when used, will trigger this status."
   },
   "coverage.status.project.if_ci_failed": {
-    "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
+    "desc": "Options include: `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
   },
   "coverage.status.project.if_not_found": {
-    "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
+    "desc": "Options include: `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
   },
   "coverage.status.project.measurement": {
-    "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
+    "desc": "Specify the type of coverage measurement. Options include: `line`, `statement`, `branch`, `method`, `complexity`"
   },
   "coverage.status.project.removed_code_behavior": {
-    "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
+    "desc": "Specify the behavior if coverage drops due to code removal. Options include: `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. [More details](https://.codecov.com//commit-status#removed_code_behavior)"
   },
   "coverage.status.project.paths": {
     "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
   },
   "coverage.status.project.flag_coverage_not_uploaded_behavior": {
-    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
+    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options include: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
   "coverage.status.patch": {
-    "desc": "Title of the patch status check. Using `default` will set title to blank"
+    "desc": "Title of the patch status check. Using `default` will set the title to blank"
   },
   "coverage.status.patch": {
     "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
   },
   "coverage.status.patch.target": {
-    "desc": "Set the patch status check to a number (80), percent (80%) or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
+    "desc": "Set the patch status check to a number (80), percent (80%), or `auto`. This specifies the minimum coverage number accepted by this patch status check. Setting to `auto` will compare coverage against the BASE commit."
   },
   "coverage.status.patch.threshold": {
     "desc": "Allow coverage to drop by x% below the target and still pass the status check."
   },
   "coverage.status.patch.flags": {
-    "desc": "A list of user defined Flags to use for the status check. The combined coverage from those flags will be reported."
+    "desc": "A list of user-defined Flags to use for the status check. The combined coverage from those flags will be reported."
   },
   "coverage.status.patch.branches": {
     "desc": "A list of the branches that, when used, will trigger this status."
   },
   "coverage.status.patch.if_ci_failed": {
-    "desc": "Options are `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
+    "desc": "Options include: `error` (default) and `success`. `error` will set the Codecov status to success only if the CI is also successful. `success` will set the Codecov status to success even if CI fails"
   },
   "coverage.status.patch.if_not_found": {
-    "desc": "Options are `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
+    "desc": "Options include: `success` (default) and `failure`. `success` will pass if there is no report for the HEAD commit. Use this on commits/PRs where you won't be uploading coverage but still want Codecov status checks to pass. `error` will fail if there is no report for the HEAD commit."
   },
   "coverage.status.patch.measurement": {
-    "desc": "Specify the type of coverage measurement. Options are `line`, `statement`, `branch`, `method`, `complexity`"
+    "desc": "Specify the type of coverage measurement. Options include: `line`, `statement`, `branch`, `method`, `complexity`"
   },
   "coverage.status.patch.removed_code_behavior": {
-    "desc": "Specify the behavior if coverage drops due to code removal. Options are `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://docs.codecov.com/docs/commit-status#removed_code_behavior for more details."
+    "desc": "Specify the behavior if coverage drops due to code removal. Options include: `removals_only`, `adjust_base`, `fully_covered_patch`, `off`, and `False`. See https://.codecov.com//commit-status#removed_code_behavior for more details."
   },
   "coverage.status.patch.paths": {
     "desc": "Similar to `flags`, a list of paths and/or regular expressions to use for the status check. The combined coverage from files that match will be reported."
   },
   "coverage.status.patch.flag_coverage_not_uploaded_behavior": {
-    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options are: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. For information see https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
+    "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options include: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
   "coverage.status.changes": {
     "desc": "Contains configuration for the changes status check."
   },
   "coverage.status.changes.flags": {
-    "desc": "A list of user defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
+    "desc": "A list of user-defined Flags to use for the changes check. The combined coverage from those flags will be reported. Flag names must match pattern: ^[\\w\\.\\-]{1,45}$"
   },
   "coverage.status.changes.base": {
-    "desc": "[Deprecated] Base picking approach to use for changes statues. Options: parent, pr, auto. It is recommended to use Codecov CLI's base picking feature instead: https://docs.codecov.com/docs/cli-options#pr-base-picking"
+    "desc": "[Deprecated] Base picking approach to use for changes statues. Options include: 'parent', 'pr', 'auto'. It is recommended to use [Codecov CLI's base picking feature](https://.codecov.com//cli-options#pr-base-picking) instead."
   },
   "coverage.status.changes.branches": {
     "desc": "The branches for which the changes status will be active. Nullable."
   },
   "coverage.status.changes.if_ci_failed": {
-    "desc": "The status to send if CI fails. Options include: success, failure. On error Codecov will on set a passing status if CI passes, on succes Codecov will set the status to success even if CI fails."
+    "desc": "The status to send if CI fails. Options include: 'success', 'failure'. On error Codecov will on set a passing status if CI passes, on success Codecov will set the status to success even if CI fails."
   },
   "coverage.status.changes.if_not_found": {
-    "desc": "The status to send if there is no report for the head. Options: failure, success. failure: the status will fail if there is no report for the head. success: the status will pass if there is no report for the head. Use this on commits / PRs where you won't be uploading coverage but still want codecov status checks to pass."
+    "desc": "The status to send if there is no report for the head. Options include: 'failure', 'success'. 'failure': the status will fail if there is no report for the head. 'success': the status will pass if there is no report for the head. Use this on commits / PRs where you won't be uploading coverage but still want codecov status checks to pass."
   },
   "coverage.status.changes.removed_code_behavior": {
-    "desc": "These behaviors allows users to specify what should happen to the project status in case changes causes overall coverage to drop, but are part of good development practices. Options include: removals_only, adjust_base, fully_covered_patch, off, False. More information: https://docs.codecov.com/docs/commit-status#removed_code_behavior"
+    "desc": "These behaviors allow users to specify what should happen to the project status in case changes causes overall coverage to drop, but are part of good development practices. Options include: 'removals_only', 'adjust_base', 'fully_covered_patch', 'off', 'False'. [More information](https://.codecov.com//commit-status#removed_code_behavior)"
   },
   "coverage.status.changes.paths": {
-    "desc": "Paths to consider when determining the status result. More information: https://docs.codecov.com/docs/commit-status#paths"
+    "desc": "Paths to consider when determining the status result. [More information](https://.codecov.com//commit-status#paths)"
   },
   "coverage.status.changes.flag_coverage_not_uploaded_behavior": {
-    "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options: include,  exclude,  pass. More information: https://docs.codecov.com/docs/commit-status#flag_coverage_not_uploaded_behavior"
+    "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options include: 'include', 'exclude', 'pass'. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
   "coverage.status.changes": {
-    "desc": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. More information: https://docs.codecov.com/docs/commit-status#changes-status"
+    "desc": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. [More information](https://.codecov.com//commit-status#changes-status)"
   },
   "coverage.status": {
-    "desc": "Configuration for various status checks supported in Codecov. Useful for blocking Pull Requests that don't meet a particular coverage threshold. More information: https://docs.codecov.com/docs/commit-status"
+    "desc": "Configuration for various status checks supported in Codecov. Useful for blocking Pull Requests that don't meet a particular coverage threshold. [More information](https://.codecov.com//commit-status)"
   },
   "coverage": {
-    "desc": "Configuration options that determine how Codecov calulates and reports on code coverage metrics."
+    "desc": "Configuration options that determine how Codecov calculates and reports on code coverage metrics."
   },
   "parsers.go.partials_as_hits": {
-    "desc": "Count partial coverage as hits for the Golang language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
+    "desc": "Count partial coverage as hits for the Golang language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.go": {
-    "desc": "Configruation options for Codecov's Golang coverage parser."
+    "desc": "Configuration options for Codecov's Golang coverage parser."
   },
   "parsers.javascript.enable_partials": {
-    "desc": "Count partial coverage as hits for the JavaScript language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
+    "desc": "Count partial coverage as hits for the JavaScript language. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.javascript": {
-    "desc": "Configruation options for Codecov's JavaScript coverage parser."
+    "desc": "Configuration options for Codecov's JavaScript coverage parser."
   },
   "parsers.gcov.branch_detection.conditional": {
-    "desc": "Count conditional coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
+    "desc": "Count conditional coverage lines toward the coverage total when using gcov. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.gcov.branch_detection.loop": {
-    "desc": "Count loop coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
+    "desc": "Count loop coverage lines toward the coverage total when using gcov. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.gcov.branch_detection.method": {
-    "desc": "Count method coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
+    "desc": "Count method coverage lines toward the coverage total when using gcov. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.gcov.branch_detection.macro": {
-    "desc": "Count macro coverage lines toward the coverage total when using gcov. Options include: True, False, yes, no, on, off"
+    "desc": "Count macro coverage lines toward the coverage total when using gcov. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.gcov.branch_detection": {
-    "desc": "Controls how Codecov parses branch coverage in gcov reports. The coverage must exist in the uploaded report for us to parse it. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersgcov"
+    "desc": "Controls how Codecov parses branch coverage in gcov reports. The coverage must exist in the uploaded report for us to parse it. [More information](https://.codecov.com//codecovyml-reference#parsersgcov)"
   },
   "parsers.gcov": {
-    "desc": "Configuration options for the gcov coverage parser. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersgcov"
+    "desc": "Configuration options for the gcov coverage parser. [More information](https://.codecov.com/docs/codecovyml-reference#parsersgcov)"
   },
   "parsers.jacoco.partials_as_hits": {
-    "desc": "Count partial coverage as hits for Jacoco coverage reports. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options: True, False, yes, no, on, off"
+    "desc": "Count partial coverage as hits for Jacoco coverage reports. Useful to enable if Codecov is reporting lower coverage than your local reporting tool. Options include: 'True', 'False', 'yes', 'no', 'on', 'off'."
   },
   "parsers.jacoco": {
-    "desc": "Configuration options for the gcov coverage parser. More information: https://docs.codecov.com/docs/codecovyml-reference#parsersjacoco"
+    "desc": "Configuration options for the gcov coverage parser. [More information](https://docs.codecov.com/docs/codecovyml-reference#parsersjacoco)"
   },
   "parsers": {
-    "desc": "Configuration settings for Codecov various language specific test coverage parsers. More info: https://docs.codecov.com/docs/codecovyml-reference#parsers"
+    "desc": "Configuration settings for Codecov various language-specific test coverage parsers. [More information:](https://docs.codecov.com/docs/codecovyml-reference#parsers)"
   },
   "ignore": {
-    "desc": "File paths for Codecov to ignore when processing coverage reports. More information: https://docs.codecov.com/docs/ignoring-paths"
+    "desc": "File paths for Codecov to ignore when processing coverage reports. [More information](https://docs.codecov.com/docs/ignoring-paths)"
   },
   "fixes": {
-    "desc": "A list of path fixes that Codecov applies to uploaded coverage reports. Before using path fixing, reading the docs is greatly encouraged: https://docs.codecov.com/docs/fixing-paths"
+    "desc": "A list of path fixes that Codecov applies to uploaded coverage reports. Before using path fixing, [reading the documentation](https://docs.codecov.com/docs/fixing-paths) is greatly encouraged."
   },
   "flags": {
-    "desc": "A list of flags Codecov will apply in order to segment code coverage. Rules for flag names: min length: 1, max length: 45, pattern: ^[\\w\\.\\-]+$. Before using flags, reading the docs is greatly encouraged: https://docs.codecov.com/docs/flags"
+    "desc": "A list of flags Codecov will apply in order to segment code coverage. Rules for flag names: min length: 1, max length: 45, pattern: ^[\\w\\.\\-]+$. Before using flags, [reading the documentation](https://docs.codecov.com/docs/flags) is greatly encouraged."
   },
   "flags.carryforward_mode": {
-    "desc": "Specified whether a flag should carry its coverage forward to future commits. Carryforward flags is an advanced feature, and reading the documentation is recommended: https://docs.codecov.com/docs/flags#carryforward-flags"
+    "desc": "Specified whether a flag should carry its coverage forward to future commits. Carryforward flags is an advanced feature, and [reading the documentation]( https://docs.codecov.com/docs/flags#carryforward-flags) is recommended."
   },
   "flags.ignore": {
     "desc": "Ignore coverage for specific lines of code. You can provide a comma-separated list of line ranges or individual line numbers to be ignored."
@@ -498,12 +498,12 @@
     "desc": "Grouping attributes allow you to categorize your code coverage data based on specific criteria. These attributes can be applied to files, directories, or other relevant components of your codebase. Grouping attributes provide a way to aggregate and filter coverage information, enabling you to gain insights into different aspects of your codebase's test coverage."
   },
   "profiling.critical_files_paths": {
-    "desc": "You can supply any of the following as an element of critical_files_paths: 1.The fully qualified path to the file relative to the root of the repository, 2. A path containing globs. 3. A regular expression."
+    "desc": "You can supply any of the following as an element of critical_files_paths: 1. The fully qualified path to the file relative to the root of the repository, 2. A path containing globs. 3. A regular expression."
   },
   "profiling": {
     "desc": "Impact Analysis requires a profiling token used to identify your repository and authenticate API requests. You can find your token in your repo settings page."
   },
   "beta_groups": {
-    "desc": "To see Impacted Entrypoints in your pull request comments, 'betaprofiling' must be added to the comment.layout section of your codecov.yml."
+    "desc": "To see Impacted Entry points in your pull request comments, 'betaprofiling' must be added to the comment.layout section of your codecov.yml."
   }
 }
