@@ -361,7 +361,6 @@ def recurse(value):
         return value
 
 
-# todo needs to convert anyof list to type items, handle custom coreases correctly
 def format(schema):
     formatted = recurse(schema)
     formatted = modify_schema(formatted)
