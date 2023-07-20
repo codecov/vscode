@@ -96,13 +96,17 @@ def modify_type(dictionary, parent_node="unknown"):
                     values_rules = modified["valuesrules"]["properties"]
 
                     values_rules = recurse(values_rules)
-                    values_rules = modify_schema(values_rules, parent_node)
+                    values_rules = modify_schema(values_rules, parent_node, True)
                     values_rules = modify_type(values_rules, parent_node)
 
                     del modified["valuesrules"]
                     del modified["keysrules"]
 
-                    modified["patternProperties"] = values_rules
+                    modified["additionalProperties"] = {
+                        "type": "object",
+                        "properties": values_rules,
+                        "additionalProperties": False,
+                    }
                     modified["unevaluatedProperties"] = False
 
             # if type is array, move properties to items
@@ -197,14 +201,18 @@ def modify_type(dictionary, parent_node="unknown"):
                         values_rules = modified["valuesrules"]["properties"]
 
                         values_rules = recurse(values_rules)
-                        values_rules = modify_schema(values_rules, parent_node)
+                        values_rules = modify_schema(values_rules, parent_node, True)
                         values_rules = modify_type(values_rules, parent_node)
 
                         del modified["valuesrules"]
                         del modified["keysrules"]
 
-                        modified["patternProperties"] = values_rules
-                        modified["unevaluatedProperties"] = False
+                        config["additionalProperties"] = {
+                            "type": "object",
+                            "properties": values_rules,
+                            "additionalProperties": False,
+                        }
+                        config["unevaluatedProperties"] = False
 
                     formatted_one_of = recurse(config)
                     formatted_one_of = modify_schema(formatted_one_of, parent_node)
@@ -238,14 +246,18 @@ def modify_type(dictionary, parent_node="unknown"):
                         values_rules = modified["valuesrules"]["properties"]
 
                         values_rules = recurse(values_rules)
-                        values_rules = modify_schema(values_rules, parent_node)
+                        values_rules = modify_schema(values_rules, parent_node, True)
                         values_rules = modify_type(values_rules, parent_node)
 
                         del modified["valuesrules"]
                         del modified["keysrules"]
 
-                        values_rules["patternProperties"] = values_rules
-                        values_rules["unevaluatedProperties"] = False
+                        modified["additionalProperties"] = {
+                            "type": "object",
+                            "properties": values_rules,
+                            "additionalProperties": False,
+                        }
+                        modified["unevaluatedProperties"] = False
 
                     formatted_any_of = recurse(config)
                     formatted_any_of = modify_schema(formatted_any_of, parent_node)
@@ -271,16 +283,22 @@ def modify_type(dictionary, parent_node="unknown"):
     return dictionary
 
 
-def modify_schema(schema, parent_node="root"):
+def modify_schema(schema, parent_node="root", parent_has_any=False):
     # print(parent_node)
 
     if isinstance(schema, dict):
         for key in schema:
+            parent_node_modifier = ""
             if isinstance(schema[key], str) or isinstance(schema[key], bool):
                 return schema
 
+            if parent_has_any == True:
+                parent_node_modifier = ".[any]"
+
+            annotate_parent_node = parent_node + parent_node_modifier
+
             modified = schema[key]
-            modified = modify_annotate(modified, key, parent_node.split("."))
+            modified = modify_annotate(modified, key, annotate_parent_node.split("."))
             modified = modify_type(modified, parent_node + "." + key)
 
             if "properties" in modified:

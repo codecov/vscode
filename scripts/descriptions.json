@@ -140,7 +140,7 @@
   "coverage.notify.slack.[any].paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
-  "coverage.notify.slack.[any]": {
+  "coverage.notify.slack": {
     "desc": "This is the path for Slack notifications to fire. Below \"slack:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [Slack notification](https://.codecov.com//notifications#slack)"
   },
   "coverage.notify.gitter.[any].url": {
@@ -161,7 +161,7 @@
   "coverage.notify.gitter.[any].paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
-  "coverage.notify.gitter.[any]": {
+  "coverage.notify.gitter": {
     "desc": "This is the root for Gitter notifications to fire. Below \"gitter:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [Gitter notification ](https://.codecov.com//notifications#gitter)"
   },
   "coverage.notify.webhook.[any].url": {
@@ -182,7 +182,7 @@
   "coverage.notify.webhook.[any].paths": {
     "desc": "Only send a notification if the specified file paths change. Augments the flags setting. Add a new, indented line for each path. If both flags and paths are specified, a notification will be triggered if files covered by the supplied flags OR paths change."
   },
-  "coverage.notify.webhook.[any]": {
+  "coverage.notify.webhook": {
     "desc": "This is the root for making a webhook for notifications outside of Slack or Gitter. Below \"webhook:\" start your configuration with an indented \"default:\". Available keys after \"default:\" are URL, Threshold, Only_pulls, Branches, Flags, and Paths. [General notification ](https://.codecov.com//notifications#standard-notification-fields)"
   },
   "coverage.notify.email.[any].layout": {
@@ -206,7 +206,7 @@
   "coverage.notify.email.[any].paths": {
     "desc": "Deprecated"
   },
-  "coverage.notify.email.[any]": {
+  "coverage.notify.email": {
     "desc": "Deprecated"
   },
   "coverage.notify": {
@@ -221,7 +221,7 @@
   "coverage.status.default_rules": {
     "desc": "A path of the `status` configuration that provides advanced configuration for repos not uploading all of their coverage on every commit. Keys available are `flag_coverage_not_uploaded_behavior` and `carryforward_behavior`."
   },
-  "coverage.status.project.[any]": {
+  "coverage.status.project": {
     "desc": "Contains the configuration for a given project status check. Setting to False will disable the project status check."
   },
   "coverage.status.project.[any].target": {
@@ -254,7 +254,7 @@
   "coverage.status.project.[any].flag_coverage_not_uploaded_behavior": {
     "desc": "Determines how to handle status checks for which no flag coverage (including carryforward flags) has been newly uploaded on a commit. Options include: `include`: (default) All the status checks defined in the YAML file will be processed and sent as normal. `exclude`: Status checks that haven't newly uploaded any flag coverage will not be sent. `pass`: Status checks that haven't newly uploaded any flag coverage will be passed automatically. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
-  "coverage.status.patch.[any]": {
+  "coverage.status.patch": {
     "desc": "Contains the configuration for a given patch status check. Setting to False will disable the patch status check."
   },
   "coverage.status.patch.[any].target": {
@@ -311,7 +311,7 @@
   "coverage.status.changes.[any].flag_coverage_not_uploaded_behavior": {
     "desc": "Determines how we handle status checks for which no flag coverage has been newly uploaded on a commit. Options include: 'include', 'exclude', 'pass'. [More information](https://.codecov.com//commit-status#flag_coverage_not_uploaded_behavior)"
   },
-  "coverage.status.changes.[any]": {
+  "coverage.status.changes": {
     "desc": "Codecov will detect changes in coverage that are NOT included in the commit/pull diff, and report these changes as a commit status. [More information](https://.codecov.com//commit-status#changes-status)"
   },
   "coverage.status": {
