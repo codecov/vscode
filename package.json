@@ -8,16 +8,12 @@
   ],
   "icon": "./icons/codecov.png",
   "description": "Codecov's official validator extension for Visual Studio Code, it helps with setup and configuration of new repositories.",
-  "galleryBanner": {
-    "color": "#ff0077",
-    "theme": "light"
-  },
   "license": "SEE LICENSE IN LICENSE.txt",
   "homepage": "https://github.com/codecov/vscode/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/codecov/vscode/issues"
   },
-  "version": "0.0.3",
+  "version": "0.0.5",
   "repository": "https://github.com/codecov/vscode",
   "engines": {
     "vscode": "^1.75.0"
