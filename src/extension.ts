@@ -139,16 +139,6 @@ export async function startClient(
 
   context.subscriptions.push(commands.registerCommand(command, commandHandler));
 
-  // Language features
-  const yamlConfig = workspace.getConfiguration("yaml");
-
-  // default to not enforcing keyOrdering
-  if (!yamlConfig.has("keyOrdering")) {
-    workspace
-      .getConfiguration("yaml", null)
-      .update("keyOrdering", false, ConfigurationTarget.Global);
-  }
-
   const outputChannel = window.createOutputChannel("Codecov Extension");
   const clientOptions: LanguageClientOptions = {
     documentSelector: [

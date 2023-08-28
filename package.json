@@ -1,14 +1,23 @@
 {
   "name": "codecov",
-  "displayName": "Codecov",
+  "displayName": "Codecov YAML Validator",
   "publisher": "codecov",
   "activationEvents": [
     "onInstall",
     "onUpdate"
   ],
   "icon": "./icons/codecov.png",
-  "description": "Codecov's official extension for Visual Studio Code, it helps with setup and configuration.",
-  "version": "0.0.1",
+  "description": "Codecov's official validator extension for Visual Studio Code, it helps with setup and configuration of new repositories.",
+  "galleryBanner": {
+    "color": "#ff0077",
+    "theme": "light"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "homepage": "https://github.com/codecov/vscode/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/codecov/vscode/issues"
+  },
+  "version": "0.0.3",
   "repository": "https://github.com/codecov/vscode",
   "engines": {
     "vscode": "^1.75.0"
@@ -16,7 +25,6 @@
   "categories": [
     "Programming Languages",
     "Linters",
-    "Snippets",
     "Formatters"
   ],
   "main": "./dist/extension.js",
@@ -26,49 +34,6 @@
     ]
   },
   "contributes": {
-    "walkthroughs": [
-      {
-        "id": "codecov.gettingStarted",
-        "title": "Getting Started with Codecov",
-        "description": "How to make the most of Codecov in VS Code.",
-        "steps": [
-          {
-            "id": "welcometocodecov",
-            "title": "Welcome to Codecov",
-            "description": "You did it! You've installed Codecov. Now let's get you set up.",
-            "media": {
-              "image": "media/placeholder-welcome.jpg",
-              "altText": "Placeholder image"
-            }
-          },
-          {
-            "id": "repositorysetup",
-            "title": "Repository Setup",
-            "description": "Direct the user to the UI / IDE to explain setting up their CI/CD, link to docs for it?",
-            "media": {
-              "markdown": "media/welcome.md"
-            }
-          },
-          {
-            "id": "settinguptheyamlfile",
-            "title": "Setting Up the YAML File",
-            "description": "Explain setting up a new file, link to reference docs, explain the check server validation button.",
-            "media": {
-              "image": "media/placeholder-welcome.jpg",
-              "altText": "Placeholder image"
-            }
-          },
-          {
-            "id": "usingcodecov",
-            "title": "Using Codecov",
-            "description": "Explain how to know when it's configured correctly and start using Codecov!",
-            "media": {
-              "markdown": "media/welcome.md"
-            }
-          }
-        ]
-      }
-    ],
     "yamlValidation": [
       {
         "url": "./schemas/codecov.json",
@@ -137,6 +102,13 @@
       }
     }
   },
+  "configuration": {
+    "yaml.keyOrdering": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enforces alphabetical ordering of keys in mappings when set to true"
+    }
+  },
   "dependencies": {
     "axios": "^1.4.0",
     "fs-extra": "^11.1.1",
@@ -159,8 +131,8 @@
     "@types/glob": "^8.1.0",
     "@types/node": "^18.15.13",
     "@types/vscode": "^1.75.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "buffer": "^6.0.3",
     "eslint": "^8.38.0",
     "glob": "^10.2.1",
