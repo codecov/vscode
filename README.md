@@ -74,11 +74,11 @@ Get started with our Codecov VS Code extension and unlock a new level of conveni
 
 
 
-**Trouble Shooting**
+**Troubleshooting**
 
-Is the extension not working? VSCode might not be detecting Codecov files if a language matching the pattern has been set and is overriding detecting Codecov as a language provider.
+Is the extension not working? VS Code might not be detecting Codecov files if a language matching the pattern has been set and is overriding detecting Codecov as a language provider.
 
 ![How to set Codecov as the language of a Codecov config file](/media/Codecov%20+%20VSCode%20(Troubleshoot).gif)
 
 
-If validation is still not working you may need to restart VSCode. If it is still broken you can [report the issue here](https://github.com/codecov/vscode/issues)
+If validation is still not working you may need to restart VS Code. If it is still broken you can [report the issue here](https://github.com/codecov/vscode/issues)
