@@ -2330,6 +2330,33 @@
             "items": {
                 "type": "string"
             }
+        },
+        "ai_pr_review": {
+          "title": "AI PR review",
+          "type": "object",
+          "description": "Experimental. Github Only. Codecov's bot will use OpenAI's GPT4 to make review comments on your Pull Requests. Data will be sent to OpenAI.",
+          "properties": {
+            "enabled": {
+              "title": "Enabled",
+              "type": "boolean",
+              "default": "false",
+              "description": "Enable AI PR review."
+            },
+            "method": {
+              "title": "Method",
+              "type": "string",
+              "enum": [
+                "auto",
+                "label"
+              ],
+              "description": "auto: all PRs will be reviews. label: only PRs labeled with `label_name` will be reviewed."
+            },
+            "label_name": {
+              "title": "Label name",
+              "type": "string",
+              "description": "Name of the label on github that will trigger a review. Ignored if `method` is not `label`."
+            }
+          }
         }
     }
 }
