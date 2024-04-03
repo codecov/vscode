@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import axios from "axios";
 
-const ENDPOINT = "https://api.codecov.io/validate/v2?source=vscode_extension";
+const ENDPOINT = "https://api.codecov.io/validate/v2?source=vscode";
 
 export function validateAction(context: vscode.ExtensionContext) {
   const editor = vscode.window.activeTextEditor;
