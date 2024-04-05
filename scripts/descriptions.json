@@ -661,5 +661,17 @@
   },
   "profiling.grouping_attributes": {
     "desc": "Grouping attributes allow you to categorize your code coverage data based on specific criteria. These attributes can be applied to files, directories, or other relevant components of your codebase. Grouping attributes provide a way to aggregate and filter coverage information, enabling you to gain insights into different aspects of your codebase's test coverage."
+  },
+  "AI_PR_review": {
+    "desc": "Experimental. Github Only. Codecov's bot will use OpenAI's GPT4 to make review comments on your Pull Requests. Data will be sent to OpenAI."
+  },
+  "AI_PR_review.enabled": {
+    "desc": "Enable AI PR review."
+  },
+  "AI_PR_review.method": {
+    "desc": "auto: all PRs will be reviews. label: only PRs labeled with `label_name` will be reviewed."
+  },
+  "AI_PR_review.label_name": {
+    "desc": "Name of the label on github that will trigger a review. Ignored if `method` is not `label`."
   }
 }
