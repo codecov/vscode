@@ -669,7 +669,7 @@
     "desc": "Enable AI PR review."
   },
   "AI_PR_review.method": {
-    "desc": "auto: all PRs will be reviews. label: only PRs labeled with `label_name` will be reviewed."
+    "desc": "auto: all PRs will be reviewed. label: only PRs labeled with `label_name` will be reviewed."
   },
   "AI_PR_review.label_name": {
     "desc": "Name of the label on github that will trigger a review. Ignored if `method` is not `label`."
