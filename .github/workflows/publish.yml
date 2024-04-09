@@ -2,6 +2,8 @@ name: Publish extension
 on:
   release:
     types: [published]
+    branches:
+      - main
 
 jobs:
   publish:
@@ -15,7 +17,7 @@ jobs:
         node-version: 20
     - name: Install dependencies
       run: npm ci
-    - name: Create docker image for json schema generation
+    - name: Create Docker image for json schema generation
       run: make build
     - name: Generate json schema
       run: make run
