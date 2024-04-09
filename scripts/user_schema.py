@@ -479,4 +479,20 @@ schema = {
         },
     },
     "beta_groups": {"type": "list", "schema": {"type": "string"}},
+    "AI_PR_review": {
+        "type": "dict",
+        "schema": {
+            "enabled": {
+                "type": "boolean",
+                "default": "false",
+            },
+            "method": {
+                "type": "string",
+                "enum": ["auto", "label"]
+            },
+            "label_name": {
+                "type": "string",
+            }
+        }
+    }
 }

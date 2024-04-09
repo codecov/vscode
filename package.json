@@ -106,12 +106,9 @@
     }
   },
   "scripts": {
-    "clean": "rimraf out && rimraf dist",
-    "test-compile": "npm run clean && tsc -p ./ && webpack --mode development",
-    "vscode:prepublish": "npm run compile",
-    "compile": "webpack --mode none",
+    "clean": "rimraf out && rimraf dist && rimraf schemas/codecov.json",
+    "build": "webpack --mode none",
     "watch": "tsc -watch -p ./ & webpack --mode development --watch",
-    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts"
   },
   "dependencies": {
