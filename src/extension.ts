@@ -143,12 +143,15 @@ export async function startClient(
   const clientOptions: LanguageClientOptions = {
     documentSelector: [
       { scheme: "file", language: "codecov" },
+      { pattern: "**/.codecov.yml" },
       { pattern: "**/codecov.yml" },
       { pattern: "**/codecov.yaml" },
     ],
     synchronize: {
       configurationSection: "codecov",
       fileEvents: [
+        workspace.createFileSystemWatcher("**/.codecov.yml"),
+        workspace.createFileSystemWatcher(".codecov.yml"),
         workspace.createFileSystemWatcher("**/codecov.yml"),
         workspace.createFileSystemWatcher("codecov.yml"),
         workspace.createFileSystemWatcher("**/codecov.yaml"),
