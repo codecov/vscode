@@ -162,9 +162,7 @@ export function activateCoverage(context: ExtensionContext) {
     const coverageUrl = `${apiUrl}/api/v2/${provider}/${owner}/repos/${repo}/file_report/${path}`;
 
     // First try getting coverage for this branch
-    console.log("attempting to get coverage for branch:", branch);
     let error = null;
-    console.log(`${coverageUrl}?branch=${encodeURIComponent(branch)}`);
     let coverage: Coverage = await axios
       .get(`${coverageUrl}?branch=${encodeURIComponent(branch)}`, {
         headers: {
@@ -189,11 +187,7 @@ export function activateCoverage(context: ExtensionContext) {
     if (error) return;
 
     if (!coverage || !coverage.line_coverage) {
-      console.log("no coverage found for branch:", branch);
-      console.log("Attempting to get default branch coverage");
-      // No coverage for this file/branch
-      //
-      // Fallback to default branch coverage
+      // No coverage for this file/branch. Fallback to default branch coverage.
       coverage = await axios
         .get(coverageUrl, {
           headers: {
@@ -213,13 +207,9 @@ export function activateCoverage(context: ExtensionContext) {
             );
           }
         });
-    } else {
-      console.log("found coverage for branch:", branch);
     }
 
     if (!coverage || !coverage.line_coverage) return;
-
-    console.log("coverage", coverage);
 
     const coveredLines: Range[] = [];
     const partialLines: Range[] = [];
