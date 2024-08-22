@@ -18,7 +18,7 @@ import {
 import { SchemaExtensionAPI } from "../schema-extension-api";
 import { JSONSchemaCache } from "../json-schema-cache";
 
-export async function activate(
+export async function activateYAML(
   context: ExtensionContext
 ): Promise<SchemaExtensionAPI> {
   const serverModule = context.asAbsolutePath("./dist/languageserver.js");

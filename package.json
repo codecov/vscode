@@ -3,8 +3,7 @@
   "displayName": "Codecov YAML Validator",
   "publisher": "codecov",
   "activationEvents": [
-    "onInstall",
-    "onUpdate"
+    "onStartupFinished"
   ],
   "icon": "./icons/codecov.png",
   "description": "Codecov's official validator extension for Visual Studio Code, it helps with setup and configuration of new repositories.",
@@ -96,13 +95,37 @@
         },
         "editor.autoIndent": "keep"
       }
-    }
-  },
-  "configuration": {
-    "yaml.keyOrdering": {
-      "type": "boolean",
-      "default": false,
-      "description": "Enforces alphabetical ordering of keys in mappings when set to true"
+    },
+    "configuration": {
+      "title": "Codecov",
+      "properties": {
+        "codecov.coverage.enabled": {
+          "type": "boolean",
+          "default": "true",
+          "description": "Toggle Codecov line coverage decorations.",
+          "order": 0
+        },
+        "codecov.api.key": {
+          "type": "string",
+          "default": "",
+          "description": "API key for accessing the Codecov API. You can generate this in your account settings within the Codecov app.",
+          "order": 1
+        },
+        "codecov.api.gitProvider": {
+          "type": "string",
+          "default": "github",
+          "enum": ["github", "gitlab", "bitbucket"],
+          "description": "Where are your repositories hosted?",
+          "order": 2
+        },
+        "codecov.api.url": {
+          "type": "string",
+          "default": "https://api.codecov.io",
+          "format": "url",
+          "description": "If you're self-hosting Codecov, update this to point to your self-hosted API.",
+          "order": 3
+        }
+      }
     }
   },
   "scripts": {
@@ -111,6 +134,9 @@
     "watch": "tsc -watch -p ./ & webpack --mode development --watch",
     "lint": "eslint src --ext ts"
   },
+  "extensionDependencies": [
+    "vscode.git"
+  ],
   "dependencies": {
     "axios": "^1.6.2",
     "fs-extra": "^11.2.0",
