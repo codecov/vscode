@@ -1,19 +1,16 @@
 // Todo list:
 // - Create setting for auth token (DONE)
-// - parse commit and or branch for more accurate coverage: try sha -> try branch -> fallback to main
-// - refactor owner/repo extration logic and persist it
+// - parse commit and or branch for more accurate coverage: try branch -> fallback to default branch (DONE)
 // - better error messaging (token unauthorized for example) (DONE)
 //
 // Stretch goals:
-// - Cache coverage with smart refetching (e.g,. if don't have coverage for current SHA, keep trying to refetch)
-// - Traverse commit history until coverage is found
+// - Persist owner/repo names in workspace storage
+// - Cache coverage
 // - Selfhosted support (DONE)
 // - Show coverage totals somewhere
 // - maybe add codecov button to disable and/or view in codecov
-//
-// Not doing, but would be cool:
-// - gl/bb support (DONE ANYWAY)
-//
+// - gl/bb support (DONE)
+
 import {
   ExtensionContext,
   OverviewRulerLane,
@@ -133,10 +130,11 @@ export function activateCoverage(context: ExtensionContext) {
     );
 
     // TODO: pull this out to its own function and cache it in the extension workspace context
-    const gitConfig = Uri.file(
-      workspace.getWorkspaceFolder(Uri.file(activeEditor.document.fileName))
-        ?.uri.path + "/.git/config"
-    );
+    const pathToWorkspace = workspace.getWorkspaceFolder(
+      Uri.file(activeEditor.document.fileName)
+    )?.uri.path;
+
+    const gitConfig = Uri.file(`${pathToWorkspace}/.git/config`);
     const remote = await workspace.fs
       .readFile(gitConfig)
       .then((buf) => buf.toString())
@@ -146,16 +144,34 @@ export function activateCoverage(context: ExtensionContext) {
     if (!remote) return;
     const [owner, repo] = remote;
 
-    const coverage: Coverage = await axios
-      .get(
-        `${apiUrl}/api/v2/${provider}/${owner}/repos/${repo}/file_report/${path}`,
-        {
-          headers: {
-            accept: "application/json",
-            authorization: `Bearer ${apiKey}`,
-          },
-        }
-      )
+    const gitHead = Uri.file(`${pathToWorkspace}/.git/HEAD`);
+    const branch = await workspace.fs
+      .readFile(gitHead)
+      .then((buf) => buf.toString())
+      .then((string) => string.replace("ref: refs/heads/", "").slice(0, -1));
+
+    if (!branch) return;
+
+    // don't need this right now, but may be useful in the future if we want to cache coverage
+    //const gitRefFile = Uri.file(`${pathToWorkspace}/.git/refs/heads/${branch}`);
+    //const commitHash = await workspace.fs
+    //  .readFile(gitRefFile)
+    //  .then((buf) => buf.toString());
+    //if (!commitHash) return;
+
+    const coverageUrl = `${apiUrl}/api/v2/${provider}/${owner}/repos/${repo}/file_report/${path}`;
+
+    // First try getting coverage for this branch
+    console.log("attempting to get coverage for branch:", branch);
+    let error = null;
+    console.log(`${coverageUrl}?branch=${encodeURIComponent(branch)}`);
+    let coverage: Coverage = await axios
+      .get(`${coverageUrl}?branch=${encodeURIComponent(branch)}`, {
+        headers: {
+          accept: "application/json",
+          authorization: `Bearer ${apiKey}`,
+        },
+      })
       .then((response) => response.data)
       .catch((error) => {
         if (error?.response?.status >= 500) {
@@ -167,12 +183,43 @@ export function activateCoverage(context: ExtensionContext) {
             "Codecov: The provided API key is unauthorized to access this repo, double check the API key in the Codecov extension settings."
           );
         }
+        error = error;
       });
 
+    if (error) return;
+
     if (!coverage || !coverage.line_coverage) {
-      // No coverage for this file
-      return;
+      console.log("no coverage found for branch:", branch);
+      console.log("Attempting to get default branch coverage");
+      // No coverage for this file/branch
+      //
+      // Fallback to default branch coverage
+      coverage = await axios
+        .get(coverageUrl, {
+          headers: {
+            accept: "application/json",
+            authorization: `Bearer ${apiKey}`,
+          },
+        })
+        .then((response) => response.data)
+        .catch((error) => {
+          if (error?.response?.status >= 500) {
+            window.showErrorMessage(
+              "Codecov: Unable to connect to server or something went seriously wrong. Double check your API key in the Codecov extension settings"
+            );
+          } else if (error?.response.status === 401) {
+            window.showErrorMessage(
+              "Codecov: The provided API key is unauthorized to access this repo, double check the API key in the Codecov extension settings."
+            );
+          }
+        });
+    } else {
+      console.log("found coverage for branch:", branch);
     }
+
+    if (!coverage || !coverage.line_coverage) return;
+
+    console.log("coverage", coverage);
 
     const coveredLines: Range[] = [];
     const partialLines: Range[] = [];
