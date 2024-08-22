@@ -1,5 +1,6 @@
 // Todo list:
-// - Create setting for auth token (DONE)
+// - Create settings for configuring extension (DONE)
+// - Store API key in extension secrets
 // - parse commit and or branch for more accurate coverage: try branch -> fallback to default branch (DONE)
 // - better error messaging (token unauthorized for example) (DONE)
 //
@@ -17,6 +18,7 @@ import {
   Position,
   Range,
   Uri,
+  commands,
   window,
   workspace,
 } from "vscode";
@@ -62,7 +64,17 @@ const Icons = {
 } as const;
 
 export function activateCoverage(context: ExtensionContext) {
-  let timeout: NodeJS.Timeout | undefined = undefined;
+  const command = "codecov.reset.api.key";
+
+  const resetApiKeyHandler = () => {
+    context.secrets.delete("api.key");
+    updateDecorations();
+    console.log("reset api key");
+  };
+
+  context.subscriptions.push(
+    commands.registerCommand(command, resetApiKeyHandler)
+  );
 
   const lineCoveredDecoration = window.createTextEditorDecorationType({
     gutterIconPath: Icons.covered,
@@ -93,7 +105,7 @@ export function activateCoverage(context: ExtensionContext) {
     const enabled = config.get("coverage.enabled");
     if (!enabled) return;
 
-    let apiKey = config.get("api.key");
+    let apiKey = await context.secrets.get("api.key");
     let apiUrl = config.get("api.url");
     const provider = config.get("api.gitProvider");
 
@@ -114,8 +126,9 @@ export function activateCoverage(context: ExtensionContext) {
           prompt:
             "You can generate an API key in your account settings within the Codecov app.",
         });
-        if (!apiKey) return;
-        await config.update("api.key", apiKey, true);
+        if (apiKey) await context.secrets.store("api.key", apiKey);
+        updateDecorations();
+        return;
       }
     }
 
@@ -178,7 +191,7 @@ export function activateCoverage(context: ExtensionContext) {
           );
         } else if (error?.response.status === 401) {
           window.showErrorMessage(
-            "Codecov: The provided API key is unauthorized to access this repo, double check the API key in the Codecov extension settings."
+            "Codecov: The provided API key is unauthorized to access this repository."
           );
         }
         error = error;
@@ -203,7 +216,7 @@ export function activateCoverage(context: ExtensionContext) {
             );
           } else if (error?.response.status === 401) {
             window.showErrorMessage(
-              "Codecov: The provided API key is unauthorized to access this repo, double check the API key in the Codecov extension settings."
+              "Codecov: The provided API key is unauthorized to access this repository."
             );
           }
         });

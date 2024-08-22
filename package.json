@@ -82,6 +82,14 @@
           "light": "./icons/codecov-light.png",
           "dark": "./icons/codecov-dark.png"
         }
+      },
+      {
+        "command": "codecov.reset.api.key",
+        "title": "Codecov: Reset the saved API key",
+        "icon": {
+          "light": "./icons/codecov-light.png",
+          "dark": "./icons/codecov-dark.png"
+        }
       }
     ],
     "configurationDefaults": {
@@ -105,25 +113,19 @@
           "description": "Toggle Codecov line coverage decorations.",
           "order": 0
         },
-        "codecov.api.key": {
-          "type": "string",
-          "default": "",
-          "description": "API key for accessing the Codecov API. You can generate this in your account settings within the Codecov app.",
-          "order": 1
-        },
         "codecov.api.gitProvider": {
           "type": "string",
           "default": "github",
-          "enum": ["github", "gitlab", "bitbucket"],
+          "enum": ["github", "github_enterprise", "gitlab", "gitlab_enterprise", "bitbucket", "bitbucket_server"],
           "description": "Where are your repositories hosted?",
-          "order": 2
+          "order": 1
         },
         "codecov.api.url": {
           "type": "string",
           "default": "https://api.codecov.io",
           "format": "url",
           "description": "If you're self-hosting Codecov, update this to point to your self-hosted API.",
-          "order": 3
+          "order": 2
         }
       }
     }
