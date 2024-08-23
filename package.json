@@ -109,7 +109,7 @@
       "properties": {
         "codecov.coverage.enabled": {
           "type": "boolean",
-          "default": "true",
+          "default": "false",
           "description": "Toggle Codecov line coverage decorations.",
           "order": 0
         },

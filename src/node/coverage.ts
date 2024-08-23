@@ -1,16 +1,8 @@
-// Todo list:
-// - Create settings for configuring extension (DONE)
-// - Store API key in extension secrets
-// - parse commit and or branch for more accurate coverage: try branch -> fallback to default branch (DONE)
-// - better error messaging (token unauthorized for example) (DONE)
-//
-// Stretch goals:
+// Future goals:
 // - Persist owner/repo names in workspace storage
 // - Cache coverage
-// - Selfhosted support (DONE)
 // - Show coverage totals somewhere
-// - maybe add codecov button to disable and/or view in codecov
-// - gl/bb support (DONE)
+// - Maybe add codecov button to disable and/or view in codecov
 
 import {
   ExtensionContext,
@@ -142,7 +134,6 @@ export function activateCoverage(context: ExtensionContext) {
       workspace.asRelativePath(activeEditor.document.fileName)
     );
 
-    // TODO: pull this out to its own function and cache it in the extension workspace context
     const pathToWorkspace = workspace.getWorkspaceFolder(
       Uri.file(activeEditor.document.fileName)
     )?.uri.path;
@@ -165,7 +156,7 @@ export function activateCoverage(context: ExtensionContext) {
 
     if (!branch) return;
 
-    // don't need this right now, but may be useful in the future if we want to cache coverage
+    // Don't need this right now, but may be useful in the future if we want to cache coverage
     //const gitRefFile = Uri.file(`${pathToWorkspace}/.git/refs/heads/${branch}`);
     //const commitHash = await workspace.fs
     //  .readFile(gitRefFile)
