@@ -174,15 +174,21 @@ export function activateCoverage(context: ExtensionContext) {
         },
       })
       .then((response) => response.data)
-      .catch((error) => {
+      .catch(async (error) => {
         if (error?.response?.status >= 500) {
-          window.showErrorMessage(
-            "Codecov: Unable to connect to server or something went seriously wrong. Double check your API key in the Codecov extension settings"
+          const choice = await window.showErrorMessage(
+            "Codecov: Unable to connect to server or something went seriously wrong.",
+            "Reset your API key"
           );
+          if (choice === "Reset your API key")
+            await commands.executeCommand(command);
         } else if (error?.response.status === 401) {
-          window.showErrorMessage(
-            "Codecov: The provided API key is unauthorized to access this repository."
+          const choice = await window.showErrorMessage(
+            "Codecov: The provided API key is not authorized to access this repository.",
+            "Reset your API key"
           );
+          if (choice === "Reset your API key")
+            await commands.executeCommand(command);
         }
         error = error;
       });
@@ -198,18 +204,7 @@ export function activateCoverage(context: ExtensionContext) {
             authorization: `Bearer ${apiKey}`,
           },
         })
-        .then((response) => response.data)
-        .catch((error) => {
-          if (error?.response?.status >= 500) {
-            window.showErrorMessage(
-              "Codecov: Unable to connect to server or something went seriously wrong. Double check your API key in the Codecov extension settings"
-            );
-          } else if (error?.response.status === 401) {
-            window.showErrorMessage(
-              "Codecov: The provided API key is unauthorized to access this repository."
-            );
-          }
-        });
+        .then((response) => response.data);
     }
 
     if (!coverage || !coverage.line_coverage) return;
