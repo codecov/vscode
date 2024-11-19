@@ -21,6 +21,9 @@ def convert_value(value):
 def convert_values_dict(dictionary):
     new_dict = {}
     for key in dictionary:
+        value = dictionary[key]
+        if (value.__class__.__name__ == 'type'):
+            print('skibbidi', type(value), value)
         new_dict[key] = convert_value(dictionary[key])
     return new_dict
 
@@ -28,6 +31,9 @@ def convert_values_dict(dictionary):
 def convert_values_list(list):
     new_list = []
     for item in list:
+        value = item
+        if (value.__class__.__name__ == 'type'):
+            print('skibbidi', type(value), value)
         new_list.append(convert_value(item))
     return new_list
 
@@ -57,14 +63,14 @@ def get_data(key, location):
     key = ".".join(location)
 
     # uncomment to find missing keys
-    # if len(list(filter(lambda x: "[any]" in x, location))):
-    #     if key not in descriptions:
-    #                     print(
-    #                         """ "%s": {
-    #             "desc": ""
-    #           },"""
-    #                         % key,
-    #                     )
+    if len(list(filter(lambda x: "[any]" in x, location))):
+        if key not in descriptions:
+                        print(
+                            """ "%s": {
+                "desc": ""
+              },"""
+                            % key,
+                        )
 
     try:
         return descriptions[key]
@@ -376,7 +382,6 @@ def format(schema):
     formatted = modify_schema(formatted)
 
     return formatted
-
 
 schema = {
     "$schema": "http://json-schema.org/draft-04/schema#",
