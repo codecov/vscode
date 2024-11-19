@@ -61,7 +61,6 @@ export function activateCoverage(context: ExtensionContext) {
   const resetApiKeyHandler = () => {
     context.secrets.delete("api.key");
     updateDecorations();
-    console.log("reset api key");
   };
 
   context.subscriptions.push(
@@ -191,7 +190,7 @@ export function activateCoverage(context: ExtensionContext) {
     if (error) return;
 
     if (!coverage || !coverage.line_coverage) {
-      // No coverage for this file/branch. Fallback to default branch coverage.
+      // No coverage for this file/branch. Fall back to default branch coverage.
       coverage = await axios
         .get(coverageUrl, {
           headers: {
