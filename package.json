@@ -55,14 +55,14 @@
           "codecov.yaml",
           "codecov.yml"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./src/yaml/language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "codecov",
         "scopeName": "source.codecov",
-        "path": "./syntaxes/codecov.tmLanguage.json"
+        "path": "./src/yaml/syntaxes/codecov.tmLanguage.json"
       }
     ],
     "menus": {
