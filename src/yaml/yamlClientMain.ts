@@ -8,15 +8,15 @@ import {
   startClient,
   LanguageClientConstructor,
   RuntimeEnvironment,
-} from "../extension";
+} from "./extension";
 import {
   TransportKind,
   LanguageClientOptions,
   LanguageClient,
 } from "vscode-languageclient/node";
 
-import { SchemaExtensionAPI } from "../schema-extension-api";
-import { JSONSchemaCache } from "../json-schema-cache";
+import { SchemaExtensionAPI } from "./schema-extension-api";
+import { JSONSchemaCache } from "./json-schema-cache";
 
 export async function activateYAML(
   context: ExtensionContext
