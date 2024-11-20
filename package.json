@@ -3,8 +3,7 @@
   "displayName": "Codecov YAML Validator",
   "publisher": "codecov",
   "activationEvents": [
-    "onInstall",
-    "onUpdate"
+    "onStartupFinished"
   ],
   "icon": "./icons/codecov.png",
   "description": "Codecov's official validator extension for Visual Studio Code, it helps with setup and configuration of new repositories.",
@@ -56,14 +55,14 @@
           "codecov.yaml",
           "codecov.yml"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./src/yaml/language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "codecov",
         "scopeName": "source.codecov",
-        "path": "./syntaxes/codecov.tmLanguage.json"
+        "path": "./src/yaml/syntaxes/codecov.tmLanguage.json"
       }
     ],
     "menus": {
@@ -83,6 +82,14 @@
           "light": "./icons/codecov-light.png",
           "dark": "./icons/codecov-dark.png"
         }
+      },
+      {
+        "command": "codecov.reset.api.key",
+        "title": "Codecov: Reset the saved API key",
+        "icon": {
+          "light": "./icons/codecov-light.png",
+          "dark": "./icons/codecov-dark.png"
+        }
       }
     ],
     "configurationDefaults": {
@@ -96,13 +103,31 @@
         },
         "editor.autoIndent": "keep"
       }
-    }
-  },
-  "configuration": {
-    "yaml.keyOrdering": {
-      "type": "boolean",
-      "default": false,
-      "description": "Enforces alphabetical ordering of keys in mappings when set to true"
+    },
+    "configuration": {
+      "title": "Codecov",
+      "properties": {
+        "codecov.coverage.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Toggle Codecov line coverage decorations.",
+          "order": 0
+        },
+        "codecov.api.gitProvider": {
+          "type": "string",
+          "default": "github",
+          "enum": ["github", "github_enterprise", "gitlab", "gitlab_enterprise", "bitbucket", "bitbucket_server"],
+          "description": "Where are your repositories hosted?",
+          "order": 1
+        },
+        "codecov.api.url": {
+          "type": "string",
+          "default": "https://api.codecov.io",
+          "format": "url",
+          "description": "If you're self-hosting Codecov, update this to point to your self-hosted API.",
+          "order": 2
+        }
+      }
     }
   },
   "scripts": {
