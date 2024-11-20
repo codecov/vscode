@@ -24,7 +24,7 @@ type Coverage =
 
 const config = workspace.getConfiguration("codecov");
 
-const Colors: Record<"covered" | "partial" | "missed", string> = {
+const Colors = {
   covered: config.get("coverage.colors.covered") || "rgb(33,181,119)",
   partial: config.get("coverage.colors.partial") || "rgb(244,176,27)",
   missed: config.get("coverage.colors.missed") || "rgb(245,32,32)",
