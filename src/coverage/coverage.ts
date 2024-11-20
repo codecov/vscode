@@ -22,10 +22,12 @@ type Coverage =
     }
   | undefined;
 
-const Colors = {
-  covered: "rgb(33,181,119)",
-  partial: "rgb(244,176,27)",
-  missed: "rgb(245,32,32)",
+const config = workspace.getConfiguration("codecov");
+
+const Colors: Record<"covered" | "partial" | "missed", string> = {
+  covered: config.get("coverage.colors.covered") || "rgb(33,181,119)",
+  partial: config.get("coverage.colors.partial") || "rgb(244,176,27)",
+  missed: config.get("coverage.colors.missed") || "rgb(245,32,32)",
 } as const;
 
 const Icons = {
@@ -89,8 +91,6 @@ export function activateCoverage(context: ExtensionContext) {
     if (!activeEditor) {
       return;
     }
-
-    const config = workspace.getConfiguration("codecov");
 
     const enabled = config.get("coverage.enabled");
     if (!enabled) return;
