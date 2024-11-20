@@ -70,7 +70,6 @@ export function activateCoverage(context: ExtensionContext) {
   const lineCoveredDecoration = window.createTextEditorDecorationType({
     gutterIconPath: Icons.covered,
     overviewRulerColor: Colors.covered,
-    isWholeLine: true,
     overviewRulerLane: OverviewRulerLane.Right,
   });
   const linePartialDecoration = window.createTextEditorDecorationType({
