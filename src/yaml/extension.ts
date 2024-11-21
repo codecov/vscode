@@ -23,6 +23,7 @@ import type { IJSONSchemaCache } from "./json-schema-cache";
 import { getJsonSchemaContent } from "./json-schema-content-provider";
 import { joinPath } from "./paths";
 import { validateAction } from "./validate";
+import Sentry from "../sentry";
 
 export interface ISchemaAssociations {
   [pattern: string]: string[];
@@ -134,7 +135,12 @@ export async function startClient(
   // Activate validator
   const command = "codecov.validate";
   const commandHandler = () => {
-    validateAction(context);
+    try {
+      validateAction(context);
+    } catch (e) {
+      Sentry.captureException(e);
+      throw e;
+    }
   };
 
   context.subscriptions.push(commands.registerCommand(command, commandHandler));

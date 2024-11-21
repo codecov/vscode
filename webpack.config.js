@@ -55,6 +55,11 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      SENTRY_DSN: JSON.stringify(process.env.SENTRY_DSN),
+    }),
+  ],
 };
 
 module.exports = [config];
