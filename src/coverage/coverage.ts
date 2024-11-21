@@ -15,6 +15,7 @@ import {
   workspace,
 } from "vscode";
 import axios from "axios";
+import Sentry from "../sentry";
 
 type Coverage =
   | {
@@ -239,9 +240,14 @@ export function activateCoverage(context: ExtensionContext) {
 
   window.onDidChangeActiveTextEditor(
     (editor) => {
-      activeEditor = editor;
-      if (editor) {
-        updateDecorations();
+      try {
+        activeEditor = editor;
+        if (editor) {
+          updateDecorations();
+        }
+      } catch (e) {
+        Sentry.captureException(e);
+        throw e;
       }
     },
     null,
@@ -250,8 +256,13 @@ export function activateCoverage(context: ExtensionContext) {
 
   workspace.onDidSaveTextDocument(
     (event) => {
-      if (activeEditor && event === activeEditor.document) {
-        updateDecorations();
+      try {
+        if (activeEditor && event === activeEditor.document) {
+          updateDecorations();
+        }
+      } catch (e) {
+        Sentry.captureException(e);
+        throw e;
       }
     },
     null,

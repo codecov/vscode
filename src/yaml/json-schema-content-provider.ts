@@ -12,9 +12,11 @@ import {
 } from "request-light";
 import { SchemaExtensionAPI } from "./schema-extension-api";
 import type { IJSONSchemaCache } from "./json-schema-cache";
+import Sentry from "../sentry";
 
 export class JSONSchemaDocumentContentProvider
-  implements TextDocumentContentProvider {
+  implements TextDocumentContentProvider
+{
   constructor(
     private readonly schemaCache: IJSONSchemaCache,
     private readonly schemaApi: SchemaExtensionAPI
@@ -117,6 +119,7 @@ export async function getJsonSchemaContent(
 }
 
 function createReject(error: XHRResponse): Promise<string> {
+  Sentry.captureException(error);
   return Promise.reject(
     error.responseText ||
       getErrorStatusDescription(error.status) ||
