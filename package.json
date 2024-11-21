@@ -116,19 +116,19 @@
         "codecov.coverage.colors.covered": {
           "type": "string",
           "default": "rgb(33,181,119)",
-          "description": "The CSS color Codecov should use for covered lines.",
+          "description": "The CSS color Codecov should use for covered lines (e.g., green, hsl(120deg 100% 50%), #00FF00).",
           "order": 1
         },
         "codecov.coverage.colors.partial": {
           "type": "string",
           "default": "rgb(244,176,27)",
-          "description": "The CSS color Codecov should use for partial lines.",
+          "description": "The CSS color Codecov should use for partial lines (e.g., green, hsl(120deg 100% 50%), #00FF00).",
           "order": 2
         },
         "codecov.coverage.colors.missed": {
           "type": "string",
           "default": "rgb(245,32,32)",
-          "description": "The CSS color Codecov should use for missed lines.",
+          "description": "The CSS color Codecov should use for missed lines (e.g., green, hsl(120deg 100% 50%), #00FF00).",
           "order": 3
         },
         "codecov.api.gitProvider": {
