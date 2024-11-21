@@ -163,6 +163,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^8.39.0",
+    "@sentry/webpack-plugin": "^2.22.6",
     "axios": "^1.6.2",
     "fs-extra": "^11.2.0",
     "request-light": "^0.7.0",

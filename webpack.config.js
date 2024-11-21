@@ -5,6 +5,7 @@
 
 "use strict";
 
+const { sentryWebpackPlugin } = require("@sentry/webpack-plugin");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -58,6 +59,11 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       SENTRY_DSN: JSON.stringify(process.env.SENTRY_DSN),
+    }),
+    sentryWebpackPlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: "codecov",
+      project: "vscode",
     }),
   ],
 };
