@@ -9,31 +9,34 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Create Docker image for json schema generation
-      run: make build
+      - name: Create Docker image for json schema generation
+        run: make build
 
-    - name: Generate json schema
-      run: make run
+      - name: Generate json schema
+        run: make run
 
-    - name: Build extension
-      run: npm run build
-        
-    - name: Install vsce
-      run: npm install -g @vscode/vsce
+      - name: Build extension
+        run: npm run build
+        env:
+          SENTRY_DSN: ${{ vars.SENTRY_DSN }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
-    - name: Publish extension
-      run: vsce publish --no-update-package-json "$VSCE_VERSION"
-      env:
-        VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        VSCE_VERSION: ${{ github.event.release.tag_name }}
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+
+      - name: Publish extension
+        run: vsce publish --no-update-package-json "$VSCE_VERSION"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          VSCE_VERSION: ${{ github.event.release.tag_name }}
