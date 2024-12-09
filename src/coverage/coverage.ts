@@ -138,11 +138,12 @@ export function activateCoverage(context: ExtensionContext) {
     )?.uri.path;
 
     const gitConfig = Uri.file(`${pathToWorkspace}/.git/config`);
-    // Try https remote auth first
-    let remote = await workspace.fs
+    const configLines = workspace.fs
       .readFile(gitConfig)
       .then((buf) => buf.toString())
-      .then((string) => string.split("\n"))
+      .then((string) => string.split("\n"));
+    // Try https remote auth first
+    let remote = await configLines
       .then((lines) =>
         lines.find((line) => line.match(/https:\/\/.*\/.*\/.*.git$/))
       )
@@ -154,10 +155,7 @@ export function activateCoverage(context: ExtensionContext) {
       );
     if (!remote) {
       // if that doesn't work try looking for remotes using ssh auth
-      remote = await workspace.fs
-        .readFile(gitConfig)
-        .then((buf) => buf.toString())
-        .then((string) => string.split("\n"))
+      remote = await configLines
         .then((lines) => lines.find((line) => line.match(/git@.*:.*\/.*.git$/)))
         .then((line) =>
           line?.replace(/.*:/, "").replace(".git", "").split("/")
