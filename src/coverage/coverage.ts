@@ -138,13 +138,31 @@ export function activateCoverage(context: ExtensionContext) {
     )?.uri.path;
 
     const gitConfig = Uri.file(`${pathToWorkspace}/.git/config`);
-    const remote = await workspace.fs
+    const configLines = workspace.fs
       .readFile(gitConfig)
       .then((buf) => buf.toString())
-      .then((string) => string.split("\n"))
-      .then((lines) => lines.find((line) => line.match(/git@.*:.*\/.*.git$/)))
-      .then((line) => line?.replace(/.*:/, "").replace(".git", "").split("/"));
-    if (!remote) return;
+      .then((string) => string.split("\n"));
+    // Try https remote auth first
+    let remote = await configLines
+      .then((lines) =>
+        lines.find((line) => line.match(/https:\/\/.*\/.*\/.*.git$/))
+      )
+      .then((line) =>
+        line
+          ?.replace(/.*https:\/\/[^\/]*\//, "")
+          .replace(".git", "")
+          .split("/")
+      );
+    if (!remote) {
+      // if that doesn't work try looking for remotes using ssh auth
+      remote = await configLines
+        .then((lines) => lines.find((line) => line.match(/git@.*:.*\/.*.git$/)))
+        .then((line) =>
+          line?.replace(/.*:/, "").replace(".git", "").split("/")
+        );
+    }
+    // Throw so we can see this in Sentry
+    if (!remote) throw new Error("Could not get remote from .git directory");
     const [owner, repo] = remote;
 
     const gitHead = Uri.file(`${pathToWorkspace}/.git/HEAD`);
@@ -193,7 +211,8 @@ export function activateCoverage(context: ExtensionContext) {
         error = error;
       });
 
-    if (error) return;
+    // Throw so we can get these in Sentry
+    if (error) throw error;
 
     if (!coverage || !coverage.line_coverage) {
       // No coverage for this file/branch. Fall back to default branch coverage.
