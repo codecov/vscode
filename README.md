@@ -19,7 +19,7 @@ This feature allows you to visualize coverage data directly in your code editor 
 1. Enter the API key:
    - After installing the extension, you will be prompted to enter your Codecov API key in VS Code. Enter the key you generated in the previous step.
 
-Now, you should see coverage information in the left side gutter of your editor, making it easier to identify untested parts of your code, right from VS Code.
+You should now start to see line coverage information in the left side gutter, making it easier to identify untested parts of your code, without having to leave your editor.
 
 Note that as of today, this feature only pulls coverage data that has been uploaded to Codecov. It is not yet able to use local coverage files. We do understand this limitation and have plans to add support for local coverage in the future!
 
@@ -27,7 +27,7 @@ Note that as of today, this feature only pulls coverage data that has been uploa
 
 In the extensions settings, we provide the following customization options for the coverage feature:
 
-- Select git provider: By default, this extension integrates with GitHub. For other providers, such as GitLab or Bitbucket, select your preferred Git provider within the settings. We also support the self-hosted/enterprise variants of each of these.
+- Select Git provider: By default, this extension integrates with GitHub. For other providers, such as GitLab or Bitbucket, select your preferred Git provider within the settings. We also support the self-hosted/enterprise variants of each of these.
 - Custom colors: Tailor the appearance of coverage decorations by setting custom colors.
 - Self-hosted API URL: If you're using a self-hosted Codecov instance, you can customize the API URL within the extension settings to connect to your server.
 
