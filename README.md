@@ -1,84 +1,49 @@
-![Overview slideshow](/media/4uLz6acpnhnd8SNe37rH.gif)
+# Codecov VS Code Extension
 
-Create, manage, and validate the codecov.yml right in VS Code with our latest extension. Make sure you don't commit any mistakes and accidentally change Codecov’s behavior due to an invalid configuration.
+Welcome to the Codecov VS Code extension! This tool can improve your development workflows by bringing Codecov line coverage and YAML validation directly into Visual Studio Code.
 
-**Key Features (for now 😉)**
+## Coverage Decorations
 
-* **PR Configuration in VS Code:** This extension empowers you to configure and enable Codecov directly within Visual Studio Code, eliminating the need for manual setups – ultimately saving you loads of time. 
-* **Ease of Use:** The extension is designed for all users, regardless of their familiarity with Codecov or YAML files. You don't need to be an expert to ensure accurate and effective Codecov integration, we’ll help you along the way. Have a particularly complex setup? We’re [here to help](github.com/codecov/feedback). 
-* **Real-time Assistance and Validation:** Tired of guesswork? Our extension offers autocomplete and real-time validation for your Codecov YAML file. It can detect errors in the YAML file before creating a pull request ensuring your configuration is spot-on. 
+![Coverage demo](/media/coverage.png)
 
-![Validate configuration against Codecov servers](/media/PmGGVqo9jNHEE1yfYW9l.gif)
+This feature allows you to visualize coverage data directly in your code editor with line-by-line coverage decorations. Follow these steps to configure this feature:
 
+1. Install the extension:
+   - Open Visual Studio Code.
+   - Navigate to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+   - Search for Codecov and install the extension.
+1. Generate a Codecov API key:
+   - Go to the [Codecov app](https://app.codecov.io).
+   - Log in to your account and navigate to your account settings.
+   - Generate an API key under the Access tab.
+1. Enter the API key:
+   - After installing the extension, you will be prompted to enter your Codecov API key in VS Code. Enter the key you generated in the previous step.
 
+You should now start to see line coverage information in the left side gutter, making it easier to identify untested parts of your code, without having to leave your editor.
 
-Here are some quick configurations to get you started:  
+Note that as of today, this feature only pulls coverage data that has been uploaded to Codecov. It is not yet able to use local coverage files. We do understand this limitation and have plans to add support for local coverage in the future!
 
-**Ease target coverage**
+### Customization Options
 
-[Relax my coverage target](https://docs.codecov.com/docs/commit-status#threshold), because I have flaky tests
+In the extensions settings, we provide the following customization options for the coverage feature:
 
+- Select Git provider: By default, this extension integrates with GitHub. For other providers, such as GitLab or Bitbucket, select your preferred Git provider within the settings. We also support the self-hosted/enterprise variants of each of these.
+- Custom colors: Tailor the appearance of coverage decorations by setting custom colors.
+- Self-hosted API URL: If you're using a self-hosted Codecov instance, you can customize the API URL within the extension settings to connect to your server.
 
-```
-codecov.yml
+## Codecov YAML Validation
 
-coverage:
-  status:
-    project:
-      default:
-        target: auto
-        # adjust accordingly based on how flaky your tests are
-        # this allows a 10% drop from the previous base commit coverage
-        threshold: 10%
-```
+![YAML demo](/media/yaml.gif)
 
+This feature provides validation for Codecov YAML configuration files, offering language server features and helpful hints for different fields. To set this up:
 
-**Set non-blocking status checks**
+1. Install the extension:
+   - Follow the same instructions as in the line-by-line coverage setup to install the Codecov extension.
+1. Create or navigate to a codecov.yml file
+1. Start editing or validate:
+   - Begin editing the codecov.yml file to take advantage of language server features like autocompletion and inline hints.
+   - Alternatively, press the Codecov icon in the top right corner of the VS Code window to validate the entire YAML file.
 
-See status checks but [prevent them from blocking](https://docs.codecov.com/docs/commit-status#informational)
+## Having problems?
 
-
-```
-codecov.yml
-
-coverage:
-  status:
-    project:
-      default:
-        informational: true
-    patch:
-      default:
-        informational: true
-```
-
-
-**Ensure all code is covered**
-
-Set blocking coverage so [that new code must be fully tested](https://docs.codecov.com/docs/commit-status#patch-status)
-
-
-```
-codecov.yml
-
-coverage:
-  status:
-    patch:
-      default:
-        target: 100%
-```
-
-
-This is just the beginning of the Codecov VS Code extension. We plan to keep investing into the extension over time to provide even more of Codecov's functionality directly in your code editor. – if you have ideas to share, questions, or need help don’t hesitate to [let us know](https://github.com/codecov/feedback). 
-
-Get started with our Codecov VS Code extension and unlock a new level of convenience and accuracy in your code coverage setup. Install now.
-
-
-
-**Troubleshooting**
-
-Is the extension not working? VS Code might not be detecting Codecov files if a language matching the pattern has been set and is overriding detecting Codecov as a language provider.
-
-![How to set Codecov as the language of a Codecov config file](/media/Codecov%20+%20VSCode%20(Troubleshoot).gif)
-
-
-If validation is still not working you may need to restart VS Code. If it is still broken you can [report the issue here](https://github.com/codecov/vscode/issues)
+If you run into issues with any of the extension's features, please don't hesitate to get in touch by [submitting an issue](https://github.com/codecov/vscode/issues). We will do our best to get back to you quickly!
